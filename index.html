@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pizzaria Jardins em Bragança Paulista. Salão e delivery, pizzas artesanais e tradição há mais de 30 anos." />
+  <title>Pizzaria Jardins | Bragança Paulista</title>
+
+  <style>
+    :root{
+      --bg:#11110f;
+      --card:#191915;
+      --gold:#d8b56c;
+      --cream:#f6f0e6;
+      --muted:#c9c1b6;
+      --line:rgba(216,181,108,.22);
+      --green:#25D366;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: Georgia, "Times New Roman", serif;
+      background:var(--bg);
+      color:var(--cream);
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1120px,92%);margin:auto}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(17,17,15,.88);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      font-size:1.45rem;
+      letter-spacing:.08em;
+      color:var(--gold);
+      font-weight:bold;
+      text-transform:uppercase;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:22px;
+      align-items:center;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.95rem;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      padding:13px 22px;
+      font-family:Arial, Helvetica, sans-serif;
+      font-weight:700;
+      transition:.25s ease;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:var(--gold);
+      color:#17130c;
+    }
+
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-outline{
+      border-color:var(--gold);
+      color:var(--gold);
+    }
+
+    .hero{
+      min-height:78vh;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:80px 0;
+      background:
+        radial-gradient(circle at 50% 25%, rgba(216,181,108,.18), transparent 32%),
+        linear-gradient(180deg, #171713 0%, #0f0f0d 100%);
+    }
+
+    .hero .eyebrow{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:.28em;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.8rem;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      font-size:clamp(3.1rem,8vw,6.5rem);
+      line-height:.95;
+      margin-bottom:24px;
+    }
+
+    .hero h1 span{color:var(--gold)}
+
+    .hero p{
+      max-width:720px;
+      margin:0 auto 30px;
+      color:var(--muted);
+      font-size:1.15rem;
+    }
+
+    .hero-actions{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    section{padding:86px 0}
+    .section-kicker{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.78rem;
+      margin-bottom:12px;
+    }
+
+    .section-title{
+      font-size:clamp(2.2rem,5vw,3.8rem);
+      line-height:1.05;
+      margin-bottom:22px;
+    }
+
+    .lead{
+      color:var(--muted);
+      max-width:760px;
+      font-size:1.08rem;
+    }
+
+    .story{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:46px;
+      align-items:center;
+    }
+
+    .story-card{
+      min-height:360px;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:34px;
+      background:
+        linear-gradient(145deg, rgba(216,181,108,.12), rgba(255,255,255,.02)),
+        var(--card);
+      display:flex;
+      align-items:end;
+    }
+
+    .story-card strong{
+      font-size:2.2rem;
+      color:var(--gold);
+      display:block;
+      margin-bottom:8px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      margin-top:36px;
+    }
+
+    .pizza-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+    }
+
+    .pizza-photo{
+      aspect-ratio:4/3;
+      display:grid;
+      place-items:center;
+      background:
+        radial-gradient(circle, rgba(216,181,108,.22), transparent 40%),
+        #211d16;
+      font-size:5rem;
+    }
+
+    .pizza-card .content{padding:24px}
+    .pizza-card h3{font-size:1.55rem;margin-bottom:8px}
+    .pizza-card p{color:var(--muted);font-family:Arial, Helvetica, sans-serif;font-size:.96rem}
+
+    .info-wrap{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      margin-top:36px;
+    }
+
+    .info-card{
+      padding:30px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:var(--card);
+    }
+
+    .info-card h3{
+      color:var(--gold);
+      margin-bottom:12px;
+      font-size:1.35rem;
+    }
+
+    .info-card p, .info-card address{
+      color:var(--muted);
+      font-family:Arial, Helvetica, sans-serif;
+      font-style:normal;
+    }
+
+    .cta{
+      text-align:center;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(216,181,108,.08), rgba(216,181,108,.02));
+    }
+
+    footer{
+      padding:34px 0;
+      color:var(--muted);
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.9rem;
+      text-align:center;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      background:var(--green);
+      color:white;
+      display:grid;
+      place-items:center;
+      font-size:1.6rem;
+      box-shadow:0 10px 25px rgba(0,0,0,.35);
+      z-index:60;
+    }
+
+    @media(max-width:850px){
+      .nav-links a:not(.btn){display:none}
+      .story,.info-wrap{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .hero{min-height:72vh}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#inicio">Pizzaria Jardins</a>
+
+    <nav class="nav-links">
+      <a href="#historia">Nossa História</a>
+      <a href="#pizzas">Pizzas</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-primary"
+         href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido."
+         target="_blank"
+         rel="noopener">
+         Pedir agora
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="eyebrow">Bragança Paulista • Salão & Delivery</div>
+      <h1>Pizzaria <span>Jardins</span></h1>
+      <p>
+        A arte em fazer pizzas há mais de 30 anos.
+        Tradição, ingredientes selecionados e aquele sabor que faz parte da história de Bragança Paulista.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary"
+           href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido."
+           target="_blank"
+           rel="noopener">
+          Fazer pedido pelo WhatsApp
+        </a>
+
+        <a class="btn btn-outline" href="#pizzas">Conhecer nossas pizzas</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="historia">
+    <div class="container story">
+      <div>
+        <div class="section-kicker">Nossa essência</div>
+        <h2 class="section-title">Tradição que atravessa gerações</h2>
+        <p class="lead">
+          Na Pizzaria Jardins, cada pizza é preparada para reunir pessoas em volta da mesa.
+          Nossa história foi construída com receitas marcantes, ingredientes de qualidade
+          e o cuidado artesanal que acompanha a casa há mais de três décadas.
+        </p>
+      </div>
+
+      <div class="story-card">
+        <div>
+          <strong>+30 anos</strong>
+          <p class="lead">de história, sabor e momentos compartilhados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pizzas">
+    <div class="container">
+      <div class="section-kicker">Algumas favoritas</div>
+      <h2 class="section-title">Clássicos da Jardins</h2>
+      <p class="lead">
+        Em breve, esta área receberá as fotos reais das pizzas da casa.
+      </p>
+
+      <div class="grid">
+        <article class="pizza-card">
+          <div class="pizza-photo">🍕</div>
+          <div class="content">
+            <h3>Muçarela</h3>
+            <p>Molho de tomate, muçarela, orégano e azeitonas chilenas pretas.</p>
+          </div>
+        </article>
+
+        <article class="pizza-card">
+          <div class="pizza-photo">🍕</div>
+          <div class="content">
+            <h3>Calabresa</h3>
+            <p>Calabresa bem dourada, cebola e azeitonas, em uma combinação clássica e generosa.</p>
+          </div>
+        </article>
+
+        <article class="pizza-card">
+          <div class="pizza-photo">🍕</div>
+          <div class="content">
+            <h3>Marguerita</h3>
+            <p>Molho de tomate, muçarela, tomate, manjericão fresco, orégano e azeitonas.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="section-kicker">Seu jantar começa aqui</div>
+      <h2 class="section-title">Peça sua Jardins</h2>
+      <p class="lead" style="margin:0 auto 28px;">
+        Atendimento de quarta a segunda, das 18h às 00h.
+        Fechado às terças-feiras.
+      </p>
+
+      <a class="btn btn-primary"
+         href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido."
+         target="_blank"
+         rel="noopener">
+        Chamar no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+      <div class="section-kicker">Visite ou peça em casa</div>
+      <h2 class="section-title">Onde estamos</h2>
+
+      <div class="info-wrap">
+        <div class="info-card">
+          <h3>Endereço</h3>
+          <address>
+            Rua José Domingues, nº 624<br>
+            Taboão — Bragança Paulista/SP<br>
+            CEP 12900-260
+          </address>
+
+          <p style="margin-top:18px;">
+            <a class="btn btn-outline"
+               href="https://www.google.com/maps/search/?api=1&query=Rua+José+Domingues+624+Taboão+Bragança+Paulista+SP"
+               target="_blank"
+               rel="noopener">
+              Abrir no mapa
+            </a>
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Atendimento</h3>
+          <p>
+            Quarta a segunda: 18h às 00h<br>
+            Terça-feira: fechado
+          </p>
+
+          <p style="margin-top:18px;">
+            WhatsApp: (11) 4034-5005<br>
+            Instagram:
+            <a href="https://www.instagram.com/pizzaria_jardins/"
+               target="_blank"
+               rel="noopener"
+               style="color:var(--gold);">
+              @pizzaria_jardins
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> Pizzaria Jardins • Bragança Paulista/SP
+  </div>
+</footer>
+
+<a class="whatsapp-float"
+   href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido."
+   target="_blank"
+   rel="noopener"
+   aria-label="Falar com a Pizzaria Jardins no WhatsApp">
+  ☎
+</a>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
