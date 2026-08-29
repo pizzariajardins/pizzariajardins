@@ -506,6 +506,82 @@ header{
   .classicGrid{grid-template-columns:1fr}
 }
 
+
+/* V22 — categorias longas em lista compacta */
+.classicsSection{
+  padding:42px 0!important;
+}
+.menuAccordion{
+  border:1px solid rgba(242,138,23,.20);
+  border-radius:24px;
+  background:var(--panel);
+  overflow:hidden;
+}
+.menuAccordion summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:26px 28px;
+  background:
+    linear-gradient(90deg,rgba(242,138,23,.07),rgba(8,168,90,.02)),
+    var(--panel);
+}
+.menuAccordion summary::-webkit-details-marker{display:none}
+.menuAccordion summary h2{
+  font-size:clamp(2rem,3.5vw,3rem);
+  line-height:1.05;
+  margin-bottom:8px;
+}
+.menuAccordion summary p{
+  color:var(--muted);
+  font:500 .9rem/1.5 Arial,sans-serif;
+}
+.summaryAction{
+  flex:0 0 auto;
+  padding:11px 16px;
+  border-radius:999px;
+  border:1px solid rgba(242,138,23,.38);
+  color:var(--orange);
+  font:800 .78rem Arial,sans-serif;
+}
+.menuAccordion[open] .summaryAction::after{content:" ▲"}
+.menuAccordion:not([open]) .summaryAction::after{content:" ▼"}
+
+.menuList{
+  border-top:1px solid rgba(242,138,23,.18);
+}
+.menuRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:18px 24px;
+  border-bottom:1px solid rgba(255,255,255,.055);
+  background:#11110e;
+}
+.menuRow:last-child{border-bottom:0}
+.menuRow:hover{background:#16140f}
+.menuRow h3{
+  font-size:1.12rem;
+  margin-bottom:4px;
+}
+.menuRow p{
+  color:var(--muted);
+  font:500 .86rem/1.45 Arial,sans-serif;
+  max-width:820px;
+}
+@media(max-width:650px){
+  .menuAccordion summary{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:22px 20px;
+  }
+  .menuRow{padding:16px 18px}
+}
+
 </style>
 </head>
 <body>
@@ -542,11 +618,11 @@ header{
 <nav class="quicknav">
   <div class="container">
     <a class="chip" href="#queridinhas">Queridinhas</a>
-    <a class="chip" href="#classicas">Clássicas</a>
+    <a class="chip" href="#classicas" data-open="classicas-lista">Clássicas</a>
     <a class="chip" href="#especial">Seleção Especial</a>
     <a class="chip" href="#premium">Premium</a>
     <a class="chip" href="#mar">Especialidades do Mar</a>
-    <a class="chip" href="#contemporaneas">Contemporâneas</a>
+    <a class="chip" href="#contemporaneas">Jardins &amp; Vegetais</a>
   </div>
 </nav>
 
@@ -621,161 +697,95 @@ header{
 </section>
 
 
-<section class="section" id="classicas">
+
+<section class="section classicsSection" id="classicas">
   <div class="container">
-    <div class="sectionTitle">
-      <div>
-        <div class="kicker">Clássicas da Jardins</div>
-        <h2>Sabores que atravessam gerações</h2>
+    <details class="menuAccordion" id="classicas-lista">
+      <summary>
+        <div>
+          <div class="kicker">Clássicas da Jardins</div>
+          <h2>Sabores que atravessam gerações</h2>
+          <p>Receitas tradicionais da casa em uma lista rápida e fácil de consultar.</p>
+        </div>
+        <span class="summaryAction">Ver sabores</span>
+      </summary>
+
+      <div class="menuList">
+
+        <article class="menuRow">
+          <div><h3>Alho</h3><p>Marcante e aromática, para quem gosta de sabores intensos e cheios de personalidade.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Alvorada</h3><p>Uma combinação acolhedora e equilibrada, com sabor delicado e aquele toque caseiro que conquista.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Ao Forno</h3><p>Uma receita envolvente, preparada para quem aprecia combinações mais marcantes.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Bacon</h3><p>Defumada, crocante e irresistível, com presença de sabor do começo ao fim.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Baiana</h3><p>Intensa e cheia de personalidade, com tempero marcante na medida certa.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Bauru</h3><p>Uma combinação clássica e reconfortante, inspirada em um dos sabores mais queridos do Brasil.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Bragança</h3><p>Uma receita com identidade da casa, criada para celebrar sabores que fazem parte da nossa história.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Brasileirinha</h3><p>Generosa, colorida e cheia de sabor, com uma combinação que tem a cara da mesa brasileira.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Brócolis</h3><p>Leve na medida certa, cremosa e saborosa, com um toque vegetal equilibrado.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Catupyrela</h3><p>Uma combinação extremamente cremosa, para quem não abre mão de queijo e suavidade.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Gorgonzola</h3><p>Elegante e intensa, com sabor inconfundível e personalidade marcante.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Canadense</h3><p>Clássica e delicada, com sabor suave e uma combinação muito equilibrada.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Milho</h3><p>Levemente adocicada, cremosa e afetiva, perfeita para quem gosta de sabores simples.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Napolitana</h3><p>Um clássico de inspiração italiana, equilibrado, aromático e cheio de frescor.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Palmito</h3><p>Delicada, cremosa e elegante, com sabor suave e textura agradável.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Pizzaiolo</h3><p>Uma receita tradicional e bem temperada, com o espírito das pizzas clássicas de forno.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Toscana</h3><p>Rústica e saborosa, com uma combinação de inspiração italiana e presença marcante.</p></div>
+        </article>
+
+        <article class="menuRow">
+          <div><h3>Três Queijos</h3><p>Cremosa e envolvente, com uma combinação equilibrada para quem ama queijo.</p></div>
+        </article>
+
       </div>
-      <p>
-        Receitas tradicionais da casa, preparadas com o estilo Jardins:
-        fartura, equilíbrio e aquele sabor que sempre dá vontade de repetir.
-      </p>
-    </div>
-
-    <div class="classicGrid">
-
-      <article class="classicItem">
-        <div class="classicIndex">01</div>
-        <h3>Alho</h3>
-        <p>Marcante e aromática, para quem gosta de uma pizza simples, intensa e cheia de personalidade.</p>
-        <div class="classicFoot">Clássica Jardins</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">02</div>
-        <h3>Alvorada</h3>
-        <p>Uma combinação acolhedora e equilibrada, com sabor delicado e aquele toque caseiro que conquista.</p>
-        <div class="classicFoot">Tradição da casa</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">03</div>
-        <h3>Ao Forno</h3>
-        <p>Uma receita de sabor profundo e envolvente, preparada para quem aprecia combinações mais marcantes.</p>
-        <div class="classicFoot">Clássica Jardins</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">04</div>
-        <h3>Bacon</h3>
-        <p>Defumada, crocante e irresistível, com presença de sabor do começo ao fim.</p>
-        <div class="classicFoot">Sabor marcante</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">05</div>
-        <h3>Baiana</h3>
-        <p>Intensa e cheia de personalidade, com tempero marcante na medida certa.</p>
-        <div class="classicFoot">Para quem gosta de sabor</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">06</div>
-        <h3>Bauru</h3>
-        <p>Uma combinação clássica e reconfortante, inspirada em um dos sabores mais queridos do Brasil.</p>
-        <div class="classicFoot">Clássico brasileiro</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">07</div>
-        <h3>Bragança</h3>
-        <p>Uma receita com identidade da casa, criada para celebrar sabores que já fazem parte da nossa história.</p>
-        <div class="classicFoot">Identidade Jardins</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">08</div>
-        <h3>Brasileirinha</h3>
-        <p>Generosa, colorida e cheia de sabor, com uma combinação que tem a cara da mesa brasileira.</p>
-        <div class="classicFoot">Querida da casa</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">09</div>
-        <h3>Brócolis</h3>
-        <p>Leve na medida certa, cremosa e saborosa, com um toque vegetal que equilibra perfeitamente a receita.</p>
-        <div class="classicFoot">Equilíbrio & sabor</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">10</div>
-        <h3>Catupyrela</h3>
-        <p>Uma combinação extremamente cremosa, pensada para quem não abre mão de queijo e suavidade.</p>
-        <div class="classicFoot">Cremosa Jardins</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">11</div>
-        <h3>Gorgonzola</h3>
-        <p>Elegante e intensa, com o sabor inconfundível do gorgonzola em uma combinação cheia de personalidade.</p>
-        <div class="classicFoot">Sabor intenso</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">12</div>
-        <h3>Canadense</h3>
-        <p>Clássica e delicada, com sabor suave e uma combinação que agrada quem prefere receitas mais equilibradas.</p>
-        <div class="classicFoot">Tradicional</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">13</div>
-        <h3>Milho</h3>
-        <p>Levemente adocicada, cremosa e muito agradável, perfeita para quem gosta de sabores simples e afetivos.</p>
-        <div class="classicFoot">Leve & cremosa</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">14</div>
-        <h3>Napolitana</h3>
-        <p>Um clássico de inspiração italiana, equilibrado, aromático e cheio de frescor.</p>
-        <div class="classicFoot">Inspiração italiana</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">15</div>
-        <h3>Palmito</h3>
-        <p>Delicada, cremosa e elegante, com sabor suave e textura que combina perfeitamente com a massa da casa.</p>
-        <div class="classicFoot">Clássica Jardins</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">16</div>
-        <h3>Pizzaiolo</h3>
-        <p>Uma receita tradicional e bem temperada, com o espírito das pizzas clássicas de forno.</p>
-        <div class="classicFoot">Tradição pizzaiola</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">17</div>
-        <h3>Toscana</h3>
-        <p>Rústica e saborosa, com uma combinação de inspiração italiana e presença marcante.</p>
-        <div class="classicFoot">Rústica & intensa</div>
-      </article>
-
-      <article class="classicItem">
-        <div class="classicIndex">18</div>
-        <h3>Três Queijos</h3>
-        <p>Cremosa e envolvente, com uma combinação equilibrada de queijos para quem gosta de sabor sem excessos.</p>
-        <div class="classicFoot">Cremosa & clássica</div>
-      </article>
-
-    </div>
-
-    <div class="callout">
-      <div>
-        <strong>Quer conhecer os ingredientes de cada sabor?</strong>
-        <p>Na próxima etapa incluiremos a composição completa, tamanhos e valores de cada pizza.</p>
-      </div>
-      <a class="btn primary"
-         href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20consultar%20o%20cardápio."
-         target="_blank"
-         rel="noopener">
-         Consultar pelo WhatsApp
-      </a>
-    </div>
+    </details>
   </div>
 </section>
 
@@ -857,5 +867,20 @@ header{
 </div>
 
 <script>document.getElementById("year").textContent=new Date().getFullYear()</script>
+
+<script>
+document.querySelectorAll('[data-open]').forEach(function(link){
+  link.addEventListener('click', function(e){
+    var targetId = link.getAttribute('data-open');
+    var details = document.getElementById(targetId);
+    if(details){
+      e.preventDefault();
+      details.open = true;
+      document.getElementById('classicas').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+});
+</script>
+
 </body>
 </html>
