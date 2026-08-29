@@ -239,6 +239,48 @@ footer{
   .hero{padding-top:52px}
   .callout{align-items:flex-start;flex-direction:column}
 }
+
+/* V17 — cardápio mais compacto, alinhado à Home */
+.nav{
+  min-height:76px!important;
+}
+.brand img{
+  width:250px!important;
+}
+.quicknav{
+  top:76px!important;
+}
+.hero{
+  padding:34px 0 30px!important;
+}
+.hero h1{
+  font-size:clamp(2.7rem,5vw,4.6rem)!important;
+  max-width:780px!important;
+  margin-bottom:14px!important;
+}
+.hero p{
+  font-size:1rem!important;
+}
+.heroActions{
+  margin-top:18px!important;
+}
+.section{
+  padding:54px 0!important;
+}
+.sectionTitle{
+  margin-bottom:22px!important;
+}
+@media(max-width:980px){
+  .brand img{width:220px!important}
+  .quicknav{top:76px!important}
+}
+@media(max-width:650px){
+  .nav{min-height:70px!important}
+  .brand img{width:190px!important}
+  .quicknav{top:70px!important}
+  .hero{padding:28px 0 24px!important}
+}
+
 </style>
 </head>
 <body>
@@ -390,7 +432,7 @@ footer{
 
       <article class="category" id="contemporaneas">
         <div class="num">05</div>
-        <h3>Contemporâneas Jardins</h3>
+        <h3>Jardins &amp; Vegetais</h3>
         <p>Receitas atuais, combinações criativas e identidade própria.</p>
       </article>
 
