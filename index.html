@@ -38,7 +38,7 @@ header{
 }
 .brand img{
   width:455px;
-  max-height:138px;
+  max-height:213.9px;
   object-fit:contain;
   object-position:left center;
   margin-top:-12px;
@@ -257,6 +257,65 @@ footer{
   .stripItem{border-right:0;border-bottom:1px solid var(--line)}
   .section{padding:66px 0}
 }
+
+/* V7: logo maior e foto integrada ao fundo, sem moldura */
+.brand img{width:auto;max-width:none}
+.hero-media{border:none!important;border-radius:0!important;overflow:visible!important;background:transparent!important}
+.hero-media img{
+  border:none!important;
+  border-radius:0!important;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 95%,transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 95%,transparent 100%);
+}
+
+
+/* V8: atalhos flutuantes para WhatsApp, iFood e 99Food */
+.delivery-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:80;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:10px;
+}
+.delivery-btn{
+  min-width:60px;
+  height:60px;
+  padding:0 16px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 12px 32px rgba(0,0,0,.38);
+  font:800 .88rem/1 Arial,sans-serif;
+  transition:transform .18s ease,filter .18s ease;
+}
+.delivery-btn:hover{transform:translateY(-2px);filter:brightness(1.04)}
+.delivery-btn.whatsapp{
+  width:60px;
+  min-width:60px;
+  padding:0;
+  background:#25d366;
+}
+.delivery-btn.whatsapp svg{width:31px;height:31px;fill:#fff}
+.delivery-btn.ifood{
+  background:#ea1d2c;
+  color:#fff;
+}
+.delivery-btn.food99{
+  background:#ffd600;
+  color:#111;
+}
+.delivery-text{white-space:nowrap}
+@media(max-width:760px){
+  .delivery-float{right:14px;bottom:14px;gap:8px}
+  .delivery-btn{height:54px;min-width:54px;padding:0 13px;font-size:.82rem}
+  .delivery-btn.whatsapp{width:54px;min-width:54px}
+  .delivery-btn.whatsapp svg{width:28px;height:28px}
+}
+
 </style>
 </head>
 <body>
@@ -435,12 +494,34 @@ footer{
   </div>
 </footer>
 
-<a class="wa" target="_blank" rel="noopener" aria-label="WhatsApp Pizzaria Jardins"
-   href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido.">
-<svg viewBox="0 0 32 32" aria-hidden="true">
-<path d="M19.11 17.21c-.28-.14-1.65-.81-1.9-.91-.26-.09-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34s1.01 2.72 1.15 2.91c.14.19 1.98 3.02 4.79 4.24.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33zM16.05 4.5c-6.34 0-11.49 5.14-11.49 11.48 0 2.03.53 4.02 1.54 5.77L4.46 27.5l5.89-1.55a11.46 11.46 0 0 0 5.69 1.56h.01c6.33 0 11.48-5.15 11.48-11.49 0-3.07-1.2-5.95-3.37-8.12A11.4 11.4 0 0 0 16.05 4.5zm0 20.96h-.01a9.41 9.41 0 0 1-4.8-1.31l-.34-.2-3.5.92.93-3.41-.22-.35a9.42 9.42 0 1 1 7.94 4.35z"/>
-</svg>
-</a>
+
+<div class="delivery-float" aria-label="Canais de pedido">
+  <a class="delivery-btn food99"
+     href="https://oia.99app.com/dlp9/0nXZXc"
+     target="_blank"
+     rel="noopener"
+     aria-label="Pedir pela 99Food">
+    <span class="delivery-text">99Food</span>
+  </a>
+
+  <a class="delivery-btn ifood"
+     href="https://www.ifood.com.br/delivery/braganca-paulista-sp/pizzaria-jardins-centro/deaf6558-8cd7-45d0-8769-4c9a6aba6210"
+     target="_blank"
+     rel="noopener"
+     aria-label="Pedir pelo iFood">
+    <span class="delivery-text">iFood</span>
+  </a>
+
+  <a class="delivery-btn whatsapp"
+     href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido."
+     target="_blank"
+     rel="noopener"
+     aria-label="Pedir pelo WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.21c-.28-.14-1.65-.81-1.9-.91-.26-.09-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34s1.01 2.72 1.15 2.91c.14.19 1.98 3.02 4.79 4.24.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33zM16.05 4.5c-6.34 0-11.49 5.14-11.49 11.48 0 2.03.53 4.02 1.54 5.77L4.46 27.5l5.89-1.55a11.46 11.46 0 0 0 5.69 1.56h.01c6.33 0 11.48-5.15 11.48-11.49 0-3.07-1.2-5.95-3.37-8.12A11.4 11.4 0 0 0 16.05 4.5zm0 20.96h-.01a9.41 9.41 0 0 1-4.8-1.31l-.34-.2-3.5.92.93-3.41-.22-.35a9.42 9.42 0 1 1 7.94 4.35z"/>
+    </svg>
+  </a>
+</div>
 
 <script>document.getElementById("year").textContent=new Date().getFullYear()</script>
 </body>
