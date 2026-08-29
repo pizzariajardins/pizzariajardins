@@ -664,6 +664,62 @@ footer{
 .pizzaCard:hover .pizzaVisual img[src$="paola.jpg"]{transform:scale(1.13)}
 .pizzaCard:hover .pizzaVisual img[src$="frango-catupiry.png"]{transform:scale(1.09)}
 
+
+/* V14 — refinamentos aprovados */
+
+/* Muçarela levemente menos ampliada */
+.pizzaVisual img[src$="mucarela.jpg"]{
+  transform:scale(1.10)!important;
+}
+.pizzaCard:hover .pizzaVisual img[src$="mucarela.jpg"]{
+  transform:scale(1.13)!important;
+}
+
+/* Botões flutuantes um pouco menores e mais afastados dos cards */
+.delivery-float{
+  right:14px!important;
+  gap:8px!important;
+}
+.delivery-btn.ifood,
+.delivery-btn.food99{
+  height:44px!important;
+  min-width:48px!important;
+  padding:0 11px!important;
+  font-size:.74rem!important;
+}
+.delivery-btn.whatsapp{
+  width:68px!important;
+  min-width:68px!important;
+  height:68px!important;
+}
+.delivery-btn.whatsapp svg{
+  width:35px!important;
+  height:35px!important;
+}
+
+@media(max-width:760px){
+  .delivery-float{
+    right:10px!important;
+    gap:7px!important;
+  }
+  .delivery-btn.ifood,
+  .delivery-btn.food99{
+    height:42px!important;
+    min-width:46px!important;
+    padding:0 10px!important;
+    font-size:.72rem!important;
+  }
+  .delivery-btn.whatsapp{
+    width:62px!important;
+    min-width:62px!important;
+    height:62px!important;
+  }
+  .delivery-btn.whatsapp svg{
+    width:32px!important;
+    height:32px!important;
+  }
+}
+
 </style>
 </head>
 <body>
