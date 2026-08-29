@@ -169,22 +169,164 @@ header{
 }
 .storyCard strong{color:var(--orange);font-size:2.15rem;margin-bottom:8px}
 
-.favorites{background:#10110d;border-block:1px solid var(--line)}
-.pizzaGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
-.pizzaCard{overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:22px}
-.placeholder{
-  aspect-ratio:1.55/1;
+.favorites{
+  background:
+    radial-gradient(circle at 82% 8%,rgba(242,138,23,.07),transparent 24%),
+    #10110d;
+  border-block:1px solid var(--line)
+}
+.favoritesHead{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:28px;
+  margin-bottom:30px
+}
+.favoritesHead .lead{max-width:620px}
+.pizzaGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px
+}
+.pizzaCard{
+  position:relative;
+  overflow:hidden;
+  min-height:405px;
+  background:linear-gradient(180deg,#1a1914,#13130f);
+  border:1px solid rgba(242,138,23,.18);
+  border-radius:26px;
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease
+}
+.pizzaCard:hover{
+  transform:translateY(-4px);
+  border-color:rgba(242,138,23,.45);
+  box-shadow:0 18px 42px rgba(0,0,0,.28)
+}
+.pizzaVisual{
+  height:235px;
   display:grid;
   place-items:center;
-  background:radial-gradient(circle,rgba(242,138,23,.18),transparent 45%),#211d16;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(242,138,23,.12),transparent 42%),
+    linear-gradient(180deg,#211e17,#181611)
+}
+.pizzaVisual:before{
+  content:"";
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 50%,#d9a84b 0 57%,#ad6c28 58% 65%,#684019 66% 71%,transparent 72%);
+  filter:drop-shadow(0 20px 22px rgba(0,0,0,.34));
+  transform:rotate(-5deg)
+}
+.pizzaVisual.calabresa:after{
+  content:"";
+  position:absolute;
+  width:150px;height:150px;border-radius:50%;
+  background:
+    radial-gradient(circle at 28% 30%,#8f241a 0 7%,transparent 8%),
+    radial-gradient(circle at 68% 25%,#8f241a 0 7%,transparent 8%),
+    radial-gradient(circle at 54% 61%,#8f241a 0 8%,transparent 9%),
+    radial-gradient(circle at 25% 68%,#8f241a 0 7%,transparent 8%),
+    radial-gradient(circle at 76% 70%,#8f241a 0 7%,transparent 8%),
+    repeating-radial-gradient(ellipse at 50% 50%,transparent 0 22px,rgba(245,235,218,.45) 23px 25px,transparent 26px 36px);
+  transform:rotate(-9deg)
+}
+.pizzaVisual.portuguesa:after{
+  content:"";position:absolute;width:150px;height:150px;border-radius:50%;
+  background:
+    radial-gradient(circle at 25% 32%,#e8c33f 0 4%,transparent 5%),
+    radial-gradient(circle at 68% 27%,#f3e6c8 0 7%,transparent 8%),
+    radial-gradient(circle at 54% 63%,#bd5540 0 7%,transparent 8%),
+    radial-gradient(circle at 26% 70%,#f3e6c8 0 7%,transparent 8%),
+    radial-gradient(circle at 78% 67%,#e8c33f 0 4%,transparent 5%);
+}
+.pizzaVisual.mucarela:after{
+  content:"";position:absolute;width:145px;height:145px;border-radius:50%;
+  background:
+    radial-gradient(circle at 34% 36%,rgba(255,245,199,.76) 0 18%,transparent 19%),
+    radial-gradient(circle at 68% 34%,rgba(255,245,199,.70) 0 17%,transparent 18%),
+    radial-gradient(circle at 50% 68%,rgba(255,245,199,.72) 0 20%,transparent 21%);
+}
+.pizzaVisual.marguerita:after{
+  content:"";position:absolute;width:150px;height:150px;border-radius:50%;
+  background:
+    radial-gradient(circle at 28% 35%,#b93325 0 8%,transparent 9%),
+    radial-gradient(circle at 69% 32%,#b93325 0 8%,transparent 9%),
+    radial-gradient(circle at 55% 68%,#b93325 0 8%,transparent 9%),
+    radial-gradient(circle at 36% 68%,#2e6a35 0 4%,transparent 5%),
+    radial-gradient(circle at 66% 51%,#2e6a35 0 4%,transparent 5%);
+}
+.pizzaVisual.paola:after{
+  content:"";position:absolute;width:150px;height:150px;border-radius:50%;
+  background:
+    radial-gradient(circle at 32% 32%,#d8c4a0 0 7%,transparent 8%),
+    radial-gradient(circle at 68% 31%,#ab7d58 0 7%,transparent 8%),
+    radial-gradient(circle at 49% 67%,#f2dfbf 0 8%,transparent 9%),
+    radial-gradient(circle at 75% 69%,#ad6f46 0 6%,transparent 7%);
+}
+.pizzaVisual.frango:after{
+  content:"";position:absolute;width:150px;height:150px;border-radius:50%;
+  background:
+    radial-gradient(circle at 28% 33%,#d3a76c 0 8%,transparent 9%),
+    radial-gradient(circle at 66% 27%,#f5efe1 0 9%,transparent 10%),
+    radial-gradient(circle at 54% 64%,#d3a76c 0 8%,transparent 9%),
+    radial-gradient(circle at 28% 70%,#f5efe1 0 9%,transparent 10%),
+    radial-gradient(circle at 76% 68%,#d3a76c 0 8%,transparent 9%);
+}
+.pizzaBadge{
+  position:absolute;
+  top:16px;
+  left:16px;
+  z-index:2;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(11,12,9,.84);
+  border:1px solid rgba(242,138,23,.35);
   color:var(--orange);
-  font:800 .82rem Arial,sans-serif;
-  letter-spacing:.12em;
+  font:800 .72rem/1 Arial,sans-serif;
+  letter-spacing:.06em;
   text-transform:uppercase
 }
-.pizzaText{padding:20px}
-.pizzaText h3{font-size:1.3rem;margin-bottom:6px}
-.pizzaText p{color:var(--muted);font:500 .9rem/1.5 Arial,sans-serif}
+.pizzaText{padding:22px 22px 24px}
+.pizzaText h3{
+  font-size:1.45rem;
+  line-height:1.1;
+  margin-bottom:8px
+}
+.pizzaText p{
+  min-height:65px;
+  color:var(--muted);
+  font:500 .9rem/1.5 Arial,sans-serif
+}
+.pizzaFoot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:16px;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.06);
+  color:#a99f91;
+  font:700 .78rem/1.2 Arial,sans-serif
+}
+.pizzaArrow{color:var(--orange);font-size:1.05rem}
+.menuCta{
+  margin-top:30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  padding:24px 26px;
+  border:1px solid rgba(242,138,23,.22);
+  border-radius:22px;
+  background:linear-gradient(90deg,rgba(242,138,23,.08),rgba(8,168,90,.03))
+}
+.menuCta strong{display:block;font-size:1.25rem;margin-bottom:4px}
+.menuCta p{color:var(--muted);font:500 .9rem/1.45 Arial,sans-serif}
 
 .service{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .card h3{font-size:1.55rem;margin-bottom:10px}
@@ -432,6 +574,12 @@ footer{
   }
 }
 
+
+@media(max-width:980px){
+  .favoritesHead{align-items:flex-start;flex-direction:column;gap:12px}
+  .menuCta{align-items:flex-start;flex-direction:column}
+}
+
 </style>
 </head>
 <body>
@@ -511,17 +659,101 @@ footer{
 
 <section class="section favorites" id="pizzas">
   <div class="container">
-    <div class="kicker">As queridinhas da Jardins</div>
-    <h2 class="title">Os sabores que os clientes mais pedem</h2>
+
+    <div class="favoritesHead">
+      <div>
+        <div class="kicker">As queridinhas da Jardins</div>
+        <h2 class="title">Os sabores que viraram tradição</h2>
+      </div>
+      <p class="lead">
+        Uma seleção das pizzas mais pedidas da casa — clássicos que atravessam gerações
+        e continuam entre as favoritas dos nossos clientes.
+      </p>
+    </div>
 
     <div class="pizzaGrid">
-      <div class="pizzaCard"><div class="placeholder">Foto em breve</div><div class="pizzaText"><h3>Calabresa</h3><p>Calabresa bem dourada, cebola e azeitonas.</p></div></div>
-      <div class="pizzaCard"><div class="placeholder">Foto em breve</div><div class="pizzaText"><h3>Portuguesa</h3><p>Um dos grandes clássicos da casa, generoso e marcante.</p></div></div>
-      <div class="pizzaCard"><div class="placeholder">Foto em breve</div><div class="pizzaText"><h3>Muçarela</h3><p>Molho, muçarela, orégano e azeitonas chilenas pretas.</p></div></div>
-      <div class="pizzaCard"><div class="placeholder">Foto em breve</div><div class="pizzaText"><h3>Marguerita</h3><p>Muçarela, tomate, manjericão fresco, orégano e azeitonas.</p></div></div>
-      <div class="pizzaCard"><div class="placeholder">Foto em breve</div><div class="pizzaText"><h3>Paola</h3><p>Um dos sabores de maior saída da Jardins.</p></div></div>
-      <div class="pizzaCard"><div class="placeholder">Foto em breve</div><div class="pizzaText"><h3>Frango com Catupiry</h3><p>Um clássico cremoso e muito querido pelos clientes.</p></div></div>
+
+      <article class="pizzaCard">
+        <div class="pizzaVisual calabresa">
+          <span class="pizzaBadge">Mais pedida</span>
+        </div>
+        <div class="pizzaText">
+          <h3>Calabresa</h3>
+          <p>Molho de tomate, calabresa, cebola, orégano e azeitonas chilenas.</p>
+          <div class="pizzaFoot"><span>Queridinha Jardins</span><span class="pizzaArrow">→</span></div>
+        </div>
+      </article>
+
+      <article class="pizzaCard">
+        <div class="pizzaVisual portuguesa">
+          <span class="pizzaBadge">Clássico da casa</span>
+        </div>
+        <div class="pizzaText">
+          <h3>Portuguesa</h3>
+          <p>Uma combinação generosa e tradicional, preparada no estilo que marcou a história da Jardins.</p>
+          <div class="pizzaFoot"><span>Entre as favoritas</span><span class="pizzaArrow">→</span></div>
+        </div>
+      </article>
+
+      <article class="pizzaCard">
+        <div class="pizzaVisual mucarela">
+          <span class="pizzaBadge">Tradição</span>
+        </div>
+        <div class="pizzaText">
+          <h3>Muçarela</h3>
+          <p>Molho de tomate, muçarela, orégano e as tradicionais azeitonas chilenas.</p>
+          <div class="pizzaFoot"><span>Clássica Jardins</span><span class="pizzaArrow">→</span></div>
+        </div>
+      </article>
+
+      <article class="pizzaCard">
+        <div class="pizzaVisual marguerita">
+          <span class="pizzaBadge">Fresca & clássica</span>
+        </div>
+        <div class="pizzaText">
+          <h3>Marguerita</h3>
+          <p>Molho de tomate, muçarela, parmesão, tomate, manjericão fresco, orégano e azeitonas chilenas.</p>
+          <div class="pizzaFoot"><span>Uma das campeãs</span><span class="pizzaArrow">→</span></div>
+        </div>
+      </article>
+
+      <article class="pizzaCard">
+        <div class="pizzaVisual paola">
+          <span class="pizzaBadge">Assinatura Jardins</span>
+        </div>
+        <div class="pizzaText">
+          <h3>Paola</h3>
+          <p>Um dos sabores de assinatura da casa e uma das pizzas de maior saída da Jardins.</p>
+          <div class="pizzaFoot"><span>Especial da casa</span><span class="pizzaArrow">→</span></div>
+        </div>
+      </article>
+
+      <article class="pizzaCard">
+        <div class="pizzaVisual frango">
+          <span class="pizzaBadge">Muito pedida</span>
+        </div>
+        <div class="pizzaText">
+          <h3>Frango com Catupiry</h3>
+          <p>Molho de tomate, sassami de frango, Catupiry, orégano e azeitonas chilenas.</p>
+          <div class="pizzaFoot"><span>Cremosa & clássica</span><span class="pizzaArrow">→</span></div>
+        </div>
+      </article>
+
     </div>
+
+    <div class="menuCta">
+      <div>
+        <strong>Mais de um sabor para cada momento.</strong>
+        <p>Em breve, o cardápio completo estará disponível aqui no site, organizado por categorias.</p>
+      </div>
+      <a class="btn primary"
+         href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20consultar%20o%20cardápio."
+         target="_blank"
+         rel="noopener">
+        Consultar cardápio
+      </a>
+    </div>
+
   </div>
 </section>
 
