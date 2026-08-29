@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Cardápio da Pizzaria Jardins em Bragança Paulista. Conheça nossas pizzas, clássicos e especialidades.">
+<title>Cardápio | Pizzaria Jardins</title>
+<style>
+:root{
+  --bg:#0b0c09;
+  --panel:#151510;
+  --cream:#f6f0e5;
+  --muted:#c9c1b4;
+  --orange:#f28a17;
+  --green:#08a85a;
+  --line:rgba(242,138,23,.22);
+  --whatsapp:#25d366;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.container{width:min(1220px,92%);margin:auto}
+
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,12,9,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)
+}
+.nav{
+  min-height:92px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px
+}
+.brand img{width:330px;height:auto}
+.navlinks{display:flex;align-items:center;gap:22px;font:700 .91rem Arial,sans-serif}
+.navlinks a:hover{color:var(--orange)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 22px;border-radius:999px;
+  border:1px solid transparent;
+  font:700 .93rem Arial,sans-serif
+}
+.primary{background:var(--orange);color:#171007}
+.outline{border-color:var(--orange);color:var(--orange)}
+
+.hero{
+  padding:72px 0 54px;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(circle at 70% 10%,rgba(242,138,23,.08),transparent 25%),
+    linear-gradient(180deg,#11110d,#0b0c09)
+}
+.kicker{
+  color:var(--orange);
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  font:800 .75rem Arial,sans-serif;
+  margin-bottom:12px
+}
+.hero h1{
+  font-size:clamp(3rem,6vw,5.8rem);
+  line-height:.95;
+  letter-spacing:-.04em;
+  max-width:850px;
+  margin-bottom:20px
+}
+.hero p{
+  max-width:760px;
+  color:var(--muted);
+  font-size:1.08rem
+}
+.heroActions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+
+.quicknav{
+  position:sticky;
+  top:92px;
+  z-index:30;
+  background:rgba(16,17,13,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)
+}
+.quicknav .container{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding:12px 0;
+  scrollbar-width:none
+}
+.quicknav .container::-webkit-scrollbar{display:none}
+.chip{
+  flex:0 0 auto;
+  padding:9px 13px;
+  border:1px solid rgba(242,138,23,.24);
+  border-radius:999px;
+  color:#e8dfd3;
+  font:700 .78rem Arial,sans-serif
+}
+.chip:hover{border-color:var(--orange);color:var(--orange)}
+
+.section{padding:72px 0}
+.section.alt{background:#10110d;border-block:1px solid var(--line)}
+.sectionTitle{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:24px;margin-bottom:26px
+}
+.sectionTitle h2{
+  font-size:clamp(2.15rem,4vw,3.6rem);
+  line-height:1.05
+}
+.sectionTitle p{
+  max-width:520px;
+  color:var(--muted);
+  font:500 .93rem/1.55 Arial,sans-serif
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px
+}
+.item{
+  background:var(--panel);
+  border:1px solid rgba(242,138,23,.18);
+  border-radius:22px;
+  overflow:hidden;
+  min-height:100%
+}
+.itemImg{
+  height:215px;
+  background:#1b1914;
+  overflow:hidden
+}
+.itemImg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:saturate(.98) contrast(1.03) brightness(.96)
+}
+.itemBody{padding:20px}
+.itemTop{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:16px;margin-bottom:8px
+}
+.item h3{font-size:1.35rem;line-height:1.12}
+.badge{
+  flex:0 0 auto;
+  padding:7px 9px;
+  border:1px solid rgba(242,138,23,.35);
+  border-radius:999px;
+  color:var(--orange);
+  font:800 .67rem Arial,sans-serif;
+  text-transform:uppercase
+}
+.item p{
+  color:var(--muted);
+  font:500 .9rem/1.5 Arial,sans-serif
+}
+.priceNote{
+  margin-top:16px;padding-top:13px;
+  border-top:1px solid rgba(255,255,255,.06);
+  color:#a99f91;
+  font:700 .77rem Arial,sans-serif
+}
+
+.categoryGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px
+}
+.category{
+  min-height:220px;
+  padding:26px;
+  border-radius:22px;
+  border:1px solid rgba(242,138,23,.2);
+  background:
+    linear-gradient(145deg,rgba(242,138,23,.07),rgba(8,168,90,.02)),
+    var(--panel)
+}
+.category .num{
+  color:var(--orange);
+  font:800 .74rem Arial,sans-serif;
+  letter-spacing:.1em;
+  margin-bottom:42px
+}
+.category h3{font-size:1.55rem;margin-bottom:8px}
+.category p{color:var(--muted);font:500 .9rem/1.55 Arial,sans-serif}
+
+.callout{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:22px;
+  margin-top:30px;
+  padding:25px 27px;
+  border-radius:22px;
+  border:1px solid rgba(242,138,23,.22);
+  background:linear-gradient(90deg,rgba(242,138,23,.09),rgba(8,168,90,.03))
+}
+.callout strong{display:block;font-size:1.25rem;margin-bottom:5px}
+.callout p{color:var(--muted);font:500 .9rem Arial,sans-serif}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:30px 0;
+  color:#a9a093;
+  font:500 .85rem Arial,sans-serif
+}
+.footer{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer img{width:170px}
+
+.delivery-float{
+  position:fixed;right:14px;bottom:18px;z-index:80;
+  display:flex;flex-direction:column;align-items:flex-end;gap:8px
+}
+.delivery-btn{
+  display:flex;align-items:center;justify-content:center;
+  border-radius:999px;
+  box-shadow:0 12px 32px rgba(0,0,0,.38);
+  font:800 .74rem Arial,sans-serif
+}
+.food99{height:44px;padding:0 11px;background:#ffd600;color:#111}
+.ifood{height:44px;padding:0 11px;background:#ea1d2c;color:#fff}
+.whatsapp{width:68px;height:68px;background:#25d366}
+.whatsapp svg{width:35px;height:35px;fill:#fff}
+
+@media(max-width:980px){
+  .brand img{width:270px}
+  .navlinks a:not(.btn){display:none}
+  .quicknav{top:92px}
+  .grid,.categoryGrid{grid-template-columns:repeat(2,1fr)}
+  .sectionTitle{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:650px){
+  .grid,.categoryGrid{grid-template-columns:1fr}
+  .hero{padding-top:52px}
+  .callout{align-items:flex-start;flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html"><img src="assets/logo-jardins.png" alt="Pizzaria Jardins"></a>
+    <nav class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="#queridinhas">Queridinhas</a>
+      <a href="#categorias">Categorias</a>
+      <a class="btn primary" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir agora</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <div class="kicker">Cardápio Jardins</div>
+    <h1>Uma pizza para cada vontade.</h1>
+    <p>
+      Dos clássicos que atravessaram gerações às receitas mais especiais da casa.
+      Explore as categorias e encontre a sua próxima favorita.
+    </p>
+    <div class="heroActions">
+      <a class="btn primary" href="#queridinhas">Ver as queridinhas</a>
+      <a class="btn outline" href="index.html">Voltar para a Home</a>
+    </div>
+  </div>
+</section>
+
+<nav class="quicknav">
+  <div class="container">
+    <a class="chip" href="#queridinhas">Queridinhas</a>
+    <a class="chip" href="#classicas">Clássicas</a>
+    <a class="chip" href="#especial">Seleção Especial</a>
+    <a class="chip" href="#premium">Premium</a>
+    <a class="chip" href="#mar">Especialidades do Mar</a>
+    <a class="chip" href="#contemporaneas">Contemporâneas</a>
+  </div>
+</nav>
+
+<section class="section alt" id="queridinhas">
+  <div class="container">
+    <div class="sectionTitle">
+      <div>
+        <div class="kicker">As queridinhas da Jardins</div>
+        <h2>Os sabores que viraram tradição</h2>
+      </div>
+      <p>Uma seleção das pizzas que estão entre as mais pedidas da casa.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="item">
+        <div class="itemImg"><img src="assets/calabresa.jpg" alt="Pizza Calabresa"></div>
+        <div class="itemBody">
+          <div class="itemTop"><h3>Calabresa</h3><span class="badge">Mais pedida</span></div>
+          <p>A clássica combinação de calabresa bem dourada com cebola, cheia de sabor e tradição.</p>
+          <div class="priceNote">Preço e tamanhos serão adicionados na próxima etapa.</div>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="itemImg"><img src="assets/portuguesa.png" alt="Pizza Portuguesa"></div>
+        <div class="itemBody">
+          <div class="itemTop"><h3>Portuguesa</h3><span class="badge">Clássico</span></div>
+          <p>Generosa e irresistível, reúne sabores clássicos em uma das receitas mais queridas da casa.</p>
+          <div class="priceNote">Preço e tamanhos serão adicionados na próxima etapa.</div>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="itemImg"><img src="assets/mucarela.jpg" alt="Pizza Muçarela"></div>
+        <div class="itemBody">
+          <div class="itemTop"><h3>Muçarela</h3><span class="badge">Tradição</span></div>
+          <p>Simples, cremosa e inesquecível — um clássico que representa a essência da boa pizza.</p>
+          <div class="priceNote">Preço e tamanhos serão adicionados na próxima etapa.</div>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="itemImg"><img src="assets/marguerita.jpg" alt="Pizza Marguerita"></div>
+        <div class="itemBody">
+          <div class="itemTop"><h3>Marguerita</h3><span class="badge">Fresca</span></div>
+          <p>Fresca, aromática e delicada, com o equilíbrio perfeito entre tomate, queijo e manjericão.</p>
+          <div class="priceNote">Preço e tamanhos serão adicionados na próxima etapa.</div>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="itemImg"><img src="assets/paola.jpg" alt="Pizza Paola"></div>
+        <div class="itemBody">
+          <div class="itemTop"><h3>Paola</h3><span class="badge">Assinatura</span></div>
+          <p>Uma receita marcante e cheia de personalidade, criada para quem gosta de sabores especiais.</p>
+          <div class="priceNote">Preço e tamanhos serão adicionados na próxima etapa.</div>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="itemImg"><img src="assets/frango-catupiry.png" alt="Pizza Frango com Catupiry"></div>
+        <div class="itemBody">
+          <div class="itemTop"><h3>Frango com Catupiry</h3><span class="badge">Muito pedida</span></div>
+          <p>Cremosa e irresistível, combina frango delicadamente temperado à suavidade inconfundível do Catupiry.</p>
+          <div class="priceNote">Preço e tamanhos serão adicionados na próxima etapa.</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="categorias">
+  <div class="container">
+    <div class="sectionTitle">
+      <div>
+        <div class="kicker">Nosso cardápio</div>
+        <h2>Explore por categoria</h2>
+      </div>
+      <p>Esta estrutura já está pronta para receber todos os sabores, descrições e valores.</p>
+    </div>
+
+    <div class="categoryGrid">
+      <article class="category" id="classicas">
+        <div class="num">01</div>
+        <h3>Clássicas da Jardins</h3>
+        <p>Sabores tradicionais, conhecidos e queridos por gerações.</p>
+      </article>
+
+      <article class="category" id="especial">
+        <div class="num">02</div>
+        <h3>Seleção Especial</h3>
+        <p>Combinações mais elaboradas para quem quer sair do óbvio.</p>
+      </article>
+
+      <article class="category" id="premium">
+        <div class="num">03</div>
+        <h3>Pizzas Premium</h3>
+        <p>Ingredientes especiais e receitas de maior valor agregado.</p>
+      </article>
+
+      <article class="category" id="mar">
+        <div class="num">04</div>
+        <h3>Especialidades do Mar</h3>
+        <p>Sabores selecionados com ingredientes do mar.</p>
+      </article>
+
+      <article class="category" id="contemporaneas">
+        <div class="num">05</div>
+        <h3>Contemporâneas Jardins</h3>
+        <p>Receitas atuais, combinações criativas e identidade própria.</p>
+      </article>
+
+      <article class="category">
+        <div class="num">06</div>
+        <h3>As Queridinhas</h3>
+        <p>As campeãs de preferência dos nossos clientes.</p>
+      </article>
+    </div>
+
+    <div class="callout">
+      <div>
+        <strong>Quer pedir agora?</strong>
+        <p>Você também pode falar diretamente com a equipe da Jardins pelo WhatsApp.</p>
+      </div>
+      <a class="btn primary" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer">
+    <img src="assets/logo-jardins.png" alt="Pizzaria Jardins">
+    <span>© <span id="year"></span> Pizzaria Jardins • Bragança Paulista/SP</span>
+  </div>
+</footer>
+
+<div class="delivery-float">
+  <a class="delivery-btn food99" href="https://oia.99app.com/dlp9/0nXZXc" target="_blank" rel="noopener">99Food</a>
+  <a class="delivery-btn ifood" href="https://www.ifood.com.br/delivery/braganca-paulista-sp/pizzaria-jardins-centro/deaf6558-8cd7-45d0-8769-4c9a6aba6210" target="_blank" rel="noopener">iFood</a>
+  <a class="delivery-btn whatsapp" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.21c-.28-.14-1.65-.81-1.9-.91-.26-.09-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34s1.01 2.72 1.15 2.91c.14.19 1.98 3.02 4.79 4.24.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33zM16.05 4.5c-6.34 0-11.49 5.14-11.49 11.48 0 2.03.53 4.02 1.54 5.77L4.46 27.5l5.89-1.55a11.46 11.46 0 0 0 5.69 1.56h.01c6.33 0 11.48-5.15 11.48-11.49 0-3.07-1.2-5.95-3.37-8.12A11.4 11.4 0 0 0 16.05 4.5zm0 20.96h-.01a9.41 9.41 0 0 1-4.8-1.31l-.34-.2-3.5.92.93-3.41-.22-.35a9.42 9.42 0 1 1 7.94 4.35z"/>
+    </svg>
+  </a>
+</div>
+
+<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
+</body>
+</html>
