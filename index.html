@@ -580,6 +580,49 @@ footer{
   .menuCta{align-items:flex-start;flex-direction:column}
 }
 
+
+/* V12 — fotos reais nas Queridinhas da Jardins */
+.pizzaVisual{
+  position:relative;
+  height:235px;
+  overflow:hidden;
+  background:#171712;
+}
+.pizzaVisual:before,
+.pizzaVisual:after{
+  content:none!important;
+  display:none!important;
+}
+.pizzaVisual img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  transition:transform .35s ease,filter .35s ease;
+  filter:saturate(.98) contrast(1.03) brightness(.96);
+}
+.pizzaCard:hover .pizzaVisual img{
+  transform:scale(1.035);
+  filter:saturate(1.03) contrast(1.04) brightness(1);
+}
+.pizzaVisual::before{
+  content:""!important;
+  display:block!important;
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:
+    linear-gradient(to bottom,transparent 64%,rgba(11,12,9,.35) 100%);
+}
+.pizzaBadge{
+  z-index:3!important;
+}
+@media(max-width:760px){
+  .pizzaVisual{height:220px}
+}
+
 </style>
 </head>
 <body>
@@ -674,9 +717,7 @@ footer{
     <div class="pizzaGrid">
 
       <article class="pizzaCard">
-        <div class="pizzaVisual calabresa">
-          <span class="pizzaBadge">Mais pedida</span>
-        </div>
+        <div class="pizzaVisual"><img src="assets/calabresa.jpg" alt="Pizza de Calabresa da Pizzaria Jardins"><span class="pizzaBadge">Mais pedida</span></div>
         <div class="pizzaText">
           <h3>Calabresa</h3>
           <p>Molho de tomate, calabresa, cebola, orégano e azeitonas chilenas.</p>
@@ -685,9 +726,7 @@ footer{
       </article>
 
       <article class="pizzaCard">
-        <div class="pizzaVisual portuguesa">
-          <span class="pizzaBadge">Clássico da casa</span>
-        </div>
+        <div class="pizzaVisual"><img src="assets/portuguesa.png" alt="Pizza Portuguesa da Pizzaria Jardins"><span class="pizzaBadge">Clássico da casa</span></div>
         <div class="pizzaText">
           <h3>Portuguesa</h3>
           <p>Uma combinação generosa e tradicional, preparada no estilo que marcou a história da Jardins.</p>
@@ -696,9 +735,7 @@ footer{
       </article>
 
       <article class="pizzaCard">
-        <div class="pizzaVisual mucarela">
-          <span class="pizzaBadge">Tradição</span>
-        </div>
+        <div class="pizzaVisual"><img src="assets/mucarela.jpg" alt="Pizza de Muçarela da Pizzaria Jardins"><span class="pizzaBadge">Tradição</span></div>
         <div class="pizzaText">
           <h3>Muçarela</h3>
           <p>Molho de tomate, muçarela, orégano e as tradicionais azeitonas chilenas.</p>
@@ -707,9 +744,7 @@ footer{
       </article>
 
       <article class="pizzaCard">
-        <div class="pizzaVisual marguerita">
-          <span class="pizzaBadge">Fresca & clássica</span>
-        </div>
+        <div class="pizzaVisual"><img src="assets/marguerita.jpg" alt="Pizza Marguerita da Pizzaria Jardins"><span class="pizzaBadge">Fresca & clássica</span></div>
         <div class="pizzaText">
           <h3>Marguerita</h3>
           <p>Molho de tomate, muçarela, parmesão, tomate, manjericão fresco, orégano e azeitonas chilenas.</p>
@@ -718,9 +753,7 @@ footer{
       </article>
 
       <article class="pizzaCard">
-        <div class="pizzaVisual paola">
-          <span class="pizzaBadge">Assinatura Jardins</span>
-        </div>
+        <div class="pizzaVisual"><img src="assets/paola.jpg" alt="Pizza Paola da Pizzaria Jardins"><span class="pizzaBadge">Assinatura Jardins</span></div>
         <div class="pizzaText">
           <h3>Paola</h3>
           <p>Um dos sabores de assinatura da casa e uma das pizzas de maior saída da Jardins.</p>
@@ -729,9 +762,7 @@ footer{
       </article>
 
       <article class="pizzaCard">
-        <div class="pizzaVisual frango">
-          <span class="pizzaBadge">Muito pedida</span>
-        </div>
+        <div class="pizzaVisual"><img src="assets/frango-catupiry.png" alt="Pizza de Frango com Catupiry da Pizzaria Jardins"><span class="pizzaBadge">Muito pedida</span></div>
         <div class="pizzaText">
           <h3>Frango com Catupiry</h3>
           <p>Molho de tomate, sassami de frango, Catupiry, orégano e azeitonas chilenas.</p>
