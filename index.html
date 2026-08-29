@@ -623,6 +623,47 @@ footer{
   .pizzaVisual{height:220px}
 }
 
+
+/* V13 — padronização fina do enquadramento das seis queridinhas */
+.pizzaVisual img[src$="calabresa.jpg"]{
+  object-fit:cover!important;
+  object-position:center 47%!important;
+  transform:scale(1.18);
+}
+.pizzaVisual img[src$="portuguesa.png"]{
+  object-fit:cover!important;
+  object-position:center 50%!important;
+  transform:scale(1.04);
+}
+.pizzaVisual img[src$="mucarela.jpg"]{
+  object-fit:cover!important;
+  object-position:center 50%!important;
+  transform:scale(1.16);
+}
+.pizzaVisual img[src$="marguerita.jpg"]{
+  object-fit:cover!important;
+  object-position:center 50%!important;
+  transform:scale(1.14);
+}
+.pizzaVisual img[src$="paola.jpg"]{
+  object-fit:cover!important;
+  object-position:center 50%!important;
+  transform:scale(1.10);
+}
+.pizzaVisual img[src$="frango-catupiry.png"]{
+  object-fit:cover!important;
+  object-position:center 50%!important;
+  transform:scale(1.06);
+}
+
+/* Mantém o efeito hover sem perder a padronização */
+.pizzaCard:hover .pizzaVisual img[src$="calabresa.jpg"]{transform:scale(1.21)}
+.pizzaCard:hover .pizzaVisual img[src$="portuguesa.png"]{transform:scale(1.07)}
+.pizzaCard:hover .pizzaVisual img[src$="mucarela.jpg"]{transform:scale(1.19)}
+.pizzaCard:hover .pizzaVisual img[src$="marguerita.jpg"]{transform:scale(1.17)}
+.pizzaCard:hover .pizzaVisual img[src$="paola.jpg"]{transform:scale(1.13)}
+.pizzaCard:hover .pizzaVisual img[src$="frango-catupiry.png"]{transform:scale(1.09)}
+
 </style>
 </head>
 <body>
@@ -720,7 +761,7 @@ footer{
         <div class="pizzaVisual"><img src="assets/calabresa.jpg" alt="Pizza de Calabresa da Pizzaria Jardins"><span class="pizzaBadge">Mais pedida</span></div>
         <div class="pizzaText">
           <h3>Calabresa</h3>
-          <p>Molho de tomate, calabresa, cebola, orégano e azeitonas chilenas.</p>
+          <p>A clássica combinação de calabresa bem dourada com cebola, cheia de sabor e tradição.</p>
           <div class="pizzaFoot"><span>Queridinha Jardins</span><span class="pizzaArrow">→</span></div>
         </div>
       </article>
@@ -729,7 +770,7 @@ footer{
         <div class="pizzaVisual"><img src="assets/portuguesa.png" alt="Pizza Portuguesa da Pizzaria Jardins"><span class="pizzaBadge">Clássico da casa</span></div>
         <div class="pizzaText">
           <h3>Portuguesa</h3>
-          <p>Uma combinação generosa e tradicional, preparada no estilo que marcou a história da Jardins.</p>
+          <p>Generosa e irresistível, reúne sabores clássicos em uma das receitas mais queridas da casa.</p>
           <div class="pizzaFoot"><span>Entre as favoritas</span><span class="pizzaArrow">→</span></div>
         </div>
       </article>
@@ -738,7 +779,7 @@ footer{
         <div class="pizzaVisual"><img src="assets/mucarela.jpg" alt="Pizza de Muçarela da Pizzaria Jardins"><span class="pizzaBadge">Tradição</span></div>
         <div class="pizzaText">
           <h3>Muçarela</h3>
-          <p>Molho de tomate, muçarela, orégano e as tradicionais azeitonas chilenas.</p>
+          <p>Simples, cremosa e inesquecível — um clássico que representa a essência da boa pizza.</p>
           <div class="pizzaFoot"><span>Clássica Jardins</span><span class="pizzaArrow">→</span></div>
         </div>
       </article>
@@ -747,7 +788,7 @@ footer{
         <div class="pizzaVisual"><img src="assets/marguerita.jpg" alt="Pizza Marguerita da Pizzaria Jardins"><span class="pizzaBadge">Fresca & clássica</span></div>
         <div class="pizzaText">
           <h3>Marguerita</h3>
-          <p>Molho de tomate, muçarela, parmesão, tomate, manjericão fresco, orégano e azeitonas chilenas.</p>
+          <p>Fresca, aromática e delicada, com o equilíbrio perfeito entre tomate, queijo e manjericão.</p>
           <div class="pizzaFoot"><span>Uma das campeãs</span><span class="pizzaArrow">→</span></div>
         </div>
       </article>
@@ -756,7 +797,7 @@ footer{
         <div class="pizzaVisual"><img src="assets/paola.jpg" alt="Pizza Paola da Pizzaria Jardins"><span class="pizzaBadge">Assinatura Jardins</span></div>
         <div class="pizzaText">
           <h3>Paola</h3>
-          <p>Um dos sabores de assinatura da casa e uma das pizzas de maior saída da Jardins.</p>
+          <p>Uma receita marcante e cheia de personalidade, criada para quem gosta de sabores especiais.</p>
           <div class="pizzaFoot"><span>Especial da casa</span><span class="pizzaArrow">→</span></div>
         </div>
       </article>
@@ -765,7 +806,7 @@ footer{
         <div class="pizzaVisual"><img src="assets/frango-catupiry.png" alt="Pizza de Frango com Catupiry da Pizzaria Jardins"><span class="pizzaBadge">Muito pedida</span></div>
         <div class="pizzaText">
           <h3>Frango com Catupiry</h3>
-          <p>Molho de tomate, sassami de frango, Catupiry, orégano e azeitonas chilenas.</p>
+          <p>Cremosa e reconfortante, combina frango bem temperado com a suavidade irresistível do Catupiry.</p>
           <div class="pizzaFoot"><span>Cremosa & clássica</span><span class="pizzaArrow">→</span></div>
         </div>
       </article>
