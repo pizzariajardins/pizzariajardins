@@ -1,0 +1,8 @@
+V34
+- Um único cardapio.html.
+- Todas as categorias e listas ficam sempre visíveis.
+- Botões superiores usam apenas âncoras locais: #classicas, #especial etc.
+- Nenhum JavaScript controla navegação.
+- Nenhuma troca de arquivo é necessária ao navegar.
+- Páginas antigas de categoria redirecionam ao ponto correto no cardapio.html.
+- Queridinhas permanecem com fotos.

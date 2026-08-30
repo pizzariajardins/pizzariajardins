@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="As Queridinhas da Jardins | Cardápio oficial da Pizzaria Jardins em Bragança Paulista.">
-<title>As Queridinhas da Jardins | Pizzaria Jardins</title>
+<meta name="description" content="Cardápio oficial da Pizzaria Jardins em Bragança Paulista.">
+<title>Cardápio | Pizzaria Jardins</title>
 <style>
+
 
 :root{--bg:#0b0c09;--panel:#151510;--cream:#f6f0e5;--muted:#c9c1b4;--orange:#f28a17;--line:rgba(242,138,23,.22)}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -106,6 +107,33 @@ header,.nav{height:88px}
 
 .menuAccordion summary{pointer-events:none;cursor:default!important}
 .menuAccordion .summaryAction{display:none!important}
+
+
+/* V34 — navegação simples por âncoras, todas as categorias visíveis */
+.categoryNav .catBtn{text-decoration:none}
+.menuSection{scroll-margin-top:190px}
+.menuAccordion{overflow:hidden}
+.categoryHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:25px 28px;
+  background:linear-gradient(90deg,rgba(242,138,23,.07),rgba(8,168,90,.02)),var(--panel);
+}
+.categoryHead h2{
+  font-size:clamp(2rem,3.5vw,3rem);
+  line-height:1.05;
+  margin-bottom:7px;
+}
+.categoryHead p{
+  color:var(--muted);
+  font:500 .9rem/1.5 Arial,sans-serif;
+  max-width:780px;
+}
+@media(max-width:650px){
+  .categoryHead{align-items:flex-start;flex-direction:column;padding:21px 20px}
+}
 </style>
 </head>
 <body>
@@ -115,7 +143,7 @@ header,.nav{height:88px}
 <a class="brand" href="index.html"><img src="assets/logo-jardins.png" alt="Pizzaria Jardins"></a>
 <nav class="navlinks">
 <a href="index.html">Home</a>
-<a href="cardapio.html">Queridinhas</a>
+<a href="cardapio.html#queridinhas">Queridinhas</a>
 <a class="btn primary" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir agora</a>
 </nav>
 </div>
@@ -126,10 +154,10 @@ header,.nav{height:88px}
 <div class="container">
 <div class="kicker">Cardápio oficial Jardins</div>
 <h1>Uma pizza para cada vontade.</h1>
-<p>Escolha uma categoria e descubra cada sabor. As descrições destacam os ingredientes que definem cada receita, com uma linguagem mais gastronômica e fácil de escolher.</p>
-<p class="menuNote">Nas pizzas salgadas, os ingredientes recorrentes da casa — como molho de tomate, orégano e azeitonas chilenas — não são repetidos mecanicamente em todas as descrições. Nas pizzas doces, todas são preparadas na massa doce especial e levam borda de doce de leite.</p>
+<p>Escolha uma categoria e descubra cada sabor. Todas as listas ficam disponíveis na mesma página para uma navegação simples e rápida.</p>
+<p class="menuNote">Nas pizzas salgadas, ingredientes recorrentes da casa — como molho de tomate, orégano e azeitonas chilenas — não são repetidos mecanicamente em todas as descrições. Nas pizzas doces, todas são preparadas na massa doce especial e levam borda de doce de leite.</p>
 <div class="heroActions">
-<a class="btn primary" href="cardapio.html">Ver as queridinhas</a>
+<a class="btn primary" href="#queridinhas">Ver as queridinhas</a>
 <a class="btn outline" href="index.html">Voltar para a Home</a>
 </div>
 </div>
@@ -137,27 +165,27 @@ header,.nav{height:88px}
 
 <nav class="categoryNav" aria-label="Categorias do cardápio">
 <div class="container">
-<a class="catBtn active" href="cardapio.html">Queridinhas</a>
-<a class="catBtn" href="cardapio-classicas.html">Clássicas</a>
-<a class="catBtn" href="cardapio-especial.html">Seleção Especial</a>
-<a class="catBtn" href="cardapio-premium.html">Pizzas Premium</a>
-<a class="catBtn" href="cardapio-vegetais.html">Jardins &amp; Vegetais</a>
-<a class="catBtn" href="cardapio-mar.html">Especialidades do Mar</a>
-<a class="catBtn" href="cardapio-doces.html">Pizzas Doces</a>
+<a class="catBtn" href="#queridinhas">Queridinhas</a>
+<a class="catBtn" href="#classicas">Clássicas</a>
+<a class="catBtn" href="#especial">Seleção Especial</a>
+<a class="catBtn" href="#premium">Pizzas Premium</a>
+<a class="catBtn" href="#vegetais">Jardins &amp; Vegetais</a>
+<a class="catBtn" href="#mar">Especialidades do Mar</a>
+<a class="catBtn" href="#doces">Pizzas Doces</a>
 </div>
 </nav>
 
 <section class="menuSection" id="queridinhas">
 <div class="container">
-<details class="menuAccordion" id="acc-queridinhas" open>
-<summary>
+<div class="menuAccordion">
+<div class="categoryHead">
 <div>
 <div class="kicker">As Queridinhas da Jardins</div>
 <h2>Os sabores que viraram tradição</h2>
 <p>As campeãs de preferência da Jardins, agora em destaque com fotos.</p>
 </div>
-<span class="summaryAction">Ver sabores</span>
-</summary>
+
+</div>
 <div class="photoGrid"><article class="pizzaCard">
 <div class="pizzaVisual"><img src="assets/calabresa.jpg" alt="Pizza Calabresa"></div>
 <div class="pizzaCardBody"><h3>Calabresa</h3><p>Calabresa bem dourada e cebola em uma combinação clássica, intensa e cheia de personalidade.</p></div>
@@ -186,7 +214,156 @@ header,.nav{height:88px}
 <div class="pizzaVisual"><img src="assets/quatro-queijos.png" alt="Pizza Quatro Queijos"></div>
 <div class="pizzaCardBody"><h3>Quatro Queijos</h3><p>Catupiry, provolone, gorgonzola e muçarela em uma mistura intensa, cremosa e irresistível.</p></div>
 </article></div>
-</details>
+</div>
+</div>
+</section><section class="menuSection" id="classicas">
+<div class="container">
+<details class="menuAccordion" id="acc-classicas" >
+<div class="categoryHead">
+<div>
+<div class="kicker">Clássicas da Jardins</div>
+<h2>Sabores que atravessam gerações</h2>
+<p>Receitas tradicionais que fazem parte da história da casa.</p>
+</div>
+
+</div>
+<div class="menuList"><article class="menuRow"><div><h3>Alho</h3><p>Muçarela, cebola, alho dourado no azeite e parmesão, formando uma pizza aromática e cheia de personalidade.</p></div></article>
+<article class="menuRow"><div><h3>Alvorada</h3><p>Atum, palmito e ovos cobertos por muçarela, com cebola trazendo equilíbrio e frescor à combinação.</p></div></article>
+<article class="menuRow"><div><h3>Ao Forno</h3><p>Catupiry cremoso, tomate fresco, champignon e parmesão em uma receita delicada e envolvente.</p></div></article>
+<article class="menuRow"><div><h3>Bacon</h3><p>Muçarela, bacon e parmesão em uma combinação defumada, crocante e muito saborosa.</p></div></article>
+<article class="menuRow"><div><h3>Baiana</h3><p>Calabresa moída, muçarela, cebola e bacon em uma receita intensa e bem temperada.</p></div></article>
+<article class="menuRow"><div><h3>Bauru</h3><p>Presunto, muçarela e tomate fresco em um clássico reconfortante e sempre certeiro.</p></div></article>
+<article class="menuRow"><div><h3>Bragança</h3><p>Carne moída temperada, Catupiry, cebola e ovos em uma combinação farta e cheia de identidade.</p></div></article>
+<article class="menuRow"><div><h3>Brasileirinha</h3><p>Calabresa e cebola cobertas com muçarela em uma receita simples, generosa e muito brasileira.</p></div></article>
+<article class="menuRow"><div><h3>Brócolis</h3><p>Brócolis, muçarela e bacon em uma combinação cremosa, equilibrada e cheia de textura.</p></div></article>
+<article class="menuRow"><div><h3>Catupyrela</h3><p>Catupiry e muçarela juntos em uma pizza extremamente cremosa e delicada.</p></div></article>
+<article class="menuRow"><div><h3>Gorgonzola</h3><p>Gorgonzola e muçarela em uma combinação intensa, elegante e marcante.</p></div></article>
+<article class="menuRow"><div><h3>Lombo Canadense</h3><p>Lombo canadense e Catupiry em uma combinação suave, cremosa e muito equilibrada.</p></div></article>
+<article class="menuRow"><div><h3>Milho</h3><p>Muçarela, milho e bacon em uma receita cremosa, levemente adocicada e muito acolhedora.</p></div></article>
+<article class="menuRow"><div><h3>Napolitana</h3><p>Muçarela, tomate fresco e parmesão em um clássico de inspiração italiana, leve e aromático.</p></div></article>
+<article class="menuRow"><div><h3>Palmito</h3><p>Palmito, muçarela e ovos em uma combinação delicada, cremosa e muito saborosa.</p></div></article>
+<article class="menuRow"><div><h3>Pizzaiolo</h3><p>Presunto, milho, Catupiry, creme de leite e muçarela em uma receita rica, cremosa e reconfortante.</p></div></article>
+<article class="menuRow"><div><h3>Toscana</h3><p>Linguiça toscana defumada e moída com muçarela em uma pizza rústica e cheia de sabor.</p></div></article>
+<article class="menuRow"><div><h3>Três Queijos</h3><p>Catupiry, provolone e muçarela em uma combinação cremosa, equilibrada e envolvente.</p></div></article></div>
+</div>
+</div>
+</section><section class="menuSection" id="especial">
+<div class="container">
+<details class="menuAccordion" id="acc-especial" >
+<div class="categoryHead">
+<div>
+<div class="kicker">Seleção Especial</div>
+<h2>Sabores com um toque a mais</h2>
+<p>Combinações especiais, cremosas e marcantes.</p>
+</div>
+
+</div>
+<div class="menuList"><article class="menuRow"><div><h3>Baiacatu</h3><p>Calabresa moída, Catupiry, cebola e bacon com um toque de Tabasco, criando uma pizza intensa e cheia de personalidade.</p></div></article>
+<article class="menuRow"><div><h3>Caipira</h3><p>Frango, milho, Catupiry e bacon em uma combinação generosa, cremosa e muito reconfortante.</p></div></article>
+<article class="menuRow"><div><h3>Calábria</h3><p>Calabresa e cebola cobertas com Catupiry e finalizadas com manjericão fresco — intensa, cremosa e aromática.</p></div></article>
+<article class="menuRow"><div><h3>Carijó</h3><p>Frango, Catupiry, cebola e bacon em uma receita farta, cremosa e cheia de sabor.</p></div></article>
+<article class="menuRow"><div><h3>Catupiry Original</h3><p>Catupiry Original em toda a sua cremosidade, para quem aprecia sabor puro e textura aveludada.</p></div></article>
+<article class="menuRow"><div><h3>Da Sogra</h3><p>Palmito, muçarela e generosas porções de Catupiry em uma combinação delicada e irresistivelmente cremosa.</p></div></article>
+<article class="menuRow"><div><h3>Escarola do Fernando</h3><p>Escarola, muçarela, calabresa e cebola com parmesão — uma receita especial que nasceu da inspiração de um cliente querido.</p></div></article>
+<article class="menuRow"><div><h3>Francesa</h3><p>Lombo canadense, ovos, Catupiry e muçarela em uma combinação rica, cremosa e equilibrada.</p></div></article>
+<article class="menuRow"><div><h3>Light</h3><p>Muçarela de búfala, peito de peru, tomate e ricota em uma opção mais leve, fresca e delicada.</p></div></article>
+<article class="menuRow"><div><h3>Moda do Chefe</h3><p>Palmito, atum, tomate seco, muçarela e ricota, com alho, parmesão e cebola — uma combinação completa e surpreendente.</p></div></article>
+<article class="menuRow"><div><h3>Shimeji</h3><p>Shimeji puxado no vinho branco com Catupiry e tomate picado, criando uma pizza aromática, cremosa e sofisticada.</p></div></article>
+<article class="menuRow"><div><h3>Siciliana</h3><p>Ervilha, palmito, presunto, ovos e cebola cobertos por muçarela em uma receita generosa e tradicional.</p></div></article>
+<article class="menuRow"><div><h3>Strogonoff de Mignon</h3><p>Filé mignon ao molho especial com Catupiry e batata palha, em uma pizza cremosa, rica e indulgente.</p></div></article>
+<article class="menuRow"><div><h3>Típica Bragantina</h3><p>Linguiça típica bragantina, muçarela, cebola e tomate seco — uma homenagem saborosa à identidade da cidade.</p></div></article>
+<article class="menuRow"><div><h3>Especial da Casa</h3><p>Calabresa moída, pimentões, champignon, Catupiry, muçarela e cebola em uma combinação farta e cheia de personalidade.</p></div></article>
+<article class="menuRow"><div><h3>Peperoni</h3><p>Pepperoni e muçarela em uma pizza intensa, levemente picante e irresistivelmente aromática.</p></div></article></div>
+</div>
+</div>
+</section><section class="menuSection" id="premium">
+<div class="container">
+<details class="menuAccordion" id="acc-premium" >
+<div class="categoryHead">
+<div>
+<div class="kicker">Pizzas Premium</div>
+<h2>Ingredientes especiais, experiências marcantes</h2>
+<p>Ingredientes de maior valor agregado em receitas sofisticadas.</p>
+</div>
+
+</div>
+<div class="menuList"><article class="menuRow"><div><h3>Marcopolo</h3><p>Catupiry, tomate seco, champignon e palmito em uma combinação cremosa, elegante e cheia de textura.</p></div></article>
+<article class="menuRow"><div><h3>Mix de Cogumelos</h3><p>Cogumelo Paris, shitake e shimeji salteados na manteiga, com cebolas ao vinho tinto, muçarela e manjericão fresco.</p></div></article>
+<article class="menuRow"><div><h3>Nordestina</h3><p>Carne seca desfiada, purê de mandioquinha e muçarela em uma combinação cremosa, marcante e profundamente brasileira.</p></div></article>
+<article class="menuRow"><div><h3>Tropical</h3><p>Peito de peru, muçarela e bacon com a escolha entre banana ou abacaxi, criando um contraste doce-salgado muito especial.</p></div></article>
+<article class="menuRow"><div><h3>Quatro Queijos &amp; Mignon</h3><p>Gorgonzola, Catupiry, provolone e muçarela com cubos de filé mignon puxados no azeite — rica, cremosa e sofisticada.</p></div></article>
+<article class="menuRow"><div><h3>Capricciosa</h3><p>Peito de peru, Catupiry, muçarela, champignon, palmito e bacon com parmesão em uma receita farta e refinada.</p></div></article>
+<article class="menuRow"><div><h3>Espanhola</h3><p>Muçarela, Catupiry, champignon, pepperoni e pimentões em uma combinação intensa, colorida e cheia de personalidade.</p></div></article>
+<article class="menuRow"><div><h3>Seis Formaggi</h3><p>Muçarela de búfala, parmesão, gorgonzola, provolone, Catupiry e ricota em uma verdadeira celebração de queijos.</p></div></article>
+<article class="menuRow"><div><h3>Jardins</h3><p>Peito de peru, champignon, creme de leite, muçarela e cebola em uma receita cremosa e com a identidade da casa.</p></div></article>
+<article class="menuRow"><div><h3>Parma</h3><p>Presunto Parma e muçarela de búfala em uma combinação minimalista, delicada e elegante.</p></div></article>
+<article class="menuRow"><div><h3>Pama Divina</h3><p>Muçarela, Brie e presunto Parma finalizados com fios de mel e delicados toques de geleia de figo ou damasco.</p></div></article>
+<article class="menuRow"><div><h3>Especialíssima</h3><p>Frango defumado, Catupiry, ricota, muçarela, tomate e bacon em uma combinação completa, cremosa e muito especial.</p></div></article></div>
+</div>
+</div>
+</section><section class="menuSection" id="vegetais">
+<div class="container">
+<details class="menuAccordion" id="acc-vegetais" >
+<div class="categoryHead">
+<div>
+<div class="kicker">Jardins &amp; Vegetais</div>
+<h2>Leves, frescas e cheias de sabor</h2>
+<p>Receitas que valorizam vegetais, frescor e equilíbrio.</p>
+</div>
+
+</div>
+<div class="menuList"><article class="menuRow"><div><h3>Abobrinha</h3><p>Abobrinha refogada no azeite com muçarela e parmesão em uma pizza leve, aromática e delicada.</p></div></article>
+<article class="menuRow"><div><h3>Alho Poró</h3><p>Alho-poró e muçarela em uma combinação suave, aromática e elegante.</p></div></article>
+<article class="menuRow"><div><h3>A Moda da Casa</h3><p>Escarola, milho, palmito e muçarela em uma receita leve, colorida e muito equilibrada.</p></div></article>
+<article class="menuRow"><div><h3>Berinjela</h3><p>Berinjela, muçarela, parmesão e alho dourado em uma combinação rústica, aromática e cheia de sabor.</p></div></article>
+<article class="menuRow"><div><h3>Brócolis Especial</h3><p>Brócolis, muçarela, carne moída temperada e bacon em uma versão mais intensa e generosa do clássico vegetal.</p></div></article>
+<article class="menuRow"><div><h3>Escarola</h3><p>Escarola, muçarela, cebola e bacon em uma pizza fresca, saborosa e muito equilibrada.</p></div></article>
+<article class="menuRow"><div><h3>Marguerita Especial</h3><p>Muçarela, parmesão, tomate, tomate-cereja e manjericão fresco em uma versão ainda mais vibrante da Marguerita.</p></div></article>
+<article class="menuRow"><div><h3>Rúcula</h3><p>Muçarela, rúcula e tomate seco em uma combinação fresca, aromática e de sabor marcante.</p></div></article>
+<article class="menuRow"><div><h3>Mediterrânea</h3><p>Muçarela de búfala, abobrinha preparada no azeite, tomate-cereja, parmesão e manjericão fresco em uma combinação leve, aromática e cheia de frescor.</p></div></article>
+<article class="menuRow"><div><h3>Parma &amp; Rúcula</h3><p>Muçarela de búfala, corações de alcachofra, presunto Parma e rúcula em uma combinação fresca, elegante e sofisticada.</p></div></article></div>
+</div>
+</div>
+</section><section class="menuSection" id="mar">
+<div class="container">
+<details class="menuAccordion" id="acc-mar" >
+<div class="categoryHead">
+<div>
+<div class="kicker">Especialidades do Mar</div>
+<h2>Sabores que vêm do mar</h2>
+<p>Combinações especiais para quem aprecia sabores do mar.</p>
+</div>
+
+</div>
+<div class="menuList"><article class="menuRow"><div><h3>Aliche</h3><p>Muçarela, anchovas peruanas e parmesão em uma combinação intensa, salgada e muito tradicional.</p></div></article>
+<article class="menuRow"><div><h3>Atum</h3><p>Atum sólido, cebola e parmesão em uma pizza clássica, marcante e equilibrada.</p></div></article>
+<article class="menuRow"><div><h3>Bacalhau</h3><p>Lascas de bacalhau Gadus Morhua puxadas no azeite com tomate, cebola, ovos e pimentões — rica, tradicional e cheia de personalidade.</p></div></article>
+<article class="menuRow"><div><h3>Camarão à Baiana</h3><p>Camarão rosa à baiana, muçarela e Catupiry em uma combinação cremosa, intensa e cheia de sabor.</p></div></article>
+<article class="menuRow"><div><h3>Camarão à Martinez</h3><p>Camarão rosa puxado no azeite com muçarela, champignon, palmito e Catupiry em uma receita sofisticada e generosa.</p></div></article>
+<article class="menuRow"><div><h3>Camarão à Moda da Casa</h3><p>Camarão rosa puxado no azeite, muçarela de búfala, pimentões coloridos e cebola em uma combinação leve, elegante e aromática.</p></div></article></div>
+</div>
+</div>
+</section><section class="menuSection" id="doces">
+<div class="container">
+<details class="menuAccordion" id="acc-doces" >
+<div class="categoryHead">
+<div>
+<div class="kicker">Pizzas Doces</div>
+<h2>Para terminar com um toque doce</h2>
+<p>Todas são preparadas na massa doce especial e levam borda de doce de leite.</p>
+</div>
+
+</div>
+<div class="menuList"><article class="menuRow"><div><h3>Banana</h3><p>Banana com açúcar e canela sobre uma base cremosa de muçarela e creme de leite.</p></div></article>
+<article class="menuRow"><div><h3>Beijinho</h3><p>Coco ralado, leite condensado e chocolate branco sobre uma base cremosa e delicada.</p></div></article>
+<article class="menuRow"><div><h3>Brigadeiro</h3><p>Chocolate nobre blend com creme de leite, finalizado com granulado para aquele clássico sabor de brigadeiro.</p></div></article>
+<article class="menuRow"><div><h3>Chocolate</h3><p>Chocolate nobre blend com creme de leite em uma versão simples, intensa e extremamente cremosa.</p></div></article>
+<article class="menuRow"><div><h3>Nutella (com morangos ou com banana)</h3><p>Nutella generosa finalizada com morangos frescos ou banana, em duas combinações igualmente irresistíveis.</p></div></article>
+<article class="menuRow"><div><h3>Ouro Branco</h3><p>Chocolate branco cremoso com pedaços de bombom Ouro Branco, unindo maciez e crocância.</p></div></article>
+<article class="menuRow"><div><h3>Romeu &amp; Julieta</h3><p>Muçarela e goiabada cremosa em um dos encontros mais clássicos entre doce e salgado.</p></div></article>
+<article class="menuRow"><div><h3>Sensação</h3><p>Chocolate nobre blend com morangos e granulado, combinando cremosidade, frescor e textura.</p></div></article>
+<article class="menuRow"><div><h3>Sonho de Valsa</h3><p>Chocolate nobre blend com pedaços de bombom Sonho de Valsa, em uma combinação cremosa e crocante.</p></div></article></div>
+</div>
 </div>
 </section>
 
@@ -206,15 +383,6 @@ header,.nav{height:88px}
 <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.21c-.28-.14-1.65-.81-1.9-.91-.26-.09-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34s1.01 2.72 1.15 2.91c.14.19 1.98 3.02 4.79 4.24.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33zM16.05 4.5c-6.34 0-11.49 5.14-11.49 11.48 0 2.03.53 4.02 1.54 5.77L4.46 27.5l5.89-1.55a11.46 11.46 0 0 0 5.69 1.56h.01c6.33 0 11.48-5.15 11.48-11.49 0-3.07-1.2-5.95-3.37-8.12A11.4 11.4 0 0 0 16.05 4.5zm0 20.96h-.01a9.41 9.41 0 0 1-4.8-1.31l-.34-.2-3.5.92.93-3.41-.22-.35a9.42 9.42 0 1 1 7.94 4.35z"/></svg>
 </a>
 </div>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  document.querySelectorAll("details.menuAccordion").forEach(function(d){
-    d.open = true;
-  });
-});
-</script>
 
 </body>
 </html>
