@@ -1,0 +1,14 @@
+V32 - Navegação sem JavaScript e sem estado compartilhado.
+
+Cada categoria possui um arquivo HTML próprio:
+- cardapio.html = Queridinhas
+- cardapio-classicas.html
+- cardapio-especial.html
+- cardapio-premium.html
+- cardapio-vegetais.html
+- cardapio-mar.html
+- cardapio-doces.html
+
+Os botões são links simples entre arquivos.
+Não existe hash, query parameter, onclick ou JavaScript controlando a navegação.
+Isso elimina o conflito que fazia Clássicas e Seleção Especial voltarem para a Home.
