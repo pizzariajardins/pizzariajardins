@@ -20,7 +20,8 @@ header{position:sticky;top:0;z-index:60;height:118px;background:rgba(11,12,9,.96
 .brand{position:relative;display:block;width:340px;height:118px;flex:0 0 340px}
 .brand img{position:absolute;left:0;top:50%;width:340px;height:auto;max-width:none;transform:translateY(-50%)}
 .navlinks{display:flex;align-items:center;gap:22px;font:700 .91rem Arial,sans-serif}
-.navlinks a:hover{color:var(--orange)}
+.navlinks a:hover,.navlinks button:hover{color:var(--orange)}
+.categoryHeaderBtn{background:none;border:0;color:var(--cream);font:700 .91rem Arial,sans-serif;cursor:pointer;padding:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:999px;border:1px solid transparent;font:700 .93rem Arial,sans-serif;cursor:pointer}
 .primary{background:var(--orange);color:#171007}
 .outline{border-color:var(--orange);color:var(--orange);background:transparent}
@@ -102,7 +103,7 @@ header,.nav{height:88px}
 <a class="brand" href="/index.html"><img src="assets/logo-jardins.png" alt="Pizzaria Jardins"></a>
 <nav class="navlinks">
 <a href="/index.html">Home</a>
-<a class="categoryHeaderBtn" href="/cardapio.html#queridinhas">Queridinhas</a>
+<button type="button" class="categoryHeaderBtn" onclick="return abrirCategoria('queridinhas');">Queridinhas</button>
 <a class="btn primary" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir agora</a>
 </nav>
 </div>
@@ -116,7 +117,7 @@ header,.nav{height:88px}
 <p>Escolha uma categoria e descubra cada sabor. As descrições destacam os ingredientes que definem cada receita, de um jeito mais leve, gastronômico e fácil de escolher.</p>
 <p class="menuNote">Nas pizzas salgadas, nossa base tradicional inclui molho de tomate e as finalizações previstas em cada receita, como orégano e azeitonas chilenas. Para deixar a leitura mais agradável, esses elementos recorrentes não são repetidos em todas as descrições. Nas pizzas doces, todas são preparadas na massa doce especial e levam borda de doce de leite.</p>
 <div class="heroActions">
-<a class="btn primary" href="/cardapio.html#queridinhas">Ver as queridinhas</a>
+<button type="button" class="btn primary" onclick="return abrirCategoria('queridinhas');">Ver as queridinhas</button>
 <a class="btn outline" href="/index.html">Voltar para a Home</a>
 </div>
 </div>
@@ -124,13 +125,13 @@ header,.nav{height:88px}
 
 <nav class="categoryNav" aria-label="Categorias do cardápio">
 <div class="container">
-<a class="catBtn" href="/cardapio.html#queridinhas" data-target="queridinhas">Queridinhas</a>
-<a class="catBtn" href="/cardapio.html#classicas" data-target="classicas">Clássicas</a>
-<a class="catBtn" href="/cardapio.html#especial" data-target="especial">Seleção Especial</a>
-<a class="catBtn" href="/cardapio.html#premium" data-target="premium">Pizzas Premium</a>
-<a class="catBtn" href="/cardapio.html#vegetais" data-target="vegetais">Jardins &amp; Vegetais</a>
-<a class="catBtn" href="/cardapio.html#mar" data-target="mar">Especialidades do Mar</a>
-<a class="catBtn" href="/cardapio.html#doces" data-target="doces">Pizzas Doces</a>
+<button type="button" class="catBtn" data-target="queridinhas" onclick="return abrirCategoria('queridinhas');">Queridinhas</button>
+<button type="button" class="catBtn" data-target="classicas" onclick="return abrirCategoria('classicas');">Clássicas</button>
+<button type="button" class="catBtn" data-target="especial" onclick="return abrirCategoria('especial');">Seleção Especial</button>
+<button type="button" class="catBtn" data-target="premium" onclick="return abrirCategoria('premium');">Pizzas Premium</button>
+<button type="button" class="catBtn" data-target="vegetais" onclick="return abrirCategoria('vegetais');">Jardins &amp; Vegetais</button>
+<button type="button" class="catBtn" data-target="mar" onclick="return abrirCategoria('mar');">Especialidades do Mar</button>
+<button type="button" class="catBtn" data-target="doces" onclick="return abrirCategoria('doces');">Pizzas Doces</button>
 </div>
 </nav>
 
@@ -352,35 +353,57 @@ header,.nav{height:88px}
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const keys = ["queridinhas","classicas","especial","premium","vegetais","mar","doces"];
+const categoriasCardapio = ["queridinhas","classicas","especial","premium","vegetais","mar","doces"];
 
-function showHashCategory(){
-  let key = location.hash.replace("#","");
-  if(!keys.includes(key)) key = "queridinhas";
+function abrirCategoria(chave){
+  if(!categoriasCardapio.includes(chave)) return false;
 
-  keys.forEach(k => {
-    const detail = document.getElementById("acc-" + k);
-    if(detail) detail.open = (k === key);
+  categoriasCardapio.forEach(function(k){
+    const detalhe = document.getElementById("acc-" + k);
+    if(detalhe) detalhe.open = (k === chave);
   });
 
-  document.querySelectorAll(".catBtn").forEach(link => {
-    link.classList.toggle("active", link.dataset.target === key);
+  document.querySelectorAll(".catBtn").forEach(function(botao){
+    botao.classList.toggle("active", botao.dataset.target === chave);
   });
 
-  const section = document.getElementById(key);
-  if(section){
-    requestAnimationFrame(() => {
-      const header = document.querySelector("header");
-      const nav = document.querySelector(".categoryNav");
-      const offset = (header ? header.offsetHeight : 0) + (nav ? nav.offsetHeight : 0) + 10;
-      const y = section.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({top:y, behavior:"auto"});
+  const secao = document.getElementById(chave);
+  if(secao){
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        const cabecalho = document.querySelector("header");
+        const barra = document.querySelector(".categoryNav");
+        const compensacao =
+          (cabecalho ? cabecalho.offsetHeight : 0) +
+          (barra ? barra.offsetHeight : 0) + 10;
+
+        const destino =
+          secao.getBoundingClientRect().top +
+          window.pageYOffset -
+          compensacao;
+
+        window.scrollTo({
+          top: destino,
+          behavior: "smooth"
+        });
+      });
     });
   }
+
+  // Critical: always prevent navigation.
+  return false;
 }
 
-window.addEventListener("DOMContentLoaded", showHashCategory);
-window.addEventListener("hashchange", showHashCategory);
+// Cardápio always opens with Queridinhas when loaded normally.
+window.addEventListener("DOMContentLoaded", function(){
+  categoriasCardapio.forEach(function(k){
+    const detalhe = document.getElementById("acc-" + k);
+    if(detalhe) detalhe.open = (k === "queridinhas");
+  });
+
+  const primeiro = document.querySelector('.catBtn[data-target="queridinhas"]');
+  if(primeiro) primeiro.classList.add("active");
+});
 </script>
 </body>
 </html>

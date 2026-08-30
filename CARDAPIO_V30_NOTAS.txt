@@ -1,0 +1,9 @@
+V30
+Correção de navegação:
+- Todos os botões de categorias são <button type="button">.
+- Nenhum botão de categoria possui href.
+- Clássicas, Seleção Especial e Premium não podem navegar para Home.
+- abrirCategoria() somente abre/fecha accordions e rola a própria página.
+- return false é aplicado diretamente no onclick.
+- A Home somente entra no cardápio via cardapio.html.
+- Foto Quatro Queijos da V29 foi preservada.
