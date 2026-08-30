@@ -99,10 +99,10 @@ header,.nav{height:88px}
 
 <header>
 <div class="container nav">
-<a class="brand" href="index.html"><img src="assets/logo-jardins.png" alt="Pizzaria Jardins"></a>
+<a class="brand" href="/index.html"><img src="assets/logo-jardins.png" alt="Pizzaria Jardins"></a>
 <nav class="navlinks">
-<a href="index.html">Home</a>
-<a class="categoryHeaderBtn" href="cardapio.html#queridinhas">Queridinhas</a>
+<a href="/index.html">Home</a>
+<a class="categoryHeaderBtn" href="/cardapio.html#queridinhas">Queridinhas</a>
 <a class="btn primary" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir agora</a>
 </nav>
 </div>
@@ -116,21 +116,21 @@ header,.nav{height:88px}
 <p>Escolha uma categoria e descubra cada sabor. As descrições destacam os ingredientes que definem cada receita, de um jeito mais leve, gastronômico e fácil de escolher.</p>
 <p class="menuNote">Nas pizzas salgadas, nossa base tradicional inclui molho de tomate e as finalizações previstas em cada receita, como orégano e azeitonas chilenas. Para deixar a leitura mais agradável, esses elementos recorrentes não são repetidos em todas as descrições. Nas pizzas doces, todas são preparadas na massa doce especial e levam borda de doce de leite.</p>
 <div class="heroActions">
-<a class="btn primary" href="cardapio.html#queridinhas">Ver as queridinhas</a>
-<a class="btn outline" href="index.html">Voltar para a Home</a>
+<a class="btn primary" href="/cardapio.html#queridinhas">Ver as queridinhas</a>
+<a class="btn outline" href="/index.html">Voltar para a Home</a>
 </div>
 </div>
 </section>
 
 <nav class="categoryNav" aria-label="Categorias do cardápio">
 <div class="container">
-<a class="catBtn" href="cardapio.html#queridinhas" data-target="queridinhas">Queridinhas</a>
-<a class="catBtn" href="cardapio.html#classicas" data-target="classicas">Clássicas</a>
-<a class="catBtn" href="cardapio.html#especial" data-target="especial">Seleção Especial</a>
-<a class="catBtn" href="cardapio.html#premium" data-target="premium">Pizzas Premium</a>
-<a class="catBtn" href="cardapio.html#vegetais" data-target="vegetais">Jardins &amp; Vegetais</a>
-<a class="catBtn" href="cardapio.html#mar" data-target="mar">Especialidades do Mar</a>
-<a class="catBtn" href="cardapio.html#doces" data-target="doces">Pizzas Doces</a>
+<a class="catBtn" href="/cardapio.html#queridinhas" data-target="queridinhas">Queridinhas</a>
+<a class="catBtn" href="/cardapio.html#classicas" data-target="classicas">Clássicas</a>
+<a class="catBtn" href="/cardapio.html#especial" data-target="especial">Seleção Especial</a>
+<a class="catBtn" href="/cardapio.html#premium" data-target="premium">Pizzas Premium</a>
+<a class="catBtn" href="/cardapio.html#vegetais" data-target="vegetais">Jardins &amp; Vegetais</a>
+<a class="catBtn" href="/cardapio.html#mar" data-target="mar">Especialidades do Mar</a>
+<a class="catBtn" href="/cardapio.html#doces" data-target="doces">Pizzas Doces</a>
 </div>
 </nav>
 
@@ -171,7 +171,7 @@ header,.nav{height:88px}
 <div class="pizzaCardBody"><h3>Frango com Catupiry</h3><p>Frango delicadamente temperado envolvido pela cremosidade inconfundível do Catupiry.</p></div>
 </article>
 <article class="pizzaCard">
-<div class="pizzaVisual"><div class="noPhoto">Foto em breve</div></div>
+<div class="pizzaVisual"><img src="assets/quatro-queijos.png" alt="Pizza Quatro Queijos"></div>
 <div class="pizzaCardBody"><h3>Quatro Queijos</h3><p>Catupiry, provolone, gorgonzola e muçarela em uma mistura intensa, cremosa e irresistível.</p></div>
 </article></div>
 </details>
@@ -354,35 +354,33 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 const keys = ["queridinhas","classicas","especial","premium","vegetais","mar","doces"];
 
-function openCategoryFromHash(smooth=false){
+function showHashCategory(){
   let key = location.hash.replace("#","");
   if(!keys.includes(key)) key = "queridinhas";
 
   keys.forEach(k => {
-    const d = document.getElementById("acc-"+k);
-    if(d) d.open = (k === key);
+    const detail = document.getElementById("acc-" + k);
+    if(detail) detail.open = (k === key);
   });
 
-  document.querySelectorAll(".catBtn").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.target === key);
+  document.querySelectorAll(".catBtn").forEach(link => {
+    link.classList.toggle("active", link.dataset.target === key);
   });
 
   const section = document.getElementById(key);
   if(section){
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const header = document.querySelector("header");
-        const nav = document.querySelector(".categoryNav");
-        const offset = (header ? header.offsetHeight : 0) + (nav ? nav.offsetHeight : 0) + 10;
-        const y = section.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({top:y, behavior:smooth ? "smooth" : "auto"});
-      });
+      const header = document.querySelector("header");
+      const nav = document.querySelector(".categoryNav");
+      const offset = (header ? header.offsetHeight : 0) + (nav ? nav.offsetHeight : 0) + 10;
+      const y = section.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({top:y, behavior:"auto"});
     });
   }
 }
 
-window.addEventListener("hashchange", () => openCategoryFromHash(true));
-window.addEventListener("DOMContentLoaded", () => openCategoryFromHash(false));
+window.addEventListener("DOMContentLoaded", showHashCategory);
+window.addEventListener("hashchange", showHashCategory);
 </script>
 </body>
 </html>

@@ -1,0 +1,12 @@
+V29
+- Category navigation uses absolute root-relative URLs:
+  /cardapio.html#queridinhas
+  /cardapio.html#classicas
+  /cardapio.html#especial
+  /cardapio.html#premium
+  /cardapio.html#vegetais
+  /cardapio.html#mar
+  /cardapio.html#doces
+- JavaScript no longer intercepts clicks.
+- JavaScript only opens the correct accordion based on the URL hash.
+- Quatro Queijos photo added to Queridinhas.
