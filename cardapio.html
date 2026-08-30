@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Cardápio da Pizzaria Jardins em Bragança Paulista. Conheça nossas pizzas, clássicos e especialidades.">
+<meta name="description" content="Cardápio oficial da Pizzaria Jardins em Bragança Paulista.">
 <title>Cardápio | Pizzaria Jardins</title>
 <style>
 :root{
@@ -14,7 +14,6 @@
   --orange:#f28a17;
   --green:#08a85a;
   --line:rgba(242,138,23,.22);
-  --whatsapp:#25d366;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -23,191 +22,129 @@ a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 .container{width:min(1220px,92%);margin:auto}
 
+/* Cabeçalho compacto aprovado */
 header{
-  position:sticky;top:0;z-index:50;
+  position:sticky;top:0;z-index:60;
+  height:118px;
   background:rgba(11,12,9,.96);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line)
 }
 .nav{
-  min-height:92px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px
+  height:118px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px
 }
-.brand img{width:330px;height:auto}
+.brand{position:relative;display:block;width:340px;height:118px;flex:0 0 340px}
+.brand img{
+  position:absolute;left:0;top:50%;width:340px;height:auto;max-width:none;
+  transform:translateY(-50%)
+}
 .navlinks{display:flex;align-items:center;gap:22px;font:700 .91rem Arial,sans-serif}
 .navlinks a:hover{color:var(--orange)}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
-  padding:14px 22px;border-radius:999px;
-  border:1px solid transparent;
+  padding:14px 22px;border-radius:999px;border:1px solid transparent;
   font:700 .93rem Arial,sans-serif
 }
 .primary{background:var(--orange);color:#171007}
 .outline{border-color:var(--orange);color:var(--orange)}
 
+/* Introdução curta */
 .hero{
-  padding:72px 0 54px;
+  padding:30px 0 26px;
   border-bottom:1px solid var(--line);
   background:
-    radial-gradient(circle at 70% 10%,rgba(242,138,23,.08),transparent 25%),
+    radial-gradient(circle at 72% 12%,rgba(242,138,23,.07),transparent 25%),
     linear-gradient(180deg,#11110d,#0b0c09)
 }
 .kicker{
-  color:var(--orange);
-  text-transform:uppercase;
-  letter-spacing:.22em;
-  font:800 .75rem Arial,sans-serif;
-  margin-bottom:12px
+  color:var(--orange);text-transform:uppercase;letter-spacing:.22em;
+  font:800 .74rem Arial,sans-serif;margin-bottom:10px
 }
 .hero h1{
-  font-size:clamp(3rem,6vw,5.8rem);
-  line-height:.95;
-  letter-spacing:-.04em;
-  max-width:850px;
-  margin-bottom:20px
+  font-size:clamp(2.8rem,5vw,4.7rem);line-height:.98;
+  letter-spacing:-.04em;max-width:780px;margin-bottom:12px
 }
-.hero p{
-  max-width:760px;
-  color:var(--muted);
-  font-size:1.08rem
-}
-.heroActions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero p{max-width:760px;color:var(--muted);font-size:1rem}
+.heroActions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
 
-.quicknav{
-  position:sticky;
-  top:92px;
-  z-index:30;
-  background:rgba(16,17,13,.96);
+/* Navegação principal de categorias */
+.categoryNav{
+  position:sticky;top:118px;z-index:50;
+  background:rgba(16,17,13,.97);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line)
 }
-.quicknav .container{
-  display:flex;
-  gap:10px;
-  overflow-x:auto;
-  padding:12px 0;
-  scrollbar-width:none
+.categoryNav .container{
+  display:flex;gap:10px;overflow-x:auto;padding:12px 0;scrollbar-width:none
 }
-.quicknav .container::-webkit-scrollbar{display:none}
-.chip{
-  flex:0 0 auto;
-  padding:9px 13px;
-  border:1px solid rgba(242,138,23,.24);
-  border-radius:999px;
-  color:#e8dfd3;
-  font:700 .78rem Arial,sans-serif
+.categoryNav .container::-webkit-scrollbar{display:none}
+.catBtn{
+  flex:0 0 auto;padding:10px 14px;border:1px solid rgba(242,138,23,.28);
+  border-radius:999px;color:#e7dfd4;background:transparent;
+  font:800 .77rem Arial,sans-serif;cursor:pointer
 }
-.chip:hover{border-color:var(--orange);color:var(--orange)}
+.catBtn:hover,.catBtn.active{background:var(--orange);color:#171007;border-color:var(--orange)}
 
-.section{padding:72px 0}
-.section.alt{background:#10110d;border-block:1px solid var(--line)}
-.sectionTitle{
-  display:flex;align-items:flex-end;justify-content:space-between;
-  gap:24px;margin-bottom:26px
+/* Categorias */
+.menuSection{padding:24px 0}
+.menuAccordion{
+  border:1px solid rgba(242,138,23,.20);
+  border-radius:24px;background:var(--panel);overflow:hidden
 }
-.sectionTitle h2{
-  font-size:clamp(2.15rem,4vw,3.6rem);
-  line-height:1.05
+.menuAccordion summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;
+  justify-content:space-between;gap:24px;padding:25px 28px;
+  background:linear-gradient(90deg,rgba(242,138,23,.07),rgba(8,168,90,.02)),var(--panel)
 }
-.sectionTitle p{
-  max-width:520px;
-  color:var(--muted);
-  font:500 .93rem/1.55 Arial,sans-serif
+.menuAccordion summary::-webkit-details-marker{display:none}
+.menuAccordion summary h2{
+  font-size:clamp(2rem,3.5vw,3rem);line-height:1.05;margin-bottom:7px
 }
+.menuAccordion summary p{
+  color:var(--muted);font:500 .9rem/1.5 Arial,sans-serif;max-width:780px
+}
+.summaryAction{
+  flex:0 0 auto;padding:11px 16px;border-radius:999px;
+  border:1px solid rgba(242,138,23,.38);color:var(--orange);
+  font:800 .76rem Arial,sans-serif
+}
+.menuAccordion[open] .summaryAction::after{content:" ▲"}
+.menuAccordion:not([open]) .summaryAction::after{content:" ▼"}
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px
+.menuList{border-top:1px solid rgba(242,138,23,.18)}
+.menuRow{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:17px 24px;border-bottom:1px solid rgba(255,255,255,.055);
+  background:#11110e
 }
-.item{
-  background:var(--panel);
-  border:1px solid rgba(242,138,23,.18);
-  border-radius:22px;
-  overflow:hidden;
-  min-height:100%
-}
-.itemImg{
-  height:215px;
-  background:#1b1914;
-  overflow:hidden
-}
-.itemImg img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  filter:saturate(.98) contrast(1.03) brightness(.96)
-}
-.itemBody{padding:20px}
-.itemTop{
-  display:flex;align-items:flex-start;justify-content:space-between;
-  gap:16px;margin-bottom:8px
-}
-.item h3{font-size:1.35rem;line-height:1.12}
-.badge{
-  flex:0 0 auto;
-  padding:7px 9px;
-  border:1px solid rgba(242,138,23,.35);
-  border-radius:999px;
-  color:var(--orange);
-  font:800 .67rem Arial,sans-serif;
-  text-transform:uppercase
-}
-.item p{
-  color:var(--muted);
-  font:500 .9rem/1.5 Arial,sans-serif
-}
-.priceNote{
-  margin-top:16px;padding-top:13px;
-  border-top:1px solid rgba(255,255,255,.06);
-  color:#a99f91;
-  font:700 .77rem Arial,sans-serif
-}
+.menuRow:last-child{border-bottom:0}
+.menuRow:hover{background:#16140f}
+.menuRow h3{font-size:1.12rem;margin-bottom:3px}
+.menuRow p{color:var(--muted);font:500 .86rem/1.45 Arial,sans-serif;max-width:920px}
 
-.categoryGrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px
+/* Queridinhas com fotos */
+.photoGrid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  padding:20px;background:#11110e
 }
-.category{
-  min-height:220px;
-  padding:26px;
-  border-radius:22px;
-  border:1px solid rgba(242,138,23,.2);
-  background:
-    linear-gradient(145deg,rgba(242,138,23,.07),rgba(8,168,90,.02)),
-    var(--panel)
+.pizzaCard{
+  overflow:hidden;border-radius:20px;border:1px solid rgba(242,138,23,.17);
+  background:#151510
 }
-.category .num{
-  color:var(--orange);
-  font:800 .74rem Arial,sans-serif;
-  letter-spacing:.1em;
-  margin-bottom:42px
+.pizzaCard img{width:100%;height:205px;object-fit:cover}
+.pizzaCardBody{padding:17px}
+.pizzaCard h3{font-size:1.25rem;margin-bottom:5px}
+.pizzaCard p{color:var(--muted);font:500 .85rem/1.45 Arial,sans-serif}
+.noPhoto{
+  height:205px;display:grid;place-items:center;
+  background:radial-gradient(circle,rgba(242,138,23,.12),transparent 45%),#1a1813;
+  color:var(--orange);font:800 .78rem Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em
 }
-.category h3{font-size:1.55rem;margin-bottom:8px}
-.category p{color:var(--muted);font:500 .9rem/1.55 Arial,sans-serif}
-
-.callout{
-  display:flex;justify-content:space-between;align-items:center;
-  gap:22px;
-  margin-top:30px;
-  padding:25px 27px;
-  border-radius:22px;
-  border:1px solid rgba(242,138,23,.22);
-  background:linear-gradient(90deg,rgba(242,138,23,.09),rgba(8,168,90,.03))
-}
-.callout strong{display:block;font-size:1.25rem;margin-bottom:5px}
-.callout p{color:var(--muted);font:500 .9rem Arial,sans-serif}
 
 footer{
-  border-top:1px solid var(--line);
-  padding:30px 0;
-  color:#a9a093;
-  font:500 .85rem Arial,sans-serif
+  border-top:1px solid var(--line);padding:30px 0;color:#a9a093;
+  font:500 .85rem Arial,sans-serif;margin-top:26px
 }
 .footer{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .footer img{width:170px}
@@ -217,10 +154,8 @@ footer{
   display:flex;flex-direction:column;align-items:flex-end;gap:8px
 }
 .delivery-btn{
-  display:flex;align-items:center;justify-content:center;
-  border-radius:999px;
-  box-shadow:0 12px 32px rgba(0,0,0,.38);
-  font:800 .74rem Arial,sans-serif
+  display:flex;align-items:center;justify-content:center;border-radius:999px;
+  box-shadow:0 12px 32px rgba(0,0,0,.38);font:800 .74rem Arial,sans-serif
 }
 .food99{height:44px;padding:0 11px;background:#ffd600;color:#111}
 .ifood{height:44px;padding:0 11px;background:#ea1d2c;color:#fff}
@@ -228,360 +163,23 @@ footer{
 .whatsapp svg{width:35px;height:35px;fill:#fff}
 
 @media(max-width:980px){
-  .brand img{width:270px}
+  header,.nav{height:100px}
+  .brand{width:285px;height:100px;flex-basis:285px}
+  .brand img{width:285px}
+  .categoryNav{top:100px}
   .navlinks a:not(.btn){display:none}
-  .quicknav{top:92px}
-  .grid,.categoryGrid{grid-template-columns:repeat(2,1fr)}
-  .sectionTitle{align-items:flex-start;flex-direction:column}
+  .photoGrid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:650px){
-  .grid,.categoryGrid{grid-template-columns:1fr}
-  .hero{padding-top:52px}
-  .callout{align-items:flex-start;flex-direction:column}
+  header,.nav{height:88px}
+  .brand{width:235px;height:88px;flex-basis:235px}
+  .brand img{width:235px}
+  .categoryNav{top:88px}
+  .hero{padding:24px 0 22px}
+  .photoGrid{grid-template-columns:1fr}
+  .menuAccordion summary{align-items:flex-start;flex-direction:column;padding:21px 20px}
+  .menuRow{padding:15px 18px}
 }
-
-/* V17 — cardápio mais compacto, alinhado à Home */
-.nav{
-  min-height:76px!important;
-}
-.brand img{
-  width:250px!important;
-}
-.quicknav{
-  top:76px!important;
-}
-.hero{
-  padding:34px 0 30px!important;
-}
-.hero h1{
-  font-size:clamp(2.7rem,5vw,4.6rem)!important;
-  max-width:780px!important;
-  margin-bottom:14px!important;
-}
-.hero p{
-  font-size:1rem!important;
-}
-.heroActions{
-  margin-top:18px!important;
-}
-.section{
-  padding:54px 0!important;
-}
-.sectionTitle{
-  margin-bottom:22px!important;
-}
-@media(max-width:980px){
-  .brand img{width:220px!important}
-  .quicknav{top:76px!important}
-}
-@media(max-width:650px){
-  .nav{min-height:70px!important}
-  .brand img{width:190px!important}
-  .quicknav{top:70px!important}
-  .hero{padding:28px 0 24px!important}
-}
-
-
-/* V19 — correção definitiva do cabeçalho do cardápio */
-header{
-  height:86px!important;
-}
-.nav{
-  height:86px!important;
-  min-height:86px!important;
-  position:relative!important;
-  overflow:visible!important;
-}
-.brand{
-  position:relative!important;
-  display:block!important;
-  width:330px!important;
-  height:86px!important;
-  flex:0 0 330px!important;
-  overflow:visible!important;
-}
-.brand img{
-  position:absolute!important;
-  left:0!important;
-  top:50%!important;
-  width:330px!important;
-  height:auto!important;
-  max-width:none!important;
-  transform:translateY(-50%) scale(1.18)!important;
-  transform-origin:left center!important;
-  pointer-events:auto!important;
-}
-
-/* Mantém a barra de categorias encostada ao cabeçalho compacto */
-.quicknav{
-  top:86px!important;
-}
-
-/* Evita excesso de espaço acima do conteúdo */
-.hero{
-  padding:28px 0 26px!important;
-}
-.hero h1{
-  margin-bottom:12px!important;
-}
-.heroActions{
-  margin-top:16px!important;
-}
-
-@media(max-width:980px){
-  header{height:80px!important}
-  .nav{
-    height:80px!important;
-    min-height:80px!important;
-  }
-  .brand{
-    width:270px!important;
-    height:80px!important;
-    flex-basis:270px!important;
-  }
-  .brand img{
-    width:270px!important;
-    transform:translateY(-50%) scale(1.12)!important;
-  }
-  .quicknav{top:80px!important}
-}
-
-@media(max-width:650px){
-  header{height:72px!important}
-  .nav{
-    height:72px!important;
-    min-height:72px!important;
-  }
-  .brand{
-    width:220px!important;
-    height:72px!important;
-    flex-basis:220px!important;
-  }
-  .brand img{
-    width:220px!important;
-    transform:translateY(-50%) scale(1.08)!important;
-  }
-  .quicknav{top:72px!important}
-  .hero{padding:24px 0 22px!important}
-}
-
-
-/* V20 — equilíbrio do cabeçalho do cardápio */
-header{
-  height:118px!important;
-}
-.nav{
-  height:118px!important;
-  min-height:118px!important;
-  position:relative!important;
-  overflow:visible!important;
-}
-.brand{
-  position:relative!important;
-  display:block!important;
-  width:340px!important;
-  height:118px!important;
-  flex:0 0 340px!important;
-  overflow:visible!important;
-}
-.brand img{
-  position:absolute!important;
-  left:0!important;
-  top:50%!important;
-  width:340px!important;
-  height:auto!important;
-  max-width:none!important;
-  transform:translateY(-50%)!important;
-  transform-origin:left center!important;
-}
-
-/* Barra de categorias acompanha a nova altura */
-.quicknav{
-  top:118px!important;
-}
-
-/* Mantém a área do cardápio compacta */
-.hero{
-  padding:30px 0 26px!important;
-}
-.hero h1{
-  margin-bottom:12px!important;
-}
-.heroActions{
-  margin-top:16px!important;
-}
-
-@media(max-width:980px){
-  header{height:100px!important}
-  .nav{
-    height:100px!important;
-    min-height:100px!important;
-  }
-  .brand{
-    width:285px!important;
-    height:100px!important;
-    flex-basis:285px!important;
-  }
-  .brand img{
-    width:285px!important;
-    transform:translateY(-50%)!important;
-  }
-  .quicknav{top:100px!important}
-}
-
-@media(max-width:650px){
-  header{height:88px!important}
-  .nav{
-    height:88px!important;
-    min-height:88px!important;
-  }
-  .brand{
-    width:235px!important;
-    height:88px!important;
-    flex-basis:235px!important;
-  }
-  .brand img{
-    width:235px!important;
-    transform:translateY(-50%)!important;
-  }
-  .quicknav{top:88px!important}
-  .hero{padding:24px 0 22px!important}
-}
-
-
-/* V21 — seção Clássicas da Jardins */
-.classicGrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:26px;
-}
-.classicItem{
-  position:relative;
-  min-height:190px;
-  padding:24px 22px;
-  border-radius:22px;
-  border:1px solid rgba(242,138,23,.18);
-  background:
-    linear-gradient(145deg,rgba(242,138,23,.055),rgba(8,168,90,.015)),
-    var(--panel);
-  transition:transform .2s ease,border-color .2s ease,background .2s ease;
-}
-.classicItem:hover{
-  transform:translateY(-3px);
-  border-color:rgba(242,138,23,.42);
-  background:
-    linear-gradient(145deg,rgba(242,138,23,.085),rgba(8,168,90,.025)),
-    var(--panel);
-}
-.classicIndex{
-  color:var(--orange);
-  font:800 .72rem/1 Arial,sans-serif;
-  letter-spacing:.08em;
-  margin-bottom:24px;
-}
-.classicItem h3{
-  font-size:1.45rem;
-  line-height:1.1;
-  margin-bottom:9px;
-}
-.classicItem p{
-  color:var(--muted);
-  font:500 .9rem/1.5 Arial,sans-serif;
-}
-.classicFoot{
-  position:absolute;
-  left:22px;
-  right:22px;
-  bottom:18px;
-  padding-top:12px;
-  border-top:1px solid rgba(255,255,255,.055);
-  color:#a99f91;
-  font:700 .75rem/1.2 Arial,sans-serif;
-}
-@media(max-width:980px){
-  .classicGrid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:650px){
-  .classicGrid{grid-template-columns:1fr}
-}
-
-
-/* V22 — categorias longas em lista compacta */
-.classicsSection{
-  padding:42px 0!important;
-}
-.menuAccordion{
-  border:1px solid rgba(242,138,23,.20);
-  border-radius:24px;
-  background:var(--panel);
-  overflow:hidden;
-}
-.menuAccordion summary{
-  list-style:none;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-  padding:26px 28px;
-  background:
-    linear-gradient(90deg,rgba(242,138,23,.07),rgba(8,168,90,.02)),
-    var(--panel);
-}
-.menuAccordion summary::-webkit-details-marker{display:none}
-.menuAccordion summary h2{
-  font-size:clamp(2rem,3.5vw,3rem);
-  line-height:1.05;
-  margin-bottom:8px;
-}
-.menuAccordion summary p{
-  color:var(--muted);
-  font:500 .9rem/1.5 Arial,sans-serif;
-}
-.summaryAction{
-  flex:0 0 auto;
-  padding:11px 16px;
-  border-radius:999px;
-  border:1px solid rgba(242,138,23,.38);
-  color:var(--orange);
-  font:800 .78rem Arial,sans-serif;
-}
-.menuAccordion[open] .summaryAction::after{content:" ▲"}
-.menuAccordion:not([open]) .summaryAction::after{content:" ▼"}
-
-.menuList{
-  border-top:1px solid rgba(242,138,23,.18);
-}
-.menuRow{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  padding:18px 24px;
-  border-bottom:1px solid rgba(255,255,255,.055);
-  background:#11110e;
-}
-.menuRow:last-child{border-bottom:0}
-.menuRow:hover{background:#16140f}
-.menuRow h3{
-  font-size:1.12rem;
-  margin-bottom:4px;
-}
-.menuRow p{
-  color:var(--muted);
-  font:500 .86rem/1.45 Arial,sans-serif;
-  max-width:820px;
-}
-@media(max-width:650px){
-  .menuAccordion summary{
-    align-items:flex-start;
-    flex-direction:column;
-    padding:22px 20px;
-  }
-  .menuRow{padding:16px 18px}
-}
-
 </style>
 </head>
 <body>
@@ -591,321 +189,287 @@ header{
     <a class="brand" href="index.html"><img src="assets/logo-jardins.png" alt="Pizzaria Jardins"></a>
     <nav class="navlinks">
       <a href="index.html">Home</a>
-      <a href="#queridinhas">Queridinhas</a>
-      
+      <a href="#queridinhas" data-category="queridinhas">Queridinhas</a>
       <a class="btn primary" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir agora</a>
     </nav>
   </div>
 </header>
 
 <main>
-
 <section class="hero">
   <div class="container">
-    <div class="kicker">Cardápio Jardins</div>
+    <div class="kicker">Cardápio oficial Jardins</div>
     <h1>Uma pizza para cada vontade.</h1>
-    <p>
-      Dos clássicos que atravessaram gerações às receitas mais especiais da casa.
-      Explore as categorias e encontre a sua próxima favorita.
-    </p>
+    <p>Escolha uma categoria e consulte nossos sabores. As listas abrem e fecham sem sair desta página.</p>
     <div class="heroActions">
-      <a class="btn primary" href="#queridinhas">Ver as queridinhas</a>
+      <a class="btn primary" href="#queridinhas" data-category="queridinhas">Ver as queridinhas</a>
       <a class="btn outline" href="index.html">Voltar para a Home</a>
     </div>
   </div>
 </section>
 
-<nav class="quicknav">
+<nav class="categoryNav" aria-label="Categorias do cardápio">
   <div class="container">
-    <a class="chip" href="#queridinhas">Queridinhas</a>
-    <a class="chip" href="#classicas" data-open="classicas-lista">Clássicas</a>
-    <a class="chip" href="#especial" data-open="especial-lista">Seleção Especial</a>
-    <a class="chip" href="#premium">Premium</a>
-    <a class="chip" href="#mar" data-open="mar-lista">Especialidades do Mar</a>
-    <a class="chip" href="#vegetais" data-open="vegetais-lista">Jardins &amp; Vegetais</a>
+    <button class="catBtn" data-target="queridinhas">Queridinhas</button>
+    <button class="catBtn" data-target="classicas">Clássicas</button>
+    <button class="catBtn" data-target="especial">Seleção Especial</button>
+    <button class="catBtn" data-target="premium">Pizzas Premium</button>
+    <button class="catBtn" data-target="vegetais">Jardins &amp; Vegetais</button>
+    <button class="catBtn" data-target="mar">Especialidades do Mar</button>
+    <button class="catBtn" data-target="doces">Pizzas Doces</button>
   </div>
 </nav>
 
-<section class="section alt" id="queridinhas">
-  <div class="container">
-    <div class="sectionTitle">
-      <div>
-        <div class="kicker">As queridinhas da Jardins</div>
-        <h2>Os sabores que viraram tradição</h2>
-      </div>
-      <p>Uma seleção das pizzas que estão entre as mais pedidas da casa.</p>
-    </div>
-
-    <div class="grid">
-
-      <article class="item">
-        <div class="itemImg"><img src="assets/calabresa.jpg" alt="Pizza Calabresa"></div>
-        <div class="itemBody">
-          <div class="itemTop"><h3>Calabresa</h3><span class="badge">Mais pedida</span></div>
-          <p>A clássica combinação de calabresa bem dourada com cebola, cheia de sabor e tradição.</p>
-          <div class="priceNote">Preço e tamanhos serão adicionados na próxima etapa.</div>
-        </div>
-      </article>
-
-      <article class="item">
-        <div class="itemImg"><img src="assets/portuguesa.png" alt="Pizza Portuguesa"></div>
-        <div class="itemBody">
-          <div class="itemTop"><h3>Portuguesa</h3><span class="badge">Clássico</span></div>
-          <p>Generosa e irresistível, reúne sabores clássicos em uma das receitas mais queridas da casa.</p>
-          <div class="priceNote">Preço e tamanhos serão adicionados na próxima etapa.</div>
-        </div>
-      </article>
-
-      <article class="item">
-        <div class="itemImg"><img src="assets/mucarela.jpg" alt="Pizza Muçarela"></div>
-        <div class="itemBody">
-          <div class="itemTop"><h3>Muçarela</h3><span class="badge">Tradição</span></div>
-          <p>Simples, cremosa e inesquecível — um clássico que representa a essência da boa pizza.</p>
-          <div class="priceNote">Preço e tamanhos serão adicionados na próxima etapa.</div>
-        </div>
-      </article>
-
-      <article class="item">
-        <div class="itemImg"><img src="assets/marguerita.jpg" alt="Pizza Marguerita"></div>
-        <div class="itemBody">
-          <div class="itemTop"><h3>Marguerita</h3><span class="badge">Fresca</span></div>
-          <p>Fresca, aromática e delicada, com o equilíbrio perfeito entre tomate, queijo e manjericão.</p>
-          <div class="priceNote">Preço e tamanhos serão adicionados na próxima etapa.</div>
-        </div>
-      </article>
-
-      <article class="item">
-        <div class="itemImg"><img src="assets/paola.jpg" alt="Pizza Paola"></div>
-        <div class="itemBody">
-          <div class="itemTop"><h3>Paola</h3><span class="badge">Assinatura</span></div>
-          <p>Uma receita marcante e cheia de personalidade, criada para quem gosta de sabores especiais.</p>
-          <div class="priceNote">Preço e tamanhos serão adicionados na próxima etapa.</div>
-        </div>
-      </article>
-
-      <article class="item">
-        <div class="itemImg"><img src="assets/frango-catupiry.png" alt="Pizza Frango com Catupiry"></div>
-        <div class="itemBody">
-          <div class="itemTop"><h3>Frango com Catupiry</h3><span class="badge">Muito pedida</span></div>
-          <p>Cremosa e irresistível, combina frango delicadamente temperado à suavidade inconfundível do Catupiry.</p>
-          <div class="priceNote">Preço e tamanhos serão adicionados na próxima etapa.</div>
-        </div>
-      </article>
-
-    </div>
+<!-- QUERIDINHAS -->
+<section class="menuSection" id="queridinhas">
+<div class="container">
+<details class="menuAccordion" id="acc-queridinhas" open>
+<summary>
+  <div>
+    <div class="kicker">As Queridinhas da Jardins</div>
+    <h2>Os sabores que viraram tradição</h2>
+    <p>As pizzas mais queridas da casa, reunidas em uma seleção especial.</p>
   </div>
+  <span class="summaryAction">Ver sabores</span>
+</summary>
+
+<div class="photoGrid">
+  <article class="pizzaCard"><img src="assets/calabresa.jpg" alt="Calabresa"><div class="pizzaCardBody"><h3>Calabresa</h3><p>Clássica, marcante e sempre entre as mais pedidas.</p></div></article>
+  <article class="pizzaCard"><img src="assets/mucarela.jpg" alt="Muçarela"><div class="pizzaCardBody"><h3>Muçarela</h3><p>Simples, cremosa e inesquecível.</p></div></article>
+  <article class="pizzaCard"><img src="assets/paola.jpg" alt="Paola"><div class="pizzaCardBody"><h3>Paola</h3><p>Uma receita de assinatura da Jardins.</p></div></article>
+  <article class="pizzaCard"><img src="assets/portuguesa.png" alt="Portuguesa"><div class="pizzaCardBody"><h3>Portuguesa</h3><p>Generosa e cheia de sabor.</p></div></article>
+  <article class="pizzaCard"><img src="assets/marguerita.jpg" alt="Marguerita"><div class="pizzaCardBody"><h3>Marguerita</h3><p>Fresca, aromática e equilibrada.</p></div></article>
+  <article class="pizzaCard"><img src="assets/frango-catupiry.png" alt="Frango com Catupiry"><div class="pizzaCardBody"><h3>Frango com Catupiry</h3><p>Cremosa e irresistível.</p></div></article>
+  <article class="pizzaCard"><div class="noPhoto">Foto em breve</div><div class="pizzaCardBody"><h3>Quatro Queijos</h3><p>Intensa, cremosa e perfeita para amantes de queijo.</p></div></article>
+</div>
+</details>
+</div>
 </section>
 
-
-
-<section class="section classicsSection" id="classicas">
-  <div class="container">
-    <details class="menuAccordion" id="classicas-lista">
-      <summary>
-        <div>
-          <div class="kicker">Clássicas da Jardins</div>
-          <h2>Sabores que atravessam gerações</h2>
-          <p>Receitas tradicionais da casa em uma lista rápida e fácil de consultar.</p>
-        </div>
-        <span class="summaryAction">Ver sabores</span>
-      </summary>
-
-      <div class="menuList">
-
-        <article class="menuRow">
-          <div><h3>Alho</h3><p>Marcante e aromática, para quem gosta de sabores intensos e cheios de personalidade.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Alvorada</h3><p>Uma combinação acolhedora e equilibrada, com sabor delicado e aquele toque caseiro que conquista.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Ao Forno</h3><p>Uma receita envolvente, preparada para quem aprecia combinações mais marcantes.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Bacon</h3><p>Defumada, crocante e irresistível, com presença de sabor do começo ao fim.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Baiana</h3><p>Intensa e cheia de personalidade, com tempero marcante na medida certa.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Bauru</h3><p>Uma combinação clássica e reconfortante, inspirada em um dos sabores mais queridos do Brasil.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Bragança</h3><p>Uma receita com identidade da casa, criada para celebrar sabores que fazem parte da nossa história.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Brasileirinha</h3><p>Generosa, colorida e cheia de sabor, com uma combinação que tem a cara da mesa brasileira.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Brócolis</h3><p>Leve na medida certa, cremosa e saborosa, com um toque vegetal equilibrado.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Catupyrela</h3><p>Uma combinação extremamente cremosa, para quem não abre mão de queijo e suavidade.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Gorgonzola</h3><p>Elegante e intensa, com sabor inconfundível e personalidade marcante.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Canadense</h3><p>Clássica e delicada, com sabor suave e uma combinação muito equilibrada.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Milho</h3><p>Levemente adocicada, cremosa e afetiva, perfeita para quem gosta de sabores simples.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Napolitana</h3><p>Um clássico de inspiração italiana, equilibrado, aromático e cheio de frescor.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Palmito</h3><p>Delicada, cremosa e elegante, com sabor suave e textura agradável.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Pizzaiolo</h3><p>Uma receita tradicional e bem temperada, com o espírito das pizzas clássicas de forno.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Toscana</h3><p>Rústica e saborosa, com uma combinação de inspiração italiana e presença marcante.</p></div>
-        </article>
-
-        <article class="menuRow">
-          <div><h3>Três Queijos</h3><p>Cremosa e envolvente, com uma combinação equilibrada para quem ama queijo.</p></div>
-        </article>
-
-      </div>
-    </details>
-  </div>
-</section>
-<section class="section classicsSection" id="especial">
-  <div class="container">
-    <details class="menuAccordion" id="especial-lista">
-      <summary>
-        <div>
-          <div class="kicker">Seleção Especial</div>
-          <h2>Sabores com um toque a mais</h2>
-          <p>Receitas especiais da casa, com combinações marcantes e personalidade própria.</p>
-        </div>
-        <span class="summaryAction">Ver sabores</span>
-      </summary>
-
-      <div class="menuList">
-        <article class="menuRow"><div><h3>Baiacatu</h3><p>Uma combinação intensa e muito saborosa, pensada para quem gosta de receitas cheias de personalidade.</p></div></article>
-        <article class="menuRow"><div><h3>Caipira</h3><p>Uma receita generosa e acolhedora, com aquele sabor que lembra comida feita para reunir todo mundo à mesa.</p></div></article>
-        <article class="menuRow"><div><h3>Calábria</h3><p>Marcante e aromática, une sabores intensos em uma combinação equilibrada e irresistível.</p></div></article>
-        <article class="menuRow"><div><h3>Carijó</h3><p>Cheia de sabor e textura, é uma das receitas especiais que conquistaram espaço entre as favoritas da casa.</p></div></article>
-        <article class="menuRow"><div><h3>Catupiry Original</h3><p>Cremosa e delicada, valoriza toda a suavidade e o sabor inconfundível do Catupiry Original.</p></div></article>
-        <article class="menuRow"><div><h3>Da Sogra</h3><p>Uma combinação generosa e cheia de personalidade, daquelas que surpreendem já na primeira fatia.</p></div></article>
-        <article class="menuRow"><div><h3>Escarola do Fernando</h3><p>Uma receita especial que nasceu da inspiração de um cliente querido e acabou entrando para a história da Jardins.</p></div></article>
-        <article class="menuRow"><div><h3>Francesa</h3><p>Elegante e equilibrada, com uma combinação delicada para quem aprecia sabores mais refinados.</p></div></article>
-        <article class="menuRow"><div><h3>Light</h3><p>Uma opção mais leve, sem abrir mão do sabor e da personalidade que caracterizam as pizzas da casa.</p></div></article>
-        <article class="menuRow"><div><h3>Moda</h3><p>Uma receita especial e generosa, feita para quem gosta de combinações variadas e cheias de sabor.</p></div></article>
-      </div>
-    </details>
-  </div>
-</section>
-<section class="section classicsSection" id="mar">
-  <div class="container">
-    <details class="menuAccordion" id="mar-lista">
-      <summary>
-        <div>
-          <div class="kicker">Especialidades do Mar</div>
-          <h2>Sabores que vêm do mar</h2>
-          <p>Receitas marcantes e especiais para quem aprecia ingredientes do mar e combinações cheias de personalidade.</p>
-        </div>
-        <span class="summaryAction">Ver sabores</span>
-      </summary>
-      <div class="menuList">
-        <article class="menuRow"><div><h3>Atum</h3><p>Clássica e saborosa, com presença marcante e equilíbrio em cada fatia.</p></div></article>
-        <article class="menuRow"><div><h3>Bacalhau</h3><p>Uma receita especial e elegante, para quem aprecia sabores intensos e tradicionais.</p></div></article>
-        <article class="menuRow"><div><h3>Escarola com Aliche</h3><p>Uma combinação de personalidade, unindo frescor vegetal ao sabor característico do aliche.</p></div></article>
-        <article class="menuRow"><div><h3>Romana</h3><p>Inspirada nos sabores clássicos italianos, com uma combinação intensa e muito aromática.</p></div></article>
-      </div>
-    </details>
-  </div>
+<!-- CLÁSSICAS -->
+<section class="menuSection" id="classicas">
+<div class="container">
+<details class="menuAccordion" id="acc-classicas">
+<summary>
+  <div><div class="kicker">Clássicas da Jardins</div><h2>Sabores que atravessam gerações</h2><p>Receitas tradicionais da casa em uma lista rápida e fácil de consultar.</p></div>
+  <span class="summaryAction">Ver sabores</span>
+</summary>
+<div class="menuList">
+  <article class="menuRow"><div><h3>Alho</h3><p>Marcante e aromática.</p></div></article>
+  <article class="menuRow"><div><h3>Alvorada</h3><p>Delicada, equilibrada e acolhedora.</p></div></article>
+  <article class="menuRow"><div><h3>Ao Forno</h3><p>Envolvente e cheia de personalidade.</p></div></article>
+  <article class="menuRow"><div><h3>Bacon</h3><p>Defumada, crocante e irresistível.</p></div></article>
+  <article class="menuRow"><div><h3>Baiana</h3><p>Intensa e bem temperada.</p></div></article>
+  <article class="menuRow"><div><h3>Bauru</h3><p>Um clássico reconfortante.</p></div></article>
+  <article class="menuRow"><div><h3>Bragança</h3><p>Uma receita com identidade da casa.</p></div></article>
+  <article class="menuRow"><div><h3>Brasileirinha</h3><p>Generosa, colorida e cheia de sabor.</p></div></article>
+  <article class="menuRow"><div><h3>Brócolis</h3><p>Leve, cremosa e equilibrada.</p></div></article>
+  <article class="menuRow"><div><h3>Catupyrela</h3><p>Extremamente cremosa e suave.</p></div></article>
+  <article class="menuRow"><div><h3>Gorgonzola</h3><p>Elegante, intensa e marcante.</p></div></article>
+  <article class="menuRow"><div><h3>Lombo Canadense</h3><p>Delicada e muito equilibrada.</p></div></article>
+  <article class="menuRow"><div><h3>Milho</h3><p>Levemente adocicada e cremosa.</p></div></article>
+  <article class="menuRow"><div><h3>Napolitana</h3><p>Clássica, aromática e fresca.</p></div></article>
+  <article class="menuRow"><div><h3>Palmito</h3><p>Suave, cremosa e elegante.</p></div></article>
+  <article class="menuRow"><div><h3>Pizzaiolo</h3><p>Tradicional e bem temperada.</p></div></article>
+  <article class="menuRow"><div><h3>Toscana</h3><p>Rústica e saborosa.</p></div></article>
+  <article class="menuRow"><div><h3>Três Queijos</h3><p>Cremosa e envolvente.</p></div></article>
+</div>
+</details>
+</div>
 </section>
 
-<section class="section classicsSection" id="vegetais">
-  <div class="container">
-    <details class="menuAccordion" id="vegetais-lista">
-      <summary>
-        <div>
-          <div class="kicker">Jardins &amp; Vegetais</div>
-          <h2>Leves, frescas e cheias de sabor</h2>
-          <p>Combinações que valorizam legumes, verduras e ingredientes delicados sem abrir mão da personalidade Jardins.</p>
-        </div>
-        <span class="summaryAction">Ver sabores</span>
-      </summary>
-      <div class="menuList">
-        <article class="menuRow"><div><h3>Abobrinha</h3><p>Leve e delicada, com sabor fresco e uma combinação equilibrada para qualquer ocasião.</p></div></article>
-        <article class="menuRow"><div><h3>Brócolis</h3><p>Cremosa e saborosa, une leveza e personalidade em uma combinação muito querida.</p></div></article>
-        <article class="menuRow"><div><h3>Palmito</h3><p>Suave, cremosa e elegante, com textura delicada e sabor que agrada em qualquer momento.</p></div></article>
-        <article class="menuRow"><div><h3>Milho</h3><p>Levemente adocicada, cremosa e acolhedora, perfeita para quem gosta de sabores simples e afetivos.</p></div></article>
-        <article class="menuRow"><div><h3>Champignon</h3><p>Delicada e aromática, com um toque sofisticado e textura suave.</p></div></article>
-        <article class="menuRow"><div><h3>Shitake</h3><p>Elegante e marcante, para quem aprecia sabores mais profundos e contemporâneos.</p></div></article>
-        <article class="menuRow"><div><h3>Vegetariana</h3><p>Colorida, equilibrada e cheia de frescor, com uma combinação generosa de ingredientes vegetais.</p></div></article>
-        <article class="menuRow"><div><h3>Coração de Alcachofra</h3><p>Delicada e especial, com um sabor refinado que transforma cada fatia em uma experiência diferente.</p></div></article>
-        <article class="menuRow"><div><h3>Light</h3><p>Uma opção mais leve e equilibrada, preparada para quem quer sabor sem excessos.</p></div></article>
-      </div>
-    </details>
-  </div>
+<!-- SELEÇÃO ESPECIAL -->
+<section class="menuSection" id="especial">
+<div class="container">
+<details class="menuAccordion" id="acc-especial">
+<summary>
+  <div><div class="kicker">Seleção Especial</div><h2>Sabores com um toque a mais</h2><p>Receitas especiais e cheias de personalidade.</p></div>
+  <span class="summaryAction">Ver sabores</span>
+</summary>
+<div class="menuList">
+  <article class="menuRow"><div><h3>Baiacatu</h3><p>Intensa e cheia de personalidade.</p></div></article>
+  <article class="menuRow"><div><h3>Caipira</h3><p>Generosa e acolhedora.</p></div></article>
+  <article class="menuRow"><div><h3>Calábria</h3><p>Marcante e aromática.</p></div></article>
+  <article class="menuRow"><div><h3>Carijó</h3><p>Cheia de sabor e textura.</p></div></article>
+  <article class="menuRow"><div><h3>Catupiry Original</h3><p>Cremosa e inconfundível.</p></div></article>
+  <article class="menuRow"><div><h3>Da Sogra</h3><p>Generosa e surpreendente.</p></div></article>
+  <article class="menuRow"><div><h3>Escarola do Fernando</h3><p>Uma receita especial que faz parte da história da Jardins.</p></div></article>
+  <article class="menuRow"><div><h3>Francesa</h3><p>Elegante e equilibrada.</p></div></article>
+  <article class="menuRow"><div><h3>Light</h3><p>Leve sem abrir mão do sabor.</p></div></article>
+  <article class="menuRow"><div><h3>Moda do Chefe</h3><p>Uma combinação criada para surpreender.</p></div></article>
+  <article class="menuRow"><div><h3>Shimeji</h3><p>Delicada, aromática e contemporânea.</p></div></article>
+  <article class="menuRow"><div><h3>Siciliana</h3><p>Inspirada em sabores italianos intensos.</p></div></article>
+  <article class="menuRow"><div><h3>Strogonoff de Mignon</h3><p>Cremosa, sofisticada e muito saborosa.</p></div></article>
+  <article class="menuRow"><div><h3>Típica Bragantina</h3><p>Uma homenagem aos sabores da nossa cidade.</p></div></article>
+  <article class="menuRow"><div><h3>Especial da Casa</h3><p>Uma combinação com a assinatura Jardins.</p></div></article>
+  <article class="menuRow"><div><h3>Peperoni</h3><p>Marcante, aromática e irresistível.</p></div></article>
+</div>
+</details>
+</div>
 </section>
 
+<!-- PREMIUM -->
+<section class="menuSection" id="premium">
+<div class="container">
+<details class="menuAccordion" id="acc-premium">
+<summary>
+  <div><div class="kicker">Pizzas Premium</div><h2>Ingredientes especiais, experiências marcantes</h2><p>Receitas elaboradas para quem quer algo ainda mais especial.</p></div>
+  <span class="summaryAction">Ver sabores</span>
+</summary>
+<div class="menuList">
+  <article class="menuRow"><div><h3>Marcopolo</h3><p>Elegante e cheia de personalidade.</p></div></article>
+  <article class="menuRow"><div><h3>Mix de Cogumelos</h3><p>Aromática, sofisticada e intensa.</p></div></article>
+  <article class="menuRow"><div><h3>Nordestina</h3><p>Marcante e cheia de identidade.</p></div></article>
+  <article class="menuRow"><div><h3>Tropical</h3><p>Equilibrada, leve e surpreendente.</p></div></article>
+  <article class="menuRow"><div><h3>Quatro Queijos &amp; Mignon</h3><p>Cremosa e sofisticada.</p></div></article>
+  <article class="menuRow"><div><h3>Capricciosa</h3><p>Generosa e inspirada na tradição italiana.</p></div></article>
+  <article class="menuRow"><div><h3>Espanhola</h3><p>Intensa e cheia de personalidade.</p></div></article>
+  <article class="menuRow"><div><h3>Seis Formaggi</h3><p>Uma celebração para amantes de queijo.</p></div></article>
+  <article class="menuRow"><div><h3>Jardins</h3><p>Uma receita especial com a identidade da casa.</p></div></article>
+  <article class="menuRow"><div><h3>Parma</h3><p>Delicada, elegante e refinada.</p></div></article>
+  <article class="menuRow"><div><h3>Pama Divina</h3><p>Uma combinação premium e surpreendente.</p></div></article>
+  <article class="menuRow"><div><h3>Especialíssima</h3><p>Uma das experiências mais completas do cardápio.</p></div></article>
+</div>
+</details>
+</div>
+</section>
 
+<!-- VEGETAIS -->
+<section class="menuSection" id="vegetais">
+<div class="container">
+<details class="menuAccordion" id="acc-vegetais">
+<summary>
+  <div><div class="kicker">Jardins &amp; Vegetais</div><h2>Leves, frescas e cheias de sabor</h2><p>Combinações que valorizam vegetais e ingredientes delicados.</p></div>
+  <span class="summaryAction">Ver sabores</span>
+</summary>
+<div class="menuList">
+  <article class="menuRow"><div><h3>Abobrinha</h3><p>Leve e delicada.</p></div></article>
+  <article class="menuRow"><div><h3>Alho Poró</h3><p>Aromática e elegante.</p></div></article>
+  <article class="menuRow"><div><h3>A Moda da Casa</h3><p>Uma combinação vegetal com a identidade Jardins.</p></div></article>
+  <article class="menuRow"><div><h3>Berinjela</h3><p>Marcante e muito saborosa.</p></div></article>
+  <article class="menuRow"><div><h3>Brócolis Especial</h3><p>Leve, cremosa e especial.</p></div></article>
+  <article class="menuRow"><div><h3>Escarola</h3><p>Fresca, leve e tradicional.</p></div></article>
+  <article class="menuRow"><div><h3>Marguerita Especial</h3><p>Fresca e aromática, com um toque a mais.</p></div></article>
+  <article class="menuRow"><div><h3>Rúcula</h3><p>Fresca e de sabor marcante.</p></div></article>
+  <article class="menuRow"><div><h3>Mediterrânea</h3><p>Leve, colorida e aromática.</p></div></article>
+  <article class="menuRow"><div><h3>Parma &amp; Rúcula</h3><p>Elegante e equilibrada.</p></div></article>
+</div>
+</details>
+</div>
+</section>
 
+<!-- MAR -->
+<section class="menuSection" id="mar">
+<div class="container">
+<details class="menuAccordion" id="acc-mar">
+<summary>
+  <div><div class="kicker">Especialidades do Mar</div><h2>Sabores que vêm do mar</h2><p>Receitas especiais para quem aprecia ingredientes do mar.</p></div>
+  <span class="summaryAction">Ver sabores</span>
+</summary>
+<div class="menuList">
+  <article class="menuRow"><div><h3>Aliche</h3><p>Intensa e tradicional.</p></div></article>
+  <article class="menuRow"><div><h3>Atum</h3><p>Clássica e saborosa.</p></div></article>
+  <article class="menuRow"><div><h3>Bacalhau</h3><p>Elegante e marcante.</p></div></article>
+  <article class="menuRow"><div><h3>Camarão à Baiana</h3><p>Intensa, cremosa e cheia de personalidade.</p></div></article>
+  <article class="menuRow"><div><h3>Camarão à Martinez</h3><p>Uma receita especial com assinatura própria.</p></div></article>
+  <article class="menuRow"><div><h3>Camarão à Moda da Casa</h3><p>Generosa e preparada no estilo Jardins.</p></div></article>
+</div>
+</details>
+</div>
+</section>
 
+<!-- DOCES -->
+<section class="menuSection" id="doces">
+<div class="container">
+<details class="menuAccordion" id="acc-doces">
+<summary>
+  <div><div class="kicker">Pizzas Doces</div><h2>Para terminar com um toque doce</h2><p>Sabores pensados para compartilhar — ou não.</p></div>
+  <span class="summaryAction">Ver sabores</span>
+</summary>
+<div class="menuList">
+  <article class="menuRow"><div><h3>Banana</h3><p>Clássica, aromática e aconchegante.</p></div></article>
+  <article class="menuRow"><div><h3>Beijinho</h3><p>Doce, delicada e cremosa.</p></div></article>
+  <article class="menuRow"><div><h3>Brigadeiro</h3><p>Um clássico irresistível.</p></div></article>
+  <article class="menuRow"><div><h3>Chocolate</h3><p>Simples, cremosa e intensa.</p></div></article>
+  <article class="menuRow"><div><h3>Nutella com Morangos ou Banana</h3><p>Cremosa e indulgente, com duas opções de finalização.</p></div></article>
+  <article class="menuRow"><div><h3>Ouro Branco</h3><p>Cremosa e cheia de textura.</p></div></article>
+  <article class="menuRow"><div><h3>Romeu &amp; Julieta</h3><p>O clássico encontro do doce com o salgado.</p></div></article>
+  <article class="menuRow"><div><h3>Sensação</h3><p>Chocolate e frescor em uma combinação muito querida.</p></div></article>
+  <article class="menuRow"><div><h3>Sonho de Valsa</h3><p>Cremosa, crocante e especial.</p></div></article>
+</div>
+</details>
+</div>
+</section>
 
 </main>
 
 <footer>
-  <div class="container footer">
-    <img src="assets/logo-jardins.png" alt="Pizzaria Jardins">
-    <span>© <span id="year"></span> Pizzaria Jardins • Bragança Paulista/SP</span>
-  </div>
+<div class="container footer">
+  <img src="assets/logo-jardins.png" alt="Pizzaria Jardins">
+  <span>© <span id="year"></span> Pizzaria Jardins • Bragança Paulista/SP</span>
+</div>
 </footer>
 
 <div class="delivery-float">
   <a class="delivery-btn food99" href="https://oia.99app.com/dlp9/0nXZXc" target="_blank" rel="noopener">99Food</a>
   <a class="delivery-btn ifood" href="https://www.ifood.com.br/delivery/braganca-paulista-sp/pizzaria-jardins-centro/deaf6558-8cd7-45d0-8769-4c9a6aba6210" target="_blank" rel="noopener">iFood</a>
   <a class="delivery-btn whatsapp" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M19.11 17.21c-.28-.14-1.65-.81-1.9-.91-.26-.09-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34s1.01 2.72 1.15 2.91c.14.19 1.98 3.02 4.79 4.24.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33zM16.05 4.5c-6.34 0-11.49 5.14-11.49 11.48 0 2.03.53 4.02 1.54 5.77L4.46 27.5l5.89-1.55a11.46 11.46 0 0 0 5.69 1.56h.01c6.33 0 11.48-5.15 11.48-11.49 0-3.07-1.2-5.95-3.37-8.12A11.4 11.4 0 0 0 16.05 4.5zm0 20.96h-.01a9.41 9.41 0 0 1-4.8-1.31l-.34-.2-3.5.92.93-3.41-.22-.35a9.42 9.42 0 1 1 7.94 4.35z"/>
-    </svg>
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.21c-.28-.14-1.65-.81-1.9-.91-.26-.09-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34s1.01 2.72 1.15 2.91c.14.19 1.98 3.02 4.79 4.24.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33zM16.05 4.5c-6.34 0-11.49 5.14-11.49 11.48 0 2.03.53 4.02 1.54 5.77L4.46 27.5l5.89-1.55a11.46 11.46 0 0 0 5.69 1.56h.01c6.33 0 11.48-5.15 11.48-11.49 0-3.07-1.2-5.95-3.37-8.12A11.4 11.4 0 0 0 16.05 4.5zm0 20.96h-.01a9.41 9.41 0 0 1-4.8-1.31l-.34-.2-3.5.92.93-3.41-.22-.35a9.42 9.42 0 1 1 7.94 4.35z"/></svg>
   </a>
 </div>
 
-<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
-
-
-
-
 <script>
-document.querySelectorAll('[data-open]').forEach(function(link){
-  link.addEventListener('click', function(e){
-    var targetId = link.getAttribute('data-open');
-    var details = document.getElementById(targetId);
-    if(details){
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const allAccordions = {
+  queridinhas: document.getElementById("acc-queridinhas"),
+  classicas: document.getElementById("acc-classicas"),
+  especial: document.getElementById("acc-especial"),
+  premium: document.getElementById("acc-premium"),
+  vegetais: document.getElementById("acc-vegetais"),
+  mar: document.getElementById("acc-mar"),
+  doces: document.getElementById("acc-doces")
+};
+
+function openCategory(key, smooth=true){
+  const acc = allAccordions[key];
+  const section = document.getElementById(key);
+  if(!acc || !section) return;
+
+  Object.values(allAccordions).forEach(d => {
+    if(d && d !== acc) d.open = false;
+  });
+  acc.open = true;
+
+  document.querySelectorAll(".catBtn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.target === key);
+  });
+
+  history.replaceState(null, "", "#" + key);
+  section.scrollIntoView({behavior: smooth ? "smooth" : "auto", block:"start"});
+}
+
+document.querySelectorAll(".catBtn").forEach(btn=>{
+  btn.addEventListener("click", ()=>openCategory(btn.dataset.target));
+});
+
+document.querySelectorAll("[data-category]").forEach(link=>{
+  link.addEventListener("click", function(e){
+    const key = this.getAttribute("data-category");
+    if(allAccordions[key]){
       e.preventDefault();
-      details.open = true;
-      var section = details.closest('section');
-      if(section){
-        section.scrollIntoView({behavior:'smooth', block:'start'});
-      }
+      openCategory(key);
     }
   });
 });
-</script>
 
+/* Se a página abrir com #categoria, abre a categoria automaticamente */
+const initial = location.hash.replace("#","");
+if(allAccordions[initial]){
+  openCategory(initial, false);
+}else{
+  document.querySelector('.catBtn[data-target="queridinhas"]').classList.add("active");
+}
+</script>
 </body>
 </html>
