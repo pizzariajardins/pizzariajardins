@@ -1,0 +1,7 @@
+V28
+- Navegação das categorias agora usa links explícitos cardapio.html#categoria.
+- Não depende de JavaScript para o clique; JS apenas abre a categoria indicada no hash.
+- Mediterrânea atualizada: muçarela de búfala, abobrinha no azeite, tomate-cereja, parmesão e manjericão fresco.
+- Brócolis corrigida: sem ricota.
+- Escarola corrigida: sem ricota.
+- Cardápio/Home apontam para cardapio.html#queridinhas.
