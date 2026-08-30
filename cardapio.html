@@ -177,12 +177,44 @@ header,.nav{height:88px}
     padding:21px 20px;
   }
 }
+
+/* V37 — correção real do clique nas categorias
+   O PNG do logo possui área transparente maior que a arte visível.
+   A imagem não pode interceptar cliques fora da área do cabeçalho. */
+.brand img{
+  pointer-events:none!important;
+}
+.brand{
+  z-index:1!important;
+}
+.categoryNav{
+  z-index:100!important;
+}
+
+
+/* V38 — correção definitiva da área invisível do logo */
+.brand{
+  pointer-events:none!important;
+}
+.brand img{
+  pointer-events:none!important;
+}
+.categoryNav,
+.categoryNav .container,
+.categoryNav .catBtn{
+  pointer-events:auto!important;
+}
+.categoryNav{
+  position:sticky!important;
+  z-index:9999!important;
+}
+
 </style>
 </head>
 <body>
 <header>
 <div class="container nav">
-<a class="brand" href="index.html"><img alt="Pizzaria Jardins" src="assets/logo-jardins.png"/></a>
+<div class="brand"><img alt="Pizzaria Jardins" src="assets/logo-jardins.png"/></div>
 <nav class="navlinks">
 <a href="./index.html">Home</a>
 <a href="./cardapio.html#queridinhas">Queridinhas</a>

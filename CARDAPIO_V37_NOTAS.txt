@@ -1,0 +1,15 @@
+V37 — causa real identificada e corrigida
+
+Problema:
+O arquivo logo-jardins.png possui uma área transparente muito maior que a arte visível.
+A imagem absoluta do logo ultrapassava visualmente o cabeçalho e ficava sobre os primeiros
+botões da barra de categorias. Como o logo está dentro de um link para index.html, o clique
+em Clássicas/Seleção Especial era capturado pelo PNG transparente e enviado para a Home.
+
+Correção:
+- .brand img { pointer-events:none!important; }
+- .categoryNav { z-index:100!important; }
+
+Os links das categorias NÃO foram alterados.
+Clássicas continua apontando para #cat-classicas-jardins.
+Seleção Especial continua apontando para #cat-selecao-especial.

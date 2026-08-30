@@ -1,0 +1,11 @@
+V38 — correção da sobreposição nos dois primeiros botões
+
+Causa confirmada pelo comportamento de hover:
+a caixa clicável .brand (link do logo) continuava sobrepondo Queridinhas e Clássicas.
+
+Correção:
+- O logo no cardápio deixou de ser <a href=Home> e virou <div class="brand">.
+- .brand e .brand img usam pointer-events:none.
+- categoryNav recebe z-index:9999 e pointer-events:auto.
+- Home continua acessível pelo link "Home" do cabeçalho.
+- Nenhuma alteração nas categorias, receitas ou visual do cardápio.

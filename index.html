@@ -731,6 +731,38 @@ footer{
   transform:scale(1.13)!important;
 }
 
+
+/* V37 — correção real do clique nas categorias
+   O PNG do logo possui área transparente maior que a arte visível.
+   A imagem não pode interceptar cliques fora da área do cabeçalho. */
+.brand img{
+  pointer-events:none!important;
+}
+.brand{
+  z-index:1!important;
+}
+.categoryNav{
+  z-index:100!important;
+}
+
+
+/* V38 — correção definitiva da área invisível do logo */
+.brand{
+  pointer-events:none!important;
+}
+.brand img{
+  pointer-events:none!important;
+}
+.categoryNav,
+.categoryNav .container,
+.categoryNav .catBtn{
+  pointer-events:auto!important;
+}
+.categoryNav{
+  position:sticky!important;
+  z-index:9999!important;
+}
+
 </style>
 </head>
 <body>
