@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Escolha como pedir na Pizzaria Jardins: WhatsApp, iFood ou 99Food.">
+<title>Pedir agora | Pizzaria Jardins</title>
+<style>
+:root{
+  --bg:#0b0c09;
+  --panel:#151510;
+  --cream:#f6f0e5;
+  --muted:#c9c1b4;
+  --orange:#f28a17;
+  --line:rgba(242,138,23,.22);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 50% 18%,rgba(242,138,23,.12),transparent 28%),
+    #0b0c09;
+  color:var(--cream);
+  font-family:Arial,sans-serif;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1080px,92%);margin:auto}
+header{
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+}
+.top{
+  display:flex;align-items:center;justify-content:space-between;gap:20px
+}
+.logo{width:260px;max-width:45vw}
+.back{
+  padding:11px 17px;border:1px solid var(--line);border-radius:999px;font-weight:800
+}
+main{padding:72px 0 84px}
+.eyebrow{
+  color:var(--orange);text-transform:uppercase;letter-spacing:.2em;
+  font-size:.76rem;font-weight:900;margin-bottom:12px
+}
+h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(3rem,6vw,5.6rem);
+  line-height:.98;letter-spacing:-.04em;max-width:850px
+}
+.intro{
+  color:var(--muted);font-size:1.05rem;line-height:1.65;max-width:670px;margin-top:18px
+}
+.options{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px
+}
+.option{
+  min-height:310px;padding:28px;border-radius:26px;border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,.006)),var(--panel);
+  display:flex;flex-direction:column;justify-content:space-between;
+  transition:transform .2s ease,border-color .2s ease
+}
+.option:hover{transform:translateY(-5px);border-color:rgba(242,138,23,.55)}
+.badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:58px;height:58px;border-radius:18px;font-weight:900;font-size:1rem
+}
+.whatsapp .badge{background:#25d366;color:white}
+.ifood .badge{background:#ea1d2c;color:white}
+.food99 .badge{background:#ffd600;color:#111}
+.option h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:2rem;margin-top:24px
+}
+.option p{color:var(--muted);line-height:1.55;margin-top:9px}
+.go{
+  margin-top:26px;display:flex;align-items:center;justify-content:space-between;
+  font-weight:900;color:var(--orange)
+}
+.note{
+  margin-top:28px;color:#8f887d;font-size:.84rem
+}
+@media(max-width:800px){
+  main{padding-top:45px}
+  .options{grid-template-columns:1fr}
+  .option{min-height:230px}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container top">
+  <a href="./index.html"><img class="logo" src="assets/logo-jardins.png" alt="Pizzaria Jardins"></a>
+  <a class="back" href="./index.html">Voltar para a Home</a>
+</div>
+</header>
+
+<main>
+<div class="container">
+  <div class="eyebrow">Pedir agora</div>
+  <h1>Escolha como sua Jardins chega até você.</h1>
+  <p class="intro">Faça seu pedido diretamente conosco pelo WhatsApp ou escolha uma de nossas lojas parceiras. Você será levado para o canal selecionado.</p>
+
+  <div class="options">
+    <a class="option whatsapp" target="_blank" rel="noopener"
+       href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido.">
+      <div>
+        <span class="badge">WA</span>
+        <h2>WhatsApp</h2>
+        <p>Fale diretamente com a equipe da Jardins para consultar sabores, fazer seu pedido e combinar o atendimento.</p>
+      </div>
+      <div class="go"><span>Pedir pelo WhatsApp</span><span>→</span></div>
+    </a>
+
+    <a class="option ifood" target="_blank" rel="noopener"
+       href="https://www.ifood.com.br/delivery/braganca-paulista-sp/pizzaria-jardins-centro/deaf6558-8cd7-45d0-8769-4c9a6aba6210">
+      <div>
+        <span class="badge">iF</span>
+        <h2>iFood</h2>
+        <p>Abra nossa loja no iFood para conferir disponibilidade, montar seu pedido e acompanhar a entrega pelo aplicativo.</p>
+      </div>
+      <div class="go"><span>Abrir no iFood</span><span>→</span></div>
+    </a>
+
+    <a class="option food99" target="_blank" rel="noopener"
+       href="https://oia.99app.com/dlp9/0nXZXc">
+      <div>
+        <span class="badge">99</span>
+        <h2>99Food</h2>
+        <p>Acesse nossa loja parceira no 99Food e escolha sua pizza diretamente pelo aplicativo.</p>
+      </div>
+      <div class="go"><span>Abrir no 99Food</span><span>→</span></div>
+    </a>
+  </div>
+
+  <p class="note">Os serviços de entrega, disponibilidade e condições de cada plataforma podem variar conforme o aplicativo.</p>
+</div>
+</main>
+</body>
+</html>

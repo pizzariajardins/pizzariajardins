@@ -1,0 +1,8 @@
+V44 — Home
+- Cardápio da V43 preservado sem alterações.
+- Header: removido Pizzas; mantidos Nossa História e Cardápio; Contato -> Localização.
+- Salão & Delivery continua rolando para #atendimento.
+- Galeria criada para 4 fotos; 1 imagem real disponível nesta versão (fachada), 3 slots aguardam fotos do salão.
+- Nossa História: card lateral usa a foto da fachada como fundo.
+- Contato: e-mail pizzariajardins.bp@gmail.com adicionado abaixo do Instagram.
+- Pedir agora: nova página pedir.html com WhatsApp, iFood e 99Food.
