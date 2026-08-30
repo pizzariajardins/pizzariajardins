@@ -1,0 +1,5 @@
+V41
+- Única alteração: alinhamento horizontal da lista Pizzas Premium.
+- Brie, Comandante e Gregoriana passam a iniciar exatamente na mesma margem
+  da Marcopolo e das demais pizzas Premium.
+- Navegação, conteúdo, fotos, Doces e demais categorias preservados da V40.
