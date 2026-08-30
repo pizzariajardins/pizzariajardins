@@ -1,0 +1,8 @@
+V36
+- Mantida exatamente a mesma navegação por âncora das categorias que já funcionam.
+- Alterados somente os identificadores das duas categorias problemáticas:
+  Clássicas -> #cat-classicas-jardins
+  Seleção Especial -> #cat-selecao-especial
+- Premium, Jardins & Vegetais, Mar, Doces e Queridinhas não foram alteradas.
+- Nenhum botão de categoria aponta para index.html.
+- Redirecionadores antigos de Clássicas e Seleção Especial também foram atualizados.
