@@ -1,0 +1,13 @@
+V31 - navegação por URL absoluta e query parameter.
+
+Exemplos:
+https://pizzariajardins.com.br/cardapio.html?categoria=classicas&v=31
+https://pizzariajardins.com.br/cardapio.html?categoria=especial&v=31
+https://pizzariajardins.com.br/cardapio.html?categoria=premium&v=31
+
+Não há onclick nos botões de categorias.
+Não há hash para controlar categorias.
+Não há JavaScript interceptando cliques.
+O JS apenas lê ?categoria= ao carregar e abre o accordion correto.
+
+O parâmetro v=31 ajuda a evitar que o navegador reutilize uma versão antiga em cache.

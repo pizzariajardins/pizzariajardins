@@ -21,7 +21,7 @@ header{position:sticky;top:0;z-index:60;height:118px;background:rgba(11,12,9,.96
 .brand img{position:absolute;left:0;top:50%;width:340px;height:auto;max-width:none;transform:translateY(-50%)}
 .navlinks{display:flex;align-items:center;gap:22px;font:700 .91rem Arial,sans-serif}
 .navlinks a:hover,.navlinks button:hover{color:var(--orange)}
-.categoryHeaderBtn{background:none;border:0;color:var(--cream);font:700 .91rem Arial,sans-serif;cursor:pointer;padding:0}
+.categoryHeaderBtn{color:var(--cream);font:700 .91rem Arial,sans-serif;cursor:pointer;padding:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:999px;border:1px solid transparent;font:700 .93rem Arial,sans-serif;cursor:pointer}
 .primary{background:var(--orange);color:#171007}
 .outline{border-color:var(--orange);color:var(--orange);background:transparent}
@@ -100,10 +100,10 @@ header,.nav{height:88px}
 
 <header>
 <div class="container nav">
-<a class="brand" href="/index.html"><img src="assets/logo-jardins.png" alt="Pizzaria Jardins"></a>
+<a class="brand" href="https://pizzariajardins.com.br/"><img src="assets/logo-jardins.png" alt="Pizzaria Jardins"></a>
 <nav class="navlinks">
-<a href="/index.html">Home</a>
-<button type="button" class="categoryHeaderBtn" onclick="return abrirCategoria('queridinhas');">Queridinhas</button>
+<a href="https://pizzariajardins.com.br/">Home</a>
+<a class="categoryHeaderBtn" href="https://pizzariajardins.com.br/cardapio.html?categoria=queridinhas&v=31">Queridinhas</a>
 <a class="btn primary" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir agora</a>
 </nav>
 </div>
@@ -117,21 +117,21 @@ header,.nav{height:88px}
 <p>Escolha uma categoria e descubra cada sabor. As descrições destacam os ingredientes que definem cada receita, de um jeito mais leve, gastronômico e fácil de escolher.</p>
 <p class="menuNote">Nas pizzas salgadas, nossa base tradicional inclui molho de tomate e as finalizações previstas em cada receita, como orégano e azeitonas chilenas. Para deixar a leitura mais agradável, esses elementos recorrentes não são repetidos em todas as descrições. Nas pizzas doces, todas são preparadas na massa doce especial e levam borda de doce de leite.</p>
 <div class="heroActions">
-<button type="button" class="btn primary" onclick="return abrirCategoria('queridinhas');">Ver as queridinhas</button>
-<a class="btn outline" href="/index.html">Voltar para a Home</a>
+<a class="btn primary" href="https://pizzariajardins.com.br/cardapio.html?categoria=queridinhas&v=31">Ver as queridinhas</a>
+<a class="btn outline" href="https://pizzariajardins.com.br/">Voltar para a Home</a>
 </div>
 </div>
 </section>
 
 <nav class="categoryNav" aria-label="Categorias do cardápio">
 <div class="container">
-<button type="button" class="catBtn" data-target="queridinhas" onclick="return abrirCategoria('queridinhas');">Queridinhas</button>
-<button type="button" class="catBtn" data-target="classicas" onclick="return abrirCategoria('classicas');">Clássicas</button>
-<button type="button" class="catBtn" data-target="especial" onclick="return abrirCategoria('especial');">Seleção Especial</button>
-<button type="button" class="catBtn" data-target="premium" onclick="return abrirCategoria('premium');">Pizzas Premium</button>
-<button type="button" class="catBtn" data-target="vegetais" onclick="return abrirCategoria('vegetais');">Jardins &amp; Vegetais</button>
-<button type="button" class="catBtn" data-target="mar" onclick="return abrirCategoria('mar');">Especialidades do Mar</button>
-<button type="button" class="catBtn" data-target="doces" onclick="return abrirCategoria('doces');">Pizzas Doces</button>
+<a class="catBtn" data-target="queridinhas" href="https://pizzariajardins.com.br/cardapio.html?categoria=queridinhas&v=31">Queridinhas</a>
+<a class="catBtn" data-target="classicas" href="https://pizzariajardins.com.br/cardapio.html?categoria=classicas&v=31">Clássicas</a>
+<a class="catBtn" data-target="especial" href="https://pizzariajardins.com.br/cardapio.html?categoria=especial&v=31">Seleção Especial</a>
+<a class="catBtn" data-target="premium" href="https://pizzariajardins.com.br/cardapio.html?categoria=premium&v=31">Pizzas Premium</a>
+<a class="catBtn" data-target="vegetais" href="https://pizzariajardins.com.br/cardapio.html?categoria=vegetais&v=31">Jardins &amp; Vegetais</a>
+<a class="catBtn" data-target="mar" href="https://pizzariajardins.com.br/cardapio.html?categoria=mar&v=31">Especialidades do Mar</a>
+<a class="catBtn" data-target="doces" href="https://pizzariajardins.com.br/cardapio.html?categoria=doces&v=31">Pizzas Doces</a>
 </div>
 </nav>
 
@@ -353,57 +353,39 @@ header,.nav{height:88px}
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const categoriasCardapio = ["queridinhas","classicas","especial","premium","vegetais","mar","doces"];
+const categorias = ["queridinhas","classicas","especial","premium","vegetais","mar","doces"];
 
-function abrirCategoria(chave){
-  if(!categoriasCardapio.includes(chave)) return false;
+function carregarCategoria(){
+  const params = new URLSearchParams(window.location.search);
+  let atual = params.get("categoria") || "queridinhas";
+  if(!categorias.includes(atual)) atual = "queridinhas";
 
-  categoriasCardapio.forEach(function(k){
-    const detalhe = document.getElementById("acc-" + k);
-    if(detalhe) detalhe.open = (k === chave);
+  categorias.forEach(function(chave){
+    const detalhe = document.getElementById("acc-" + chave);
+    if(detalhe) detalhe.open = (chave === atual);
   });
 
-  document.querySelectorAll(".catBtn").forEach(function(botao){
-    botao.classList.toggle("active", botao.dataset.target === chave);
+  document.querySelectorAll(".catBtn").forEach(function(link){
+    link.classList.toggle("active", link.dataset.target === atual);
   });
 
-  const secao = document.getElementById(chave);
-  if(secao){
+  const secao = document.getElementById(atual);
+  if(secao && atual !== "queridinhas"){
     requestAnimationFrame(function(){
       requestAnimationFrame(function(){
-        const cabecalho = document.querySelector("header");
-        const barra = document.querySelector(".categoryNav");
-        const compensacao =
-          (cabecalho ? cabecalho.offsetHeight : 0) +
-          (barra ? barra.offsetHeight : 0) + 10;
-
-        const destino =
-          secao.getBoundingClientRect().top +
-          window.pageYOffset -
-          compensacao;
-
-        window.scrollTo({
-          top: destino,
-          behavior: "smooth"
-        });
+        const header = document.querySelector("header");
+        const nav = document.querySelector(".categoryNav");
+        const offset =
+          (header ? header.offsetHeight : 0) +
+          (nav ? nav.offsetHeight : 0) + 10;
+        const y = secao.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({top:y, behavior:"auto"});
       });
     });
   }
-
-  // Critical: always prevent navigation.
-  return false;
 }
 
-// Cardápio always opens with Queridinhas when loaded normally.
-window.addEventListener("DOMContentLoaded", function(){
-  categoriasCardapio.forEach(function(k){
-    const detalhe = document.getElementById("acc-" + k);
-    if(detalhe) detalhe.open = (k === "queridinhas");
-  });
-
-  const primeiro = document.querySelector('.catBtn[data-target="queridinhas"]');
-  if(primeiro) primeiro.classList.add("active");
-});
+window.addEventListener("DOMContentLoaded", carregarCategoria);
 </script>
 </body>
 </html>
