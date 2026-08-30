@@ -1,0 +1,7 @@
+V33
+- Botão Queridinhas, dentro do cardápio, aponta para cardapio.html.
+- Todas as páginas individuais das categorias abrem com a lista já expandida.
+- O título da categoria não precisa mais ser clicado.
+- O summary foi desativado para evitar recolher a lista.
+- "Ver sabores" foi ocultado.
+- Home mantém entrada em cardapio.html.
