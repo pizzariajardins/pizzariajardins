@@ -1,0 +1,6 @@
+V42
+- Corrigida a estrutura completa da lista Pizzas Premium.
+- TODOS os sabores Premium agora usam exatamente a mesma estrutura HTML e margem.
+- Marcopolo é a referência de alinhamento.
+- Nenhum item Premium possui recuo interno diferente.
+- Nenhuma alteração em navegação, fotos, textos ou demais categorias.
