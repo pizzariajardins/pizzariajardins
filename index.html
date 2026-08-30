@@ -868,6 +868,34 @@ footer{
   .salonGallery{grid-template-columns:1fr}
 }
 
+
+/* V45 — galeria real do Salão & Delivery */
+.salonPhoto{
+  min-height:0;
+  overflow:hidden;
+  background:#151510;
+  display:flex;
+  flex-direction:column;
+}
+.salonPhoto img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  display:block;
+}
+.salonPhoto figcaption{
+  position:static;
+  padding:16px 16px 18px;
+  border-radius:0;
+  background:transparent;
+  color:#d8d0c4;
+  font:500 .82rem/1.55 Arial,sans-serif;
+  flex:1;
+}
+@media(max-width:560px){
+  .salonPhoto img{height:250px}
+}
+
 </style>
 </head>
 <body>
@@ -1072,21 +1100,21 @@ footer{
       </div>
       <div class="salonGallery">
         <figure class="salonPhoto">
-          <img src="assets/fachada-jardins.jpg" alt="Fachada da Pizzaria Jardins">
-          <figcaption>Nossa casa no Taboão.</figcaption>
+          <img src="assets/salao-jardins-01.jpg" alt="Salão da Pizzaria Jardins">
+          <figcaption>Um salão acolhedor, preparado para receber famílias e amigos com conforto, tranquilidade e o cuidado que faz parte da história da Jardins.</figcaption>
         </figure>
-        <div class="salonPhoto salonPlaceholder">
-          <span>Foto do salão 2</span>
-          <small>pronta para receber sua imagem</small>
-        </div>
-        <div class="salonPhoto salonPlaceholder">
-          <span>Foto do salão 3</span>
-          <small>pronta para receber sua imagem</small>
-        </div>
-        <div class="salonPhoto salonPlaceholder">
-          <span>Foto do salão 4</span>
-          <small>pronta para receber sua imagem</small>
-        </div>
+        <figure class="salonPhoto">
+          <img src="assets/salao-jardins-02.jpg" alt="Adega e seleção de vinhos da Pizzaria Jardins">
+          <figcaption>Detalhes que fazem parte da nossa casa: uma seleção especial de vinhos e um ambiente pensado para tornar cada encontro ainda mais agradável.</figcaption>
+        </figure>
+        <figure class="salonPhoto">
+          <img src="assets/salao-jardins-03.jpg" alt="Forno a lenha da Pizzaria Jardins">
+          <figcaption>O calor do nosso forno traduz uma tradição de mais de 30 anos, com pizzas preparadas com dedicação, ingredientes selecionados e muito sabor.</figcaption>
+        </figure>
+        <figure class="salonPhoto">
+          <img src="assets/salao-jardins-04.jpg" alt="Mesa preparada no salão da Pizzaria Jardins">
+          <figcaption>À mesa, cada detalhe importa. Na Jardins, ambiente acolhedor e atendimento atencioso se unem para transformar seu jantar em uma experiência especial.</figcaption>
+        </figure>
       </div>
     </div>
 </section>

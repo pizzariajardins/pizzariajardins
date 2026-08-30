@@ -1,0 +1,5 @@
+V45 — Salão & Delivery
+- Mantida integralmente a estrutura aprovada da V44.
+- Substituídos os quatro espaços da galeria pelas quatro fotos reais enviadas.
+- Adicionadas descrições gastronômicas/institucionais sob cada imagem.
+- Cardápio e demais páginas não foram alterados.
