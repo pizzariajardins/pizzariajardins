@@ -1,0 +1,10 @@
+V35
+- Corrigido diretamente no HTML real da V34.
+- ZERO tags <details>.
+- ZERO tags <summary>.
+- ZERO 'Saiba mais'.
+- Todas as categorias ficam abertas e visíveis.
+- Botões superiores apontam para ./cardapio.html#categoria.
+- Queridinhas continua com fotos.
+- Nenhum JavaScript controla navegação.
+- Arquivos antigos de categoria apenas redirecionam para a seção correta.

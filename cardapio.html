@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Cardápio oficial da Pizzaria Jardins em Bragança Paulista.">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<meta content="Cardápio oficial da Pizzaria Jardins em Bragança Paulista." name="description"/>
 <title>Cardápio | Pizzaria Jardins</title>
 <style>
 
@@ -43,13 +44,13 @@ header{position:sticky;top:0;z-index:60;height:118px;background:rgba(11,12,9,.96
 
 .menuSection{padding:24px 0;scroll-margin-top:190px}
 .menuAccordion{border:1px solid rgba(242,138,23,.20);border-radius:24px;background:var(--panel);overflow:hidden}
-.menuAccordion summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:25px 28px;background:linear-gradient(90deg,rgba(242,138,23,.07),rgba(8,168,90,.02)),var(--panel)}
-.menuAccordion summary::-webkit-details-marker{display:none}
-.menuAccordion summary h2{font-size:clamp(2rem,3.5vw,3rem);line-height:1.05;margin-bottom:7px}
-.menuAccordion summary p{color:var(--muted);font:500 .9rem/1.5 Arial,sans-serif;max-width:780px}
+
+
+
+
 .summaryAction{flex:0 0 auto;padding:11px 16px;border-radius:999px;border:1px solid rgba(242,138,23,.38);color:var(--orange);font:800 .76rem Arial,sans-serif}
-.menuAccordion[open] .summaryAction::after{content:" ▲"}
-.menuAccordion:not([open]) .summaryAction::after{content:" ▼"}
+
+
 
 .menuList{border-top:1px solid rgba(242,138,23,.18)}
 .menuRow{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.055);background:#11110e}
@@ -93,7 +94,7 @@ header,.nav{height:88px}
 .categoryNav{top:88px}
 .hero{padding:24px 0 22px}
 .photoGrid{grid-template-columns:1fr}
-.menuAccordion summary{align-items:flex-start;flex-direction:column;padding:21px 20px}
+
 .menuRow{padding:15px 18px}
 }
 
@@ -102,10 +103,10 @@ header,.nav{height:88px}
 .categoryNav .catBtn{text-decoration:none}
 .categoryNav .catBtn.active{background:var(--orange);color:#171007;border-color:var(--orange)}
 .menuSection{padding-top:24px}
-.menuAccordion summary{cursor:default}
+
 .menuAccordion .summaryAction{display:none}
 
-.menuAccordion summary{pointer-events:none;cursor:default!important}
+
 .menuAccordion .summaryAction{display:none!important}
 
 
@@ -134,21 +135,61 @@ header,.nav{height:88px}
 @media(max-width:650px){
   .categoryHead{align-items:flex-start;flex-direction:column;padding:21px 20px}
 }
+
+
+/* V35 — cardápio estático e sem accordions */
+.menuAccordion{
+  display:block!important;
+  border:1px solid rgba(242,138,23,.20);
+  border-radius:24px;
+  background:var(--panel);
+  overflow:hidden;
+}
+.categoryHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:25px 28px;
+  background:linear-gradient(90deg,rgba(242,138,23,.07),rgba(8,168,90,.02)),var(--panel);
+}
+.categoryHead h2{
+  font-size:clamp(2rem,3.5vw,3rem);
+  line-height:1.05;
+  margin-bottom:7px;
+}
+.categoryHead p{
+  color:var(--muted);
+  font:500 .9rem/1.5 Arial,sans-serif;
+  max-width:780px;
+}
+.menuList,.photoGrid{
+  display:grid!important;
+}
+.menuSection{
+  display:block!important;
+  scroll-margin-top:190px;
+}
+@media(max-width:650px){
+  .categoryHead{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:21px 20px;
+  }
+}
 </style>
 </head>
 <body>
-
 <header>
 <div class="container nav">
-<a class="brand" href="index.html"><img src="assets/logo-jardins.png" alt="Pizzaria Jardins"></a>
+<a class="brand" href="index.html"><img alt="Pizzaria Jardins" src="assets/logo-jardins.png"/></a>
 <nav class="navlinks">
-<a href="index.html">Home</a>
-<a href="cardapio.html#queridinhas">Queridinhas</a>
-<a class="btn primary" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir agora</a>
+<a href="./index.html">Home</a>
+<a href="./cardapio.html#queridinhas">Queridinhas</a>
+<a class="btn primary" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." rel="noopener" target="_blank">Pedir agora</a>
 </nav>
 </div>
 </header>
-
 <main>
 <section class="hero">
 <div class="container">
@@ -157,24 +198,22 @@ header,.nav{height:88px}
 <p>Escolha uma categoria e descubra cada sabor. Todas as listas ficam disponíveis na mesma página para uma navegação simples e rápida.</p>
 <p class="menuNote">Nas pizzas salgadas, ingredientes recorrentes da casa — como molho de tomate, orégano e azeitonas chilenas — não são repetidos mecanicamente em todas as descrições. Nas pizzas doces, todas são preparadas na massa doce especial e levam borda de doce de leite.</p>
 <div class="heroActions">
-<a class="btn primary" href="#queridinhas">Ver as queridinhas</a>
-<a class="btn outline" href="index.html">Voltar para a Home</a>
+<a class="btn primary" href="./cardapio.html#queridinhas">Ver as queridinhas</a>
+<a class="btn outline" href="./index.html">Voltar para a Home</a>
 </div>
 </div>
 </section>
-
-<nav class="categoryNav" aria-label="Categorias do cardápio">
+<nav aria-label="Categorias do cardápio" class="categoryNav">
 <div class="container">
-<a class="catBtn" href="#queridinhas">Queridinhas</a>
-<a class="catBtn" href="#classicas">Clássicas</a>
-<a class="catBtn" href="#especial">Seleção Especial</a>
-<a class="catBtn" href="#premium">Pizzas Premium</a>
-<a class="catBtn" href="#vegetais">Jardins &amp; Vegetais</a>
-<a class="catBtn" href="#mar">Especialidades do Mar</a>
-<a class="catBtn" href="#doces">Pizzas Doces</a>
+<a class="catBtn" href="./cardapio.html#queridinhas">Queridinhas</a>
+<a class="catBtn" href="./cardapio.html#classicas">Clássicas</a>
+<a class="catBtn" href="./cardapio.html#especial">Seleção Especial</a>
+<a class="catBtn" href="./cardapio.html#premium">Pizzas Premium</a>
+<a class="catBtn" href="./cardapio.html#vegetais">Jardins &amp; Vegetais</a>
+<a class="catBtn" href="./cardapio.html#mar">Especialidades do Mar</a>
+<a class="catBtn" href="./cardapio.html#doces">Pizzas Doces</a>
 </div>
 </nav>
-
 <section class="menuSection" id="queridinhas">
 <div class="container">
 <div class="menuAccordion">
@@ -184,48 +223,46 @@ header,.nav{height:88px}
 <h2>Os sabores que viraram tradição</h2>
 <p>As campeãs de preferência da Jardins, agora em destaque com fotos.</p>
 </div>
-
 </div>
 <div class="photoGrid"><article class="pizzaCard">
-<div class="pizzaVisual"><img src="assets/calabresa.jpg" alt="Pizza Calabresa"></div>
+<div class="pizzaVisual"><img alt="Pizza Calabresa" src="assets/calabresa.jpg"/></div>
 <div class="pizzaCardBody"><h3>Calabresa</h3><p>Calabresa bem dourada e cebola em uma combinação clássica, intensa e cheia de personalidade.</p></div>
 </article>
 <article class="pizzaCard">
-<div class="pizzaVisual"><img src="assets/mucarela.jpg" alt="Pizza Muçarela"></div>
+<div class="pizzaVisual"><img alt="Pizza Muçarela" src="assets/mucarela.jpg"/></div>
 <div class="pizzaCardBody"><h3>Muçarela</h3><p>Muçarela generosa e bem derretida, o clássico absoluto para quem valoriza simplicidade e sabor.</p></div>
 </article>
 <article class="pizzaCard">
-<div class="pizzaVisual"><img src="assets/paola.jpg" alt="Pizza Paola"></div>
+<div class="pizzaVisual"><img alt="Pizza Paola" src="assets/paola.jpg"/></div>
 <div class="pizzaCardBody"><h3>Paola</h3><p>Presunto, calabresa e bacon com muçarela, Catupiry e parmesão — uma combinação farta e marcante, com assinatura Jardins.</p></div>
 </article>
 <article class="pizzaCard">
-<div class="pizzaVisual"><img src="assets/portuguesa.png" alt="Pizza Portuguesa"></div>
+<div class="pizzaVisual"><img alt="Pizza Portuguesa" src="assets/portuguesa.png"/></div>
 <div class="pizzaCardBody"><h3>Portuguesa</h3><p>Presunto, muçarela, cebola e ovos em uma receita tradicional, generosa e equilibrada.</p></div>
 </article>
 <article class="pizzaCard">
-<div class="pizzaVisual"><img src="assets/marguerita.jpg" alt="Pizza Marguerita"></div>
+<div class="pizzaVisual"><img alt="Pizza Marguerita" src="assets/marguerita.jpg"/></div>
 <div class="pizzaCardBody"><h3>Marguerita</h3><p>Muçarela, parmesão, tomate fresco e manjericão em uma combinação aromática, leve e atemporal.</p></div>
 </article>
 <article class="pizzaCard">
-<div class="pizzaVisual"><img src="assets/frango-catupiry.png" alt="Pizza Frango com Catupiry"></div>
+<div class="pizzaVisual"><img alt="Pizza Frango com Catupiry" src="assets/frango-catupiry.png"/></div>
 <div class="pizzaCardBody"><h3>Frango com Catupiry</h3><p>Frango delicadamente temperado envolvido pela cremosidade inconfundível do Catupiry.</p></div>
 </article>
 <article class="pizzaCard">
-<div class="pizzaVisual"><img src="assets/quatro-queijos.png" alt="Pizza Quatro Queijos"></div>
+<div class="pizzaVisual"><img alt="Pizza Quatro Queijos" src="assets/quatro-queijos.png"/></div>
 <div class="pizzaCardBody"><h3>Quatro Queijos</h3><p>Catupiry, provolone, gorgonzola e muçarela em uma mistura intensa, cremosa e irresistível.</p></div>
 </article></div>
 </div>
 </div>
 </section><section class="menuSection" id="classicas">
 <div class="container">
-<details class="menuAccordion" id="acc-classicas" >
+<div class="menuAccordion" id="acc-classicas">
 <div class="categoryHead">
 <div>
 <div class="kicker">Clássicas da Jardins</div>
 <h2>Sabores que atravessam gerações</h2>
 <p>Receitas tradicionais que fazem parte da história da casa.</p>
 </div>
-
 </div>
 <div class="menuList"><article class="menuRow"><div><h3>Alho</h3><p>Muçarela, cebola, alho dourado no azeite e parmesão, formando uma pizza aromática e cheia de personalidade.</p></div></article>
 <article class="menuRow"><div><h3>Alvorada</h3><p>Atum, palmito e ovos cobertos por muçarela, com cebola trazendo equilíbrio e frescor à combinação.</p></div></article>
@@ -245,18 +282,17 @@ header,.nav{height:88px}
 <article class="menuRow"><div><h3>Pizzaiolo</h3><p>Presunto, milho, Catupiry, creme de leite e muçarela em uma receita rica, cremosa e reconfortante.</p></div></article>
 <article class="menuRow"><div><h3>Toscana</h3><p>Linguiça toscana defumada e moída com muçarela em uma pizza rústica e cheia de sabor.</p></div></article>
 <article class="menuRow"><div><h3>Três Queijos</h3><p>Catupiry, provolone e muçarela em uma combinação cremosa, equilibrada e envolvente.</p></div></article></div>
-</div>
-</div>
+</div></div>
+
 </section><section class="menuSection" id="especial">
 <div class="container">
-<details class="menuAccordion" id="acc-especial" >
+<div class="menuAccordion" id="acc-especial">
 <div class="categoryHead">
 <div>
 <div class="kicker">Seleção Especial</div>
 <h2>Sabores com um toque a mais</h2>
 <p>Combinações especiais, cremosas e marcantes.</p>
 </div>
-
 </div>
 <div class="menuList"><article class="menuRow"><div><h3>Baiacatu</h3><p>Calabresa moída, Catupiry, cebola e bacon com um toque de Tabasco, criando uma pizza intensa e cheia de personalidade.</p></div></article>
 <article class="menuRow"><div><h3>Caipira</h3><p>Frango, milho, Catupiry e bacon em uma combinação generosa, cremosa e muito reconfortante.</p></div></article>
@@ -274,18 +310,17 @@ header,.nav{height:88px}
 <article class="menuRow"><div><h3>Típica Bragantina</h3><p>Linguiça típica bragantina, muçarela, cebola e tomate seco — uma homenagem saborosa à identidade da cidade.</p></div></article>
 <article class="menuRow"><div><h3>Especial da Casa</h3><p>Calabresa moída, pimentões, champignon, Catupiry, muçarela e cebola em uma combinação farta e cheia de personalidade.</p></div></article>
 <article class="menuRow"><div><h3>Peperoni</h3><p>Pepperoni e muçarela em uma pizza intensa, levemente picante e irresistivelmente aromática.</p></div></article></div>
-</div>
-</div>
+</div></div>
+
 </section><section class="menuSection" id="premium">
 <div class="container">
-<details class="menuAccordion" id="acc-premium" >
+<div class="menuAccordion" id="acc-premium">
 <div class="categoryHead">
 <div>
 <div class="kicker">Pizzas Premium</div>
 <h2>Ingredientes especiais, experiências marcantes</h2>
 <p>Ingredientes de maior valor agregado em receitas sofisticadas.</p>
 </div>
-
 </div>
 <div class="menuList"><article class="menuRow"><div><h3>Marcopolo</h3><p>Catupiry, tomate seco, champignon e palmito em uma combinação cremosa, elegante e cheia de textura.</p></div></article>
 <article class="menuRow"><div><h3>Mix de Cogumelos</h3><p>Cogumelo Paris, shitake e shimeji salteados na manteiga, com cebolas ao vinho tinto, muçarela e manjericão fresco.</p></div></article>
@@ -299,18 +334,17 @@ header,.nav{height:88px}
 <article class="menuRow"><div><h3>Parma</h3><p>Presunto Parma e muçarela de búfala em uma combinação minimalista, delicada e elegante.</p></div></article>
 <article class="menuRow"><div><h3>Pama Divina</h3><p>Muçarela, Brie e presunto Parma finalizados com fios de mel e delicados toques de geleia de figo ou damasco.</p></div></article>
 <article class="menuRow"><div><h3>Especialíssima</h3><p>Frango defumado, Catupiry, ricota, muçarela, tomate e bacon em uma combinação completa, cremosa e muito especial.</p></div></article></div>
-</div>
-</div>
+</div></div>
+
 </section><section class="menuSection" id="vegetais">
 <div class="container">
-<details class="menuAccordion" id="acc-vegetais" >
+<div class="menuAccordion" id="acc-vegetais">
 <div class="categoryHead">
 <div>
 <div class="kicker">Jardins &amp; Vegetais</div>
 <h2>Leves, frescas e cheias de sabor</h2>
 <p>Receitas que valorizam vegetais, frescor e equilíbrio.</p>
 </div>
-
 </div>
 <div class="menuList"><article class="menuRow"><div><h3>Abobrinha</h3><p>Abobrinha refogada no azeite com muçarela e parmesão em uma pizza leve, aromática e delicada.</p></div></article>
 <article class="menuRow"><div><h3>Alho Poró</h3><p>Alho-poró e muçarela em uma combinação suave, aromática e elegante.</p></div></article>
@@ -322,18 +356,17 @@ header,.nav{height:88px}
 <article class="menuRow"><div><h3>Rúcula</h3><p>Muçarela, rúcula e tomate seco em uma combinação fresca, aromática e de sabor marcante.</p></div></article>
 <article class="menuRow"><div><h3>Mediterrânea</h3><p>Muçarela de búfala, abobrinha preparada no azeite, tomate-cereja, parmesão e manjericão fresco em uma combinação leve, aromática e cheia de frescor.</p></div></article>
 <article class="menuRow"><div><h3>Parma &amp; Rúcula</h3><p>Muçarela de búfala, corações de alcachofra, presunto Parma e rúcula em uma combinação fresca, elegante e sofisticada.</p></div></article></div>
-</div>
-</div>
+</div></div>
+
 </section><section class="menuSection" id="mar">
 <div class="container">
-<details class="menuAccordion" id="acc-mar" >
+<div class="menuAccordion" id="acc-mar">
 <div class="categoryHead">
 <div>
 <div class="kicker">Especialidades do Mar</div>
 <h2>Sabores que vêm do mar</h2>
 <p>Combinações especiais para quem aprecia sabores do mar.</p>
 </div>
-
 </div>
 <div class="menuList"><article class="menuRow"><div><h3>Aliche</h3><p>Muçarela, anchovas peruanas e parmesão em uma combinação intensa, salgada e muito tradicional.</p></div></article>
 <article class="menuRow"><div><h3>Atum</h3><p>Atum sólido, cebola e parmesão em uma pizza clássica, marcante e equilibrada.</p></div></article>
@@ -341,18 +374,17 @@ header,.nav{height:88px}
 <article class="menuRow"><div><h3>Camarão à Baiana</h3><p>Camarão rosa à baiana, muçarela e Catupiry em uma combinação cremosa, intensa e cheia de sabor.</p></div></article>
 <article class="menuRow"><div><h3>Camarão à Martinez</h3><p>Camarão rosa puxado no azeite com muçarela, champignon, palmito e Catupiry em uma receita sofisticada e generosa.</p></div></article>
 <article class="menuRow"><div><h3>Camarão à Moda da Casa</h3><p>Camarão rosa puxado no azeite, muçarela de búfala, pimentões coloridos e cebola em uma combinação leve, elegante e aromática.</p></div></article></div>
-</div>
-</div>
+</div></div>
+
 </section><section class="menuSection" id="doces">
 <div class="container">
-<details class="menuAccordion" id="acc-doces" >
+<div class="menuAccordion" id="acc-doces">
 <div class="categoryHead">
 <div>
 <div class="kicker">Pizzas Doces</div>
 <h2>Para terminar com um toque doce</h2>
 <p>Todas são preparadas na massa doce especial e levam borda de doce de leite.</p>
 </div>
-
 </div>
 <div class="menuList"><article class="menuRow"><div><h3>Banana</h3><p>Banana com açúcar e canela sobre uma base cremosa de muçarela e creme de leite.</p></div></article>
 <article class="menuRow"><div><h3>Beijinho</h3><p>Coco ralado, leite condensado e chocolate branco sobre uma base cremosa e delicada.</p></div></article>
@@ -363,26 +395,22 @@ header,.nav{height:88px}
 <article class="menuRow"><div><h3>Romeu &amp; Julieta</h3><p>Muçarela e goiabada cremosa em um dos encontros mais clássicos entre doce e salgado.</p></div></article>
 <article class="menuRow"><div><h3>Sensação</h3><p>Chocolate nobre blend com morangos e granulado, combinando cremosidade, frescor e textura.</p></div></article>
 <article class="menuRow"><div><h3>Sonho de Valsa</h3><p>Chocolate nobre blend com pedaços de bombom Sonho de Valsa, em uma combinação cremosa e crocante.</p></div></article></div>
-</div>
-</div>
+</div></div>
+
 </section>
-
 </main>
-
 <footer>
 <div class="container footer">
-<img src="assets/logo-jardins.png" alt="Pizzaria Jardins">
+<img alt="Pizzaria Jardins" src="assets/logo-jardins.png"/>
 <span>© 2026 Pizzaria Jardins • Bragança Paulista/SP</span>
 </div>
 </footer>
-
 <div class="delivery-float">
-<a class="delivery-btn food99" href="https://oia.99app.com/dlp9/0nXZXc" target="_blank" rel="noopener">99Food</a>
-<a class="delivery-btn ifood" href="https://www.ifood.com.br/delivery/braganca-paulista-sp/pizzaria-jardins-centro/deaf6558-8cd7-45d0-8769-4c9a6aba6210" target="_blank" rel="noopener">iFood</a>
-<a class="delivery-btn whatsapp" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener" aria-label="WhatsApp">
-<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.21c-.28-.14-1.65-.81-1.9-.91-.26-.09-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34s1.01 2.72 1.15 2.91c.14.19 1.98 3.02 4.79 4.24.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33zM16.05 4.5c-6.34 0-11.49 5.14-11.49 11.48 0 2.03.53 4.02 1.54 5.77L4.46 27.5l5.89-1.55a11.46 11.46 0 0 0 5.69 1.56h.01c6.33 0 11.48-5.15 11.48-11.49 0-3.07-1.2-5.95-3.37-8.12A11.4 11.4 0 0 0 16.05 4.5zm0 20.96h-.01a9.41 9.41 0 0 1-4.8-1.31l-.34-.2-3.5.92.93-3.41-.22-.35a9.42 9.42 0 1 1 7.94 4.35z"/></svg>
+<a class="delivery-btn food99" href="https://oia.99app.com/dlp9/0nXZXc" rel="noopener" target="_blank">99Food</a>
+<a class="delivery-btn ifood" href="https://www.ifood.com.br/delivery/braganca-paulista-sp/pizzaria-jardins-centro/deaf6558-8cd7-45d0-8769-4c9a6aba6210" rel="noopener" target="_blank">iFood</a>
+<a aria-label="WhatsApp" class="delivery-btn whatsapp" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." rel="noopener" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 32 32"><path d="M19.11 17.21c-.28-.14-1.65-.81-1.9-.91-.26-.09-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.12.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34s1.01 2.72 1.15 2.91c.14.19 1.98 3.02 4.79 4.24.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33zM16.05 4.5c-6.34 0-11.49 5.14-11.49 11.48 0 2.03.53 4.02 1.54 5.77L4.46 27.5l5.89-1.55a11.46 11.46 0 0 0 5.69 1.56h.01c6.33 0 11.48-5.15 11.48-11.49 0-3.07-1.2-5.95-3.37-8.12A11.4 11.4 0 0 0 16.05 4.5zm0 20.96h-.01a9.41 9.41 0 0 1-4.8-1.31l-.34-.2-3.5.92.93-3.41-.22-.35a9.42 9.42 0 1 1 7.94 4.35z"></path></svg>
 </a>
 </div>
-
 </body>
 </html>
