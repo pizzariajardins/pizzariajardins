@@ -87,7 +87,7 @@ header{
 .catBtn:hover,.catBtn.active{background:var(--orange);color:#171007;border-color:var(--orange)}
 
 /* Categorias */
-.menuSection{padding:24px 0}
+.menuSection{padding:24px 0;scroll-margin-top:190px}
 .menuAccordion{
   border:1px solid rgba(242,138,23,.20);
   border-radius:24px;background:var(--panel);overflow:hidden
@@ -121,7 +121,7 @@ header{
 .menuRow:last-child{border-bottom:0}
 .menuRow:hover{background:#16140f}
 .menuRow h3{font-size:1.12rem;margin-bottom:3px}
-.menuRow p{color:var(--muted);font:500 .86rem/1.45 Arial,sans-serif;max-width:920px}
+.menuRow p{color:var(--muted);font:500 .90rem/1.55 Arial,sans-serif;max-width:1000px}
 
 /* Queridinhas com fotos */
 .photoGrid{
@@ -221,181 +221,178 @@ footer{
 </nav>
 
 <!-- QUERIDINHAS -->
+
 <section class="menuSection" id="queridinhas">
 <div class="container">
 <details class="menuAccordion" id="acc-queridinhas" open>
 <summary>
-  <div>
-    <div class="kicker">As Queridinhas da Jardins</div>
-    <h2>Os sabores que viraram tradição</h2>
-    <p>As pizzas mais queridas da casa, reunidas em uma seleção especial.</p>
-  </div>
+  <div><div class="kicker">As Queridinhas da Jardins</div><h2>Os sabores que viraram tradição</h2>
+  <p>Uma seleção das pizzas mais queridas da casa.</p></div>
   <span class="summaryAction">Ver sabores</span>
 </summary>
-
-<div class="photoGrid">
-  <article class="pizzaCard"><img src="assets/calabresa.jpg" alt="Calabresa"><div class="pizzaCardBody"><h3>Calabresa</h3><p>Clássica, marcante e sempre entre as mais pedidas.</p></div></article>
-  <article class="pizzaCard"><img src="assets/mucarela.jpg" alt="Muçarela"><div class="pizzaCardBody"><h3>Muçarela</h3><p>Simples, cremosa e inesquecível.</p></div></article>
-  <article class="pizzaCard"><img src="assets/paola.jpg" alt="Paola"><div class="pizzaCardBody"><h3>Paola</h3><p>Uma receita de assinatura da Jardins.</p></div></article>
-  <article class="pizzaCard"><img src="assets/portuguesa.png" alt="Portuguesa"><div class="pizzaCardBody"><h3>Portuguesa</h3><p>Generosa e cheia de sabor.</p></div></article>
-  <article class="pizzaCard"><img src="assets/marguerita.jpg" alt="Marguerita"><div class="pizzaCardBody"><h3>Marguerita</h3><p>Fresca, aromática e equilibrada.</p></div></article>
-  <article class="pizzaCard"><img src="assets/frango-catupiry.png" alt="Frango com Catupiry"><div class="pizzaCardBody"><h3>Frango com Catupiry</h3><p>Cremosa e irresistível.</p></div></article>
-  <article class="pizzaCard"><div class="noPhoto">Foto em breve</div><div class="pizzaCardBody"><h3>Quatro Queijos</h3><p>Intensa, cremosa e perfeita para amantes de queijo.</p></div></article>
+<div class="menuList">
+<article class="menuRow"><div><h3>Calabresa</h3><p>Calabresa bem dourada com cebola, molho de tomate, orégano e as tradicionais azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Muçarela</h3><p>Muçarela derretida sobre nosso molho de tomate, finalizada com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Paola</h3><p>Muçarela, presunto, calabresa, bacon e delicadas porções de Catupiry, com parmesão, molho de tomate, orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Portuguesa</h3><p>Muçarela e presunto com cebola e ovos, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Marguerita</h3><p>Muçarela e parmesão com rodelas de tomate e manjericão fresco, sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Frango com Catupiry</h3><p>Frango macio com a cremosidade do Catupiry, sobre molho de tomate, finalizado com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Quatro Queijos</h3><p>Uma combinação cremosa de Catupiry, provolone, gorgonzola e muçarela, sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
 </div>
 </details>
 </div>
 </section>
 
-<!-- CLÁSSICAS -->
 <section class="menuSection" id="classicas">
 <div class="container">
-<details class="menuAccordion" id="acc-classicas">
+<details class="menuAccordion" id="acc-classicas" >
 <summary>
-  <div><div class="kicker">Clássicas da Jardins</div><h2>Sabores que atravessam gerações</h2><p>Receitas tradicionais da casa em uma lista rápida e fácil de consultar.</p></div>
+  <div><div class="kicker">Clássicas da Jardins</div><h2>Sabores que atravessam gerações</h2>
+  <p>Clique para consultar todos os sabores e suas combinações.</p></div>
   <span class="summaryAction">Ver sabores</span>
 </summary>
 <div class="menuList">
-  <article class="menuRow"><div><h3>Alho</h3><p>Marcante e aromática.</p></div></article>
-  <article class="menuRow"><div><h3>Alvorada</h3><p>Delicada, equilibrada e acolhedora.</p></div></article>
-  <article class="menuRow"><div><h3>Ao Forno</h3><p>Envolvente e cheia de personalidade.</p></div></article>
-  <article class="menuRow"><div><h3>Bacon</h3><p>Defumada, crocante e irresistível.</p></div></article>
-  <article class="menuRow"><div><h3>Baiana</h3><p>Intensa e bem temperada.</p></div></article>
-  <article class="menuRow"><div><h3>Bauru</h3><p>Um clássico reconfortante.</p></div></article>
-  <article class="menuRow"><div><h3>Bragança</h3><p>Uma receita com identidade da casa.</p></div></article>
-  <article class="menuRow"><div><h3>Brasileirinha</h3><p>Generosa, colorida e cheia de sabor.</p></div></article>
-  <article class="menuRow"><div><h3>Brócolis</h3><p>Leve, cremosa e equilibrada.</p></div></article>
-  <article class="menuRow"><div><h3>Catupyrela</h3><p>Extremamente cremosa e suave.</p></div></article>
-  <article class="menuRow"><div><h3>Gorgonzola</h3><p>Elegante, intensa e marcante.</p></div></article>
-  <article class="menuRow"><div><h3>Lombo Canadense</h3><p>Delicada e muito equilibrada.</p></div></article>
-  <article class="menuRow"><div><h3>Milho</h3><p>Levemente adocicada e cremosa.</p></div></article>
-  <article class="menuRow"><div><h3>Napolitana</h3><p>Clássica, aromática e fresca.</p></div></article>
-  <article class="menuRow"><div><h3>Palmito</h3><p>Suave, cremosa e elegante.</p></div></article>
-  <article class="menuRow"><div><h3>Pizzaiolo</h3><p>Tradicional e bem temperada.</p></div></article>
-  <article class="menuRow"><div><h3>Toscana</h3><p>Rústica e saborosa.</p></div></article>
-  <article class="menuRow"><div><h3>Três Queijos</h3><p>Cremosa e envolvente.</p></div></article>
+<article class="menuRow"><div><h3>Alho</h3><p>Muçarela, cebola e alho dourado no azeite, com parmesão, molho de tomate, orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Alvorada</h3><p>Atum sólido, palmito e ovos sob uma camada de muçarela, com cebola, molho de tomate, orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Ao Forno</h3><p>Catupiry cremoso com rodelas de tomate e champignon, finalizado com parmesão, molho de tomate, orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Bacon</h3><p>Muçarela e bacon com parmesão, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Baiana</h3><p>Calabresa moída, muçarela, cebola e bacon, sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Bauru</h3><p>Presunto e muçarela com rodelas de tomate, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Bragança</h3><p>Carne moída temperada com Catupiry, cebola e ovos, sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Brasileirinha</h3><p>Calabresa e cebola cobertas com muçarela, sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Brócolis</h3><p>Brócolis, ricota, muçarela e bacon, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Catupyrela</h3><p>O encontro cremoso de Catupiry e muçarela sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Gorgonzola</h3><p>Gorgonzola e muçarela derretidos sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Lombo Canadense</h3><p>Lombo canadense com Catupiry cremoso, sobre molho de tomate, finalizado com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Milho</h3><p>Muçarela, milho e bacon sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Napolitana</h3><p>Muçarela, rodelas de tomate e parmesão sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Palmito</h3><p>Palmito, muçarela e ovos sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Pizzaiolo</h3><p>Presunto, milho, Catupiry, creme de leite e muçarela sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Toscana</h3><p>Linguiça toscana defumada e moída com muçarela, sobre molho de tomate, finalizada com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Três Queijos</h3><p>Catupiry, provolone e muçarela sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
 </div>
 </details>
 </div>
 </section>
 
-<!-- SELEÇÃO ESPECIAL -->
 <section class="menuSection" id="especial">
 <div class="container">
-<details class="menuAccordion" id="acc-especial">
+<details class="menuAccordion" id="acc-especial" >
 <summary>
-  <div><div class="kicker">Seleção Especial</div><h2>Sabores com um toque a mais</h2><p>Receitas especiais e cheias de personalidade.</p></div>
+  <div><div class="kicker">Seleção Especial</div><h2>Sabores com um toque a mais</h2>
+  <p>Clique para consultar todos os sabores e suas combinações.</p></div>
   <span class="summaryAction">Ver sabores</span>
 </summary>
 <div class="menuList">
-  <article class="menuRow"><div><h3>Baiacatu</h3><p>Intensa e cheia de personalidade.</p></div></article>
-  <article class="menuRow"><div><h3>Caipira</h3><p>Generosa e acolhedora.</p></div></article>
-  <article class="menuRow"><div><h3>Calábria</h3><p>Marcante e aromática.</p></div></article>
-  <article class="menuRow"><div><h3>Carijó</h3><p>Cheia de sabor e textura.</p></div></article>
-  <article class="menuRow"><div><h3>Catupiry Original</h3><p>Cremosa e inconfundível.</p></div></article>
-  <article class="menuRow"><div><h3>Da Sogra</h3><p>Generosa e surpreendente.</p></div></article>
-  <article class="menuRow"><div><h3>Escarola do Fernando</h3><p>Uma receita especial que faz parte da história da Jardins.</p></div></article>
-  <article class="menuRow"><div><h3>Francesa</h3><p>Elegante e equilibrada.</p></div></article>
-  <article class="menuRow"><div><h3>Light</h3><p>Leve sem abrir mão do sabor.</p></div></article>
-  <article class="menuRow"><div><h3>Moda do Chefe</h3><p>Uma combinação criada para surpreender.</p></div></article>
-  <article class="menuRow"><div><h3>Shimeji</h3><p>Delicada, aromática e contemporânea.</p></div></article>
-  <article class="menuRow"><div><h3>Siciliana</h3><p>Inspirada em sabores italianos intensos.</p></div></article>
-  <article class="menuRow"><div><h3>Strogonoff de Mignon</h3><p>Cremosa, sofisticada e muito saborosa.</p></div></article>
-  <article class="menuRow"><div><h3>Típica Bragantina</h3><p>Uma homenagem aos sabores da nossa cidade.</p></div></article>
-  <article class="menuRow"><div><h3>Especial da Casa</h3><p>Uma combinação com a assinatura Jardins.</p></div></article>
-  <article class="menuRow"><div><h3>Peperoni</h3><p>Marcante, aromática e irresistível.</p></div></article>
+<article class="menuRow"><div><h3>Baiacatu</h3><p>Calabresa moída, Catupiry, cebola e bacon com um toque de Tabasco, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Caipira</h3><p>Frango, milho, Catupiry e bacon sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Calábria</h3><p>Calabresa e cebola cobertas com Catupiry, com manjericão fresco, molho de tomate, orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Carijó</h3><p>Frango, Catupiry, cebola e bacon sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Catupiry Original</h3><p>A cremosidade do Catupiry sobre molho de tomate, finalizada com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Da Sogra</h3><p>Palmito, muçarela e generosas porções de Catupiry, sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Escarola do Fernando</h3><p>Escarola, muçarela, calabresa e cebola com parmesão, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Francesa</h3><p>Lombo canadense, ovos, Catupiry e muçarela sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Light</h3><p>Muçarela de búfala, peito de peru, rodelas de tomate e ricota sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Moda do Chefe</h3><p>Palmito, atum, tomate seco, muçarela e ricota, com alho, parmesão e cebola, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Shimeji</h3><p>Shimeji puxado no vinho branco com Catupiry e tomate picado, sobre molho de tomate, finalizado com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Siciliana</h3><p>Ervilha, palmito, presunto, ovos e cebola cobertos com muçarela, sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Strogonoff de Mignon</h3><p>Filé mignon ao molho especial com Catupiry e batata palha, sobre molho de tomate, finalizado com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Típica Bragantina</h3><p>Linguiça típica bragantina, muçarela, cebola e tomate seco, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Especial da Casa</h3><p>Calabresa moída, pimentões, champignon, Catupiry, muçarela e cebola, sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Peperoni</h3><p>Pepperoni e muçarela sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
 </div>
 </details>
 </div>
 </section>
 
-<!-- PREMIUM -->
 <section class="menuSection" id="premium">
 <div class="container">
-<details class="menuAccordion" id="acc-premium">
+<details class="menuAccordion" id="acc-premium" >
 <summary>
-  <div><div class="kicker">Pizzas Premium</div><h2>Ingredientes especiais, experiências marcantes</h2><p>Receitas elaboradas para quem quer algo ainda mais especial.</p></div>
+  <div><div class="kicker">Pizzas Premium</div><h2>Ingredientes especiais, experiências marcantes</h2>
+  <p>Clique para consultar todos os sabores e suas combinações.</p></div>
   <span class="summaryAction">Ver sabores</span>
 </summary>
 <div class="menuList">
-  <article class="menuRow"><div><h3>Marcopolo</h3><p>Elegante e cheia de personalidade.</p></div></article>
-  <article class="menuRow"><div><h3>Mix de Cogumelos</h3><p>Aromática, sofisticada e intensa.</p></div></article>
-  <article class="menuRow"><div><h3>Nordestina</h3><p>Marcante e cheia de identidade.</p></div></article>
-  <article class="menuRow"><div><h3>Tropical</h3><p>Equilibrada, leve e surpreendente.</p></div></article>
-  <article class="menuRow"><div><h3>Quatro Queijos &amp; Mignon</h3><p>Cremosa e sofisticada.</p></div></article>
-  <article class="menuRow"><div><h3>Capricciosa</h3><p>Generosa e inspirada na tradição italiana.</p></div></article>
-  <article class="menuRow"><div><h3>Espanhola</h3><p>Intensa e cheia de personalidade.</p></div></article>
-  <article class="menuRow"><div><h3>Seis Formaggi</h3><p>Uma celebração para amantes de queijo.</p></div></article>
-  <article class="menuRow"><div><h3>Jardins</h3><p>Uma receita especial com a identidade da casa.</p></div></article>
-  <article class="menuRow"><div><h3>Parma</h3><p>Delicada, elegante e refinada.</p></div></article>
-  <article class="menuRow"><div><h3>Pama Divina</h3><p>Uma combinação premium e surpreendente.</p></div></article>
-  <article class="menuRow"><div><h3>Especialíssima</h3><p>Uma das experiências mais completas do cardápio.</p></div></article>
+<article class="menuRow"><div><h3>Marcopolo</h3><p>Catupiry, tomate seco, champignon e palmito sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Mix de Cogumelos</h3><p>Cogumelos Paris, shitake e shimeji salteados na manteiga, com cebolas ao vinho tinto, muçarela e manjericão fresco, sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Nordestina</h3><p>Muçarela, purê de mandioquinha e carne seca desfiada sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Tropical</h3><p>Muçarela, peito de peru, bacon e sua escolha entre banana ou abacaxi, sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Quatro Queijos &amp; Mignon</h3><p>Gorgonzola, Catupiry, provolone e muçarela com cubos de filé mignon puxados no azeite, sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Capricciosa</h3><p>Catupiry, peito de peru, muçarela, champignon, palmito e bacon, com parmesão, molho de tomate, orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Espanhola</h3><p>Muçarela, Catupiry, champignon, pepperoni e pimentões, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Seis Formaggi</h3><p>Muçarela de búfala, parmesão, gorgonzola, provolone, Catupiry e ricota sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Jardins</h3><p>Peito de peru, champignon, creme de leite e muçarela com cebola, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Parma</h3><p>Presunto Parma e muçarela de búfala sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Pama Divina</h3><p>Muçarela, queijo Brie e presunto Parma, finalizados com fios de mel e delicados toques de geleia de figo ou damasco.</p></div></article>
+<article class="menuRow"><div><h3>Especialíssima</h3><p>Muçarela, peito de frango defumado, Catupiry e ricota, com rodelas de tomate e bacon, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
 </div>
 </details>
 </div>
 </section>
 
-<!-- VEGETAIS -->
 <section class="menuSection" id="vegetais">
 <div class="container">
-<details class="menuAccordion" id="acc-vegetais">
+<details class="menuAccordion" id="acc-vegetais" >
 <summary>
-  <div><div class="kicker">Jardins &amp; Vegetais</div><h2>Leves, frescas e cheias de sabor</h2><p>Combinações que valorizam vegetais e ingredientes delicados.</p></div>
+  <div><div class="kicker">Jardins &amp; Vegetais</div><h2>Leves, frescas e cheias de sabor</h2>
+  <p>Clique para consultar todos os sabores e suas combinações.</p></div>
   <span class="summaryAction">Ver sabores</span>
 </summary>
 <div class="menuList">
-  <article class="menuRow"><div><h3>Abobrinha</h3><p>Leve e delicada.</p></div></article>
-  <article class="menuRow"><div><h3>Alho Poró</h3><p>Aromática e elegante.</p></div></article>
-  <article class="menuRow"><div><h3>A Moda da Casa</h3><p>Uma combinação vegetal com a identidade Jardins.</p></div></article>
-  <article class="menuRow"><div><h3>Berinjela</h3><p>Marcante e muito saborosa.</p></div></article>
-  <article class="menuRow"><div><h3>Brócolis Especial</h3><p>Leve, cremosa e especial.</p></div></article>
-  <article class="menuRow"><div><h3>Escarola</h3><p>Fresca, leve e tradicional.</p></div></article>
-  <article class="menuRow"><div><h3>Marguerita Especial</h3><p>Fresca e aromática, com um toque a mais.</p></div></article>
-  <article class="menuRow"><div><h3>Rúcula</h3><p>Fresca e de sabor marcante.</p></div></article>
-  <article class="menuRow"><div><h3>Mediterrânea</h3><p>Leve, colorida e aromática.</p></div></article>
-  <article class="menuRow"><div><h3>Parma &amp; Rúcula</h3><p>Elegante e equilibrada.</p></div></article>
+<article class="menuRow"><div><h3>Abobrinha</h3><p>Muçarela e abobrinha refogada no azeite, com parmesão, molho de tomate, orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Alho Poró</h3><p>Alho-poró e muçarela sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>A Moda da Casa</h3><p>Escarola, milho, palmito e muçarela sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Berinjela</h3><p>Berinjela e muçarela com parmesão e alho dourado, sobre molho de tomate, finalizadas com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Brócolis Especial</h3><p>Brócolis, muçarela, carne moída temperada e bacon, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Escarola</h3><p>Escarola, muçarela, cebola, ricota e bacon sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Marguerita Especial</h3><p>Muçarela, parmesão, rodelas de tomate, tomate-cereja e manjericão fresco, sobre molho de tomate, com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Rúcula</h3><p>Muçarela, rúcula e tomate seco sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Mediterrânea</h3><p>Receita selecionada para o novo cardápio. Os ingredientes não constam no cardápio de 2025 e serão inseridos assim que a composição oficial for confirmada.</p></div></article>
+<article class="menuRow"><div><h3>Parma &amp; Rúcula</h3><p>Muçarela de búfala, corações de alcachofra, presunto Parma e rúcula, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
 </div>
 </details>
 </div>
 </section>
 
-<!-- MAR -->
 <section class="menuSection" id="mar">
 <div class="container">
-<details class="menuAccordion" id="acc-mar">
+<details class="menuAccordion" id="acc-mar" >
 <summary>
-  <div><div class="kicker">Especialidades do Mar</div><h2>Sabores que vêm do mar</h2><p>Receitas especiais para quem aprecia ingredientes do mar.</p></div>
+  <div><div class="kicker">Especialidades do Mar</div><h2>Sabores que vêm do mar</h2>
+  <p>Clique para consultar todos os sabores e suas combinações.</p></div>
   <span class="summaryAction">Ver sabores</span>
 </summary>
 <div class="menuList">
-  <article class="menuRow"><div><h3>Aliche</h3><p>Intensa e tradicional.</p></div></article>
-  <article class="menuRow"><div><h3>Atum</h3><p>Clássica e saborosa.</p></div></article>
-  <article class="menuRow"><div><h3>Bacalhau</h3><p>Elegante e marcante.</p></div></article>
-  <article class="menuRow"><div><h3>Camarão à Baiana</h3><p>Intensa, cremosa e cheia de personalidade.</p></div></article>
-  <article class="menuRow"><div><h3>Camarão à Martinez</h3><p>Uma receita especial com assinatura própria.</p></div></article>
-  <article class="menuRow"><div><h3>Camarão à Moda da Casa</h3><p>Generosa e preparada no estilo Jardins.</p></div></article>
+<article class="menuRow"><div><h3>Aliche</h3><p>Muçarela, filés de anchovas peruanas e parmesão sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Atum</h3><p>Atum sólido e cebola com parmesão, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Bacalhau</h3><p>Lascas de bacalhau Gadus Morhua puxadas no azeite, com rodelas de tomate, cebola, ovos e pimentões, sobre molho de tomate, finalizadas com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Camarão à Baiana</h3><p>Camarão rosa à baiana, muçarela e generosas porções de Catupiry, sobre molho de tomate, finalizados com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Camarão à Martinez</h3><p>Camarão rosa puxado no azeite com muçarela, champignon, palmito e Catupiry, sobre molho de tomate, finalizado com orégano e azeitonas chilenas.</p></div></article>
+<article class="menuRow"><div><h3>Camarão à Moda da Casa</h3><p>Camarão rosa puxado no azeite com muçarela de búfala, pimentões coloridos e cebola, sobre molho de tomate, finalizado com orégano e azeitonas chilenas.</p></div></article>
 </div>
 </details>
 </div>
 </section>
 
-<!-- DOCES -->
 <section class="menuSection" id="doces">
 <div class="container">
-<details class="menuAccordion" id="acc-doces">
+<details class="menuAccordion" id="acc-doces" >
 <summary>
-  <div><div class="kicker">Pizzas Doces</div><h2>Para terminar com um toque doce</h2><p>Sabores pensados para compartilhar — ou não.</p></div>
+  <div><div class="kicker">Pizzas Doces</div><h2>Para terminar com um toque doce</h2>
+  <p>Clique para consultar todos os sabores e suas combinações.</p></div>
   <span class="summaryAction">Ver sabores</span>
 </summary>
 <div class="menuList">
-  <article class="menuRow"><div><h3>Banana</h3><p>Clássica, aromática e aconchegante.</p></div></article>
-  <article class="menuRow"><div><h3>Beijinho</h3><p>Doce, delicada e cremosa.</p></div></article>
-  <article class="menuRow"><div><h3>Brigadeiro</h3><p>Um clássico irresistível.</p></div></article>
-  <article class="menuRow"><div><h3>Chocolate</h3><p>Simples, cremosa e intensa.</p></div></article>
-  <article class="menuRow"><div><h3>Nutella com Morangos ou Banana</h3><p>Cremosa e indulgente, com duas opções de finalização.</p></div></article>
-  <article class="menuRow"><div><h3>Ouro Branco</h3><p>Cremosa e cheia de textura.</p></div></article>
-  <article class="menuRow"><div><h3>Romeu &amp; Julieta</h3><p>O clássico encontro do doce com o salgado.</p></div></article>
-  <article class="menuRow"><div><h3>Sensação</h3><p>Chocolate e frescor em uma combinação muito querida.</p></div></article>
-  <article class="menuRow"><div><h3>Sonho de Valsa</h3><p>Cremosa, crocante e especial.</p></div></article>
+<article class="menuRow"><div><h3>Banana</h3><p>Creme de leite e muçarela com banana, açúcar e canela, na nossa massa doce especial com borda de doce de leite.</p></div></article>
+<article class="menuRow"><div><h3>Beijinho</h3><p>Creme de leite, coco ralado, leite condensado e chocolate branco, na nossa massa doce especial com borda de doce de leite.</p></div></article>
+<article class="menuRow"><div><h3>Brigadeiro</h3><p>Creme de leite e chocolate nobre blend, finalizados com granulado de chocolate, na nossa massa doce especial com borda de doce de leite.</p></div></article>
+<article class="menuRow"><div><h3>Chocolate</h3><p>Creme de leite e chocolate nobre blend, na nossa massa doce especial com borda de doce de leite.</p></div></article>
+<article class="menuRow"><div><h3>Nutella (com morangos ou com banana)</h3><p>Nutella generosa, finalizada com morangos frescos ou banana, na nossa massa doce especial com borda de doce de leite.</p></div></article>
+<article class="menuRow"><div><h3>Ouro Branco</h3><p>Creme de leite e chocolate branco com pedaços de bombom Ouro Branco, na nossa massa doce especial com borda de doce de leite.</p></div></article>
+<article class="menuRow"><div><h3>Romeu &amp; Julieta</h3><p>Creme de leite e muçarela com goiabada cremosa, na nossa massa doce especial com borda de doce de leite.</p></div></article>
+<article class="menuRow"><div><h3>Sensação</h3><p>Creme de leite e chocolate nobre blend com morangos e granulado de chocolate, na nossa massa doce especial com borda de doce de leite.</p></div></article>
+<article class="menuRow"><div><h3>Sonho de Valsa</h3><p>Creme de leite e chocolate nobre blend com pedaços de bombom Sonho de Valsa, na nossa massa doce especial com borda de doce de leite.</p></div></article>
 </div>
 </details>
 </div>
@@ -419,56 +416,76 @@ footer{
 </div>
 
 <script>
-document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-const allAccordions = {
-  queridinhas: document.getElementById("acc-queridinhas"),
-  classicas: document.getElementById("acc-classicas"),
-  especial: document.getElementById("acc-especial"),
-  premium: document.getElementById("acc-premium"),
-  vegetais: document.getElementById("acc-vegetais"),
-  mar: document.getElementById("acc-mar"),
-  doces: document.getElementById("acc-doces")
-};
+const categoryKeys = ["queridinhas","classicas","especial","premium","vegetais","mar","doces"];
 
-function openCategory(key, smooth=true){
-  const acc = allAccordions[key];
-  const section = document.getElementById(key);
-  if(!acc || !section) return;
+function getAccordion(key){
+  return document.getElementById("acc-" + key);
+}
 
-  Object.values(allAccordions).forEach(d => {
-    if(d && d !== acc) d.open = false;
-  });
-  acc.open = true;
-
+function setActiveButton(key){
   document.querySelectorAll(".catBtn").forEach(btn => {
     btn.classList.toggle("active", btn.dataset.target === key);
   });
-
-  history.replaceState(null, "", "#" + key);
-  section.scrollIntoView({behavior: smooth ? "smooth" : "auto", block:"start"});
 }
 
-document.querySelectorAll(".catBtn").forEach(btn=>{
-  btn.addEventListener("click", ()=>openCategory(btn.dataset.target));
+function openCategory(key, smooth = true){
+  if(!categoryKeys.includes(key)) return;
+
+  const acc = getAccordion(key);
+  const section = document.getElementById(key);
+  if(!acc || !section) return;
+
+  categoryKeys.forEach(k => {
+    const item = getAccordion(k);
+    if(item) item.open = (k === key);
+  });
+
+  setActiveButton(key);
+
+  if(history.replaceState){
+    history.replaceState(null, "", "#" + key);
+  }
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      const stickyOffset =
+        document.querySelector("header").offsetHeight +
+        document.querySelector(".categoryNav").offsetHeight + 12;
+      const y = section.getBoundingClientRect().top + window.pageYOffset - stickyOffset;
+      window.scrollTo({top:y, behavior:smooth ? "smooth" : "auto"});
+    });
+  });
+}
+
+document.querySelectorAll(".catBtn").forEach(btn => {
+  btn.addEventListener("click", function(e){
+    e.preventDefault();
+    openCategory(this.dataset.target, true);
+  });
 });
 
-document.querySelectorAll("[data-category]").forEach(link=>{
+document.querySelectorAll("[data-category]").forEach(link => {
   link.addEventListener("click", function(e){
-    const key = this.getAttribute("data-category");
-    if(allAccordions[key]){
+    const key = this.dataset.category;
+    if(categoryKeys.includes(key)){
       e.preventDefault();
-      openCategory(key);
+      openCategory(key, true);
     }
   });
 });
 
-/* Se a página abrir com #categoria, abre a categoria automaticamente */
-const initial = location.hash.replace("#","");
-if(allAccordions[initial]){
+window.addEventListener("hashchange", () => {
+  const key = location.hash.slice(1);
+  if(categoryKeys.includes(key)) openCategory(key, false);
+});
+
+const initial = location.hash.slice(1);
+if(categoryKeys.includes(initial)){
   openCategory(initial, false);
 }else{
-  document.querySelector('.catBtn[data-target="queridinhas"]').classList.add("active");
+  setActiveButton("queridinhas");
 }
 </script>
 </body>

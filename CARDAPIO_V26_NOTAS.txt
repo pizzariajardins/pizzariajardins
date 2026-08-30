@@ -1,0 +1,10 @@
+V26 - Cardápio oficial
+Descrições reescritas com base no PDF 'Cardápio Jardins Imprimir versão 2025(1).pdf'.
+Foram mantidos somente os sabores da lista oficial escolhida em 30/08/2026.
+
+Observações:
+- 'Lombo Canadense': usada a composição da antiga pizza LOMBO (lombo canadense + Catupiry), conforme decisão anterior de renomear Lombo.
+- 'Pama Divina': mantida a grafia da lista oficial enviada, embora o cardápio 2025 traga 'Parma Divina'.
+- 'Mediterrânea': não foi localizada no cardápio 2025; não foram inventados ingredientes.
+- 'Camarão à Moda da Casa' e 'Camarão à Martinez': descrições seguem as composições do cardápio 2025.
+- Seleção Especial: JavaScript refeito para abrir/fechar corretamente a categoria sem retornar à Home.
