@@ -1,0 +1,9 @@
+V40
+- Navegação da V39 preservada sem alterações.
+- Premium: Brie, Comandante e Gregoriana agora estão dentro da mesma .menuList
+  das demais pizzas e seguem exatamente o mesmo alinhamento.
+- Doces: removidas todas as repetições após Sonho de Valsa.
+- Seção Doces contém somente:
+  Clássicos Doces: Banana, Beijinho, Brigadeiro, Chocolate, Romeu & Julieta.
+  Doces Especiais: Nutella®, Ouro Branco, Sensação, Sonho de Valsa.
+- Lista termina em Sonho de Valsa.
