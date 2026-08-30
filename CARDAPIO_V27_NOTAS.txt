@@ -1,0 +1,7 @@
+V27
+- Navegação interna das categorias refeita exclusivamente com <button>, sem links que possam voltar à Home.
+- Queridinhas restauradas em cards com fotos.
+- Descrições reescritas em linguagem gastronômica.
+- Ingredientes recorrentes (molho de tomate, orégano, azeitonas chilenas) explicados uma vez no topo, evitando repetição.
+- Ingredientes exclusivos de cada sabor continuam informados.
+- Mediterrânea permanece sem composição inventada: receita não localizada no cardápio 2025.
