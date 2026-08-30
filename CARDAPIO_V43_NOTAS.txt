@@ -1,0 +1,1 @@
+V43: seção Premium reconstruída do zero usando exatamente a mesma estrutura HTML das categorias que já funcionam. Removidos overrides CSS V41/V42. Restante preservado.
