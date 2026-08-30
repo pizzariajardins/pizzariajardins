@@ -1,0 +1,11 @@
+V46 SEO
+- Visual preservado da V45.
+- Ajuste mobile do logo preservado em scale(1.12).
+- Titles e meta descriptions otimizados.
+- Canonical URLs.
+- Open Graph / Twitter cards.
+- Schema.org PizzaRestaurant na Home.
+- robots.txt criado.
+- sitemap.xml criado.
+- Páginas antigas de categoria marcadas noindex,follow.
+- Nenhum preço adicionado.
