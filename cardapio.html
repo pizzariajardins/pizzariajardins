@@ -592,7 +592,7 @@ header{
     <nav class="navlinks">
       <a href="index.html">Home</a>
       <a href="#queridinhas">Queridinhas</a>
-      <a href="#categorias">Categorias</a>
+      
       <a class="btn primary" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir agora</a>
     </nav>
   </div>
@@ -619,7 +619,7 @@ header{
   <div class="container">
     <a class="chip" href="#queridinhas">Queridinhas</a>
     <a class="chip" href="#classicas" data-open="classicas-lista">Clássicas</a>
-    <a class="chip" href="#especial">Seleção Especial</a>
+    <a class="chip" href="#especial" data-open="especial-lista">Seleção Especial</a>
     <a class="chip" href="#premium">Premium</a>
     <a class="chip" href="#mar">Especialidades do Mar</a>
     <a class="chip" href="#contemporaneas">Jardins &amp; Vegetais</a>
@@ -788,64 +788,36 @@ header{
     </details>
   </div>
 </section>
-
-<section class="section" id="categorias">
+<section class="section classicsSection" id="especial">
   <div class="container">
-    <div class="sectionTitle">
-      <div>
-        <div class="kicker">Nosso cardápio</div>
-        <h2>Explore por categoria</h2>
+    <details class="menuAccordion" id="especial-lista">
+      <summary>
+        <div>
+          <div class="kicker">Seleção Especial</div>
+          <h2>Sabores com um toque a mais</h2>
+          <p>Receitas especiais da casa, com combinações marcantes e personalidade própria.</p>
+        </div>
+        <span class="summaryAction">Ver sabores</span>
+      </summary>
+
+      <div class="menuList">
+        <article class="menuRow"><div><h3>Baiacatu</h3><p>Uma combinação intensa e muito saborosa, pensada para quem gosta de receitas cheias de personalidade.</p></div></article>
+        <article class="menuRow"><div><h3>Caipira</h3><p>Uma receita generosa e acolhedora, com aquele sabor que lembra comida feita para reunir todo mundo à mesa.</p></div></article>
+        <article class="menuRow"><div><h3>Calábria</h3><p>Marcante e aromática, une sabores intensos em uma combinação equilibrada e irresistível.</p></div></article>
+        <article class="menuRow"><div><h3>Carijó</h3><p>Cheia de sabor e textura, é uma das receitas especiais que conquistaram espaço entre as favoritas da casa.</p></div></article>
+        <article class="menuRow"><div><h3>Catupiry Original</h3><p>Cremosa e delicada, valoriza toda a suavidade e o sabor inconfundível do Catupiry Original.</p></div></article>
+        <article class="menuRow"><div><h3>Da Sogra</h3><p>Uma combinação generosa e cheia de personalidade, daquelas que surpreendem já na primeira fatia.</p></div></article>
+        <article class="menuRow"><div><h3>Escarola do Fernando</h3><p>Uma receita especial que nasceu da inspiração de um cliente querido e acabou entrando para a história da Jardins.</p></div></article>
+        <article class="menuRow"><div><h3>Francesa</h3><p>Elegante e equilibrada, com uma combinação delicada para quem aprecia sabores mais refinados.</p></div></article>
+        <article class="menuRow"><div><h3>Light</h3><p>Uma opção mais leve, sem abrir mão do sabor e da personalidade que caracterizam as pizzas da casa.</p></div></article>
+        <article class="menuRow"><div><h3>Moda</h3><p>Uma receita especial e generosa, feita para quem gosta de combinações variadas e cheias de sabor.</p></div></article>
       </div>
-      <p>Esta estrutura já está pronta para receber todos os sabores, descrições e valores.</p>
-    </div>
-
-    <div class="categoryGrid">
-      <article class="category">
-        <div class="num">01</div>
-        <h3>Clássicas da Jardins</h3>
-        <p>Sabores tradicionais, conhecidos e queridos por gerações.</p>
-      </article>
-
-      <article class="category" id="especial">
-        <div class="num">02</div>
-        <h3>Seleção Especial</h3>
-        <p>Combinações mais elaboradas para quem quer sair do óbvio.</p>
-      </article>
-
-      <article class="category" id="premium">
-        <div class="num">03</div>
-        <h3>Pizzas Premium</h3>
-        <p>Ingredientes especiais e receitas de maior valor agregado.</p>
-      </article>
-
-      <article class="category" id="mar">
-        <div class="num">04</div>
-        <h3>Especialidades do Mar</h3>
-        <p>Sabores selecionados com ingredientes do mar.</p>
-      </article>
-
-      <article class="category" id="contemporaneas">
-        <div class="num">05</div>
-        <h3>Jardins &amp; Vegetais</h3>
-        <p>Receitas atuais, combinações criativas e identidade própria.</p>
-      </article>
-
-      <article class="category">
-        <div class="num">06</div>
-        <h3>As Queridinhas</h3>
-        <p>As campeãs de preferência dos nossos clientes.</p>
-      </article>
-    </div>
-
-    <div class="callout">
-      <div>
-        <strong>Quer pedir agora?</strong>
-        <p>Você também pode falar diretamente com a equipe da Jardins pelo WhatsApp.</p>
-      </div>
-      <a class="btn primary" href="https://wa.me/551140345005?text=Olá%20Pizzaria%20Jardins!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
-    </div>
+    </details>
   </div>
 </section>
+
+
+
 
 </main>
 
@@ -868,6 +840,9 @@ header{
 
 <script>document.getElementById("year").textContent=new Date().getFullYear()</script>
 
+
+
+
 <script>
 document.querySelectorAll('[data-open]').forEach(function(link){
   link.addEventListener('click', function(e){
@@ -876,7 +851,10 @@ document.querySelectorAll('[data-open]').forEach(function(link){
     if(details){
       e.preventDefault();
       details.open = true;
-      document.getElementById('classicas').scrollIntoView({behavior:'smooth', block:'start'});
+      var section = details.closest('section');
+      if(section){
+        section.scrollIntoView({behavior:'smooth', block:'start'});
+      }
     }
   });
 });
