@@ -9,7 +9,44 @@
   <meta name="robots" content="noindex, nofollow">
 
   <title>Cardápio Digital | Pizzaria Jardins</title>
+.item-cardapio {
+  padding: 17px 0;
+  border-bottom: 1px solid #eee3d5;
+}
 
+.item-cardapio:last-child {
+  border-bottom: none;
+}
+
+.item-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.item-nome {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #176c3b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.item-preco {
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #e87518;
+}
+
+.item-descricao {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #66645f;
+}
   <style>
     * {
       box-sizing: border-box;
@@ -201,8 +238,298 @@
     <details class="categoria">
       <summary>🍕 Pizzas Tradicionais</summary>
       <div class="conteudo-categoria">
-        <div class="aguarde">Os sabores serão inseridos no próximo passo.</div>
-      </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Abobrinha</div>
+      <div class="item-preco">R$ 99</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, muçarela, abobrinha refogada no azeite, parmesão, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Alho</div>
+      <div class="item-preco">R$ 99</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, muçarela, cebola, alho frito no azeite, parmesão, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Alho Poró</div>
+      <div class="item-preco">R$ 109</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, alho poró, muçarela, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Aliche</div>
+      <div class="item-preco">R$ 116</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, muçarela, filet de anchovas peruanas, parmesão, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">À Moda da Casa</div>
+      <div class="item-preco">R$ 99</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, escarola, milho, palmito, muçarela, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Alvorada</div>
+      <div class="item-preco">R$ 116</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, atum sólido, palmito, ovos, muçarela, cebola, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Americana</div>
+      <div class="item-preco">R$ 116</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, atum sólido, palmito, ervilha, cobertos com muçarela, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Ao Forno</div>
+      <div class="item-preco">R$ 114</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, catupiry, rodelas de tomate, champignon, parmesão, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Atum</div>
+      <div class="item-preco">R$ 116</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, atum sólido, cebola, parmesão, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Bacon</div>
+      <div class="item-preco">R$ 99</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, muçarela, bacon, parmesão, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Baiana</div>
+      <div class="item-preco">R$ 99</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, calabresa moída, muçarela, cebola, bacon, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Baiacatu</div>
+      <div class="item-preco">R$ 109</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, calabresa moída, catupiry, cebola, bacon, pimenta Tabasco, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Bauru</div>
+      <div class="item-preco">R$ 99</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, presunto, muçarela, rodelas de tomate, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Berinjela</div>
+      <div class="item-preco">R$ 99</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, berinjela, muçarela, parmesão, alho frito, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Bragança</div>
+      <div class="item-preco">R$ 109</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, carne moída temperada, catupiry, cebola, ovos, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Brasileirinha</div>
+      <div class="item-preco">R$ 99</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, calabresa, cebola, cobertos com muçarela, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Brie</div>
+      <div class="item-preco">R$ 112</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, agrião coberto com muçarela, fatias de queijo Brie, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Brócolis</div>
+      <div class="item-preco">R$ 99</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, brócolis, ricota, muçarela, bacon, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Brócolis Especial</div>
+      <div class="item-preco">R$ 109</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, brócolis, muçarela, carne moída temperada, bacon, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Caipira</div>
+      <div class="item-preco">R$ 109</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, sassami de frango, milho, catupiry, bacon, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Calabresa</div>
+      <div class="item-preco">R$ 89</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, calabresa, cebola, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Calábria</div>
+      <div class="item-preco">R$ 109</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, calabresa e cebola coberta com catupiry, manjericão fresco, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Canadense</div>
+      <div class="item-preco">R$ 99</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, lombo canadense, muçarela, cebola, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Carijó</div>
+      <div class="item-preco">R$ 109</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, sassami de frango, catupiry, cebola, bacon, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Catupiry</div>
+      <div class="item-preco">R$ 112</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, catupiry, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Catupyrela</div>
+      <div class="item-preco">R$ 109</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, catupiry, muçarela, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Catuperú</div>
+      <div class="item-preco">R$ 109</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, catupiry, peito de peru, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Champignon</div>
+      <div class="item-preco">R$ 99</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, champignon, muçarela, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+  <div class="item-cardapio">
+    <div class="item-topo">
+      <div class="item-nome">Comandante</div>
+      <div class="item-preco">R$ 116</div>
+    </div>
+    <div class="item-descricao">
+      Molho de tomate, berinjela, muçarela, filet de anchovas peruanas, pimentões picados, orégano e azeitonas chilenas.
+    </div>
+  </div>
+
+</div>
     </details>
 
     <details class="categoria">
