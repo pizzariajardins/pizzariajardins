@@ -420,13 +420,10 @@
 
       <summary>🍫 Pizzas Doces</summary>
 
-      <div class="conteudo-categoria">
-
-        <div class="em-breve">
-          Estamos preparando esta categoria.
-        </div>
-
-      </div>
+      <div
+  class="conteudo-categoria"
+  id="lista-doces">
+</div>
 
     </details>
 
@@ -1146,7 +1143,64 @@
 
 ];
 
+const pizzasDoces = [
 
+  {
+    nome: "Banana",
+    preco: "R$ 109",
+    descricao: "Creme de leite, muçarela e banana com canela e açúcar."
+  },
+
+  {
+    nome: "Beijinho",
+    preco: "R$ 99",
+    descricao: "Creme de leite, coco ralado, leite condensado e chocolate branco."
+  },
+
+  {
+    nome: "Brigadeiro",
+    preco: "R$ 109",
+    descricao: "Creme de leite, chocolate nobre blend coberto com chocolate granulado."
+  },
+
+  {
+    nome: "Chocolate",
+    preco: "R$ 99",
+    descricao: "Creme de leite e chocolate nobre blend."
+  },
+
+  {
+    nome: "Nutella",
+    preco: "R$ 119",
+    descricao: "Nutella coberta com morangos ou banana."
+  },
+
+  {
+    nome: "Romeu e Julieta",
+    preco: "R$ 109",
+    descricao: "Creme de leite, muçarela e goiabada cremosa por cima."
+  },
+
+  {
+    nome: "Sensação",
+    preco: "R$ 114",
+    descricao: "Creme de leite, chocolate nobre blend, morangos e chocolate granulado por cima."
+  },
+
+  {
+    nome: "Sonho de Valsa",
+    preco: "R$ 114",
+    descricao: "Creme de leite, chocolate nobre blend e bombom Sonho de Valsa."
+  },
+
+  {
+    nome: "Ouro Branco",
+    preco: "R$ 114",
+    descricao: "Creme de leite, chocolate branco e bombom Ouro Branco."
+  }
+
+];
+    
     function montarCardapio(lista, destino) {
 
       const container = document.getElementById(destino);
@@ -1192,6 +1246,11 @@
   "lista-especiais"
 );
 
+    montarCardapio(
+  pizzasDoces,
+  "lista-doces"
+);
+    
   </script>
 
 
