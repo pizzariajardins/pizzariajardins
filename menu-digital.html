@@ -2,142 +2,117 @@
 <html lang="pt-BR">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <!-- Esta página não deve aparecer nas buscas do Google -->
   <meta name="robots" content="noindex, nofollow">
 
   <title>Cardápio Digital | Pizzaria Jardins</title>
-.item-cardapio {
-  padding: 17px 0;
-  border-bottom: 1px solid #eee3d5;
-}
 
-.item-cardapio:last-child {
-  border-bottom: none;
-}
 
-.item-topo {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 15px;
-}
-
-.item-nome {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: #176c3b;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.item-preco {
-  flex-shrink: 0;
-  font-size: 16px;
-  font-weight: 700;
-  color: #e87518;
-}
-
-.item-descricao {
-  margin-top: 6px;
-  font-size: 13px;
-  line-height: 1.5;
-  color: #66645f;
-}
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7efe3;
-      color: #27382d;
-      padding-bottom: 95px;
+    html {
+      scroll-behavior: smooth;
     }
 
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f0e4;
+      color: #514c45;
+      padding-bottom: 100px;
+    }
+
+
+    /* =========================
+       CABEÇALHO
+    ========================= */
+
     .topo {
-      text-align: center;
-      padding: 28px 20px 22px;
       background: #fffaf2;
-      border-bottom: 1px solid #eadfce;
+      text-align: center;
+      padding: 30px 20px;
+      border-bottom: 1px solid #e8dccb;
     }
 
     .logo {
       width: 100%;
-      max-width: 300px;
+      max-width: 430px;
       height: auto;
       display: block;
-      margin: 0 auto 14px;
-    }
-
-    .slogan {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 16px;
-      font-style: italic;
-      color: #176c3b;
-      margin-bottom: 8px;
-    }
-
-    .desde {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #e87518;
-      font-weight: 700;
-    }
-
-    .intro {
-      max-width: 700px;
       margin: 0 auto;
-      padding: 24px 20px 10px;
-      text-align: center;
     }
 
-    .intro h1 {
+
+    /* =========================
+       CONTEÚDO PRINCIPAL
+    ========================= */
+
+    .pagina {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 25px 16px 40px;
+    }
+
+    .introducao {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .introducao h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
       color: #176c3b;
+      font-size: 32px;
       margin-bottom: 10px;
     }
 
-    .intro p {
+    .introducao p {
+      max-width: 600px;
+      margin: 0 auto;
       font-size: 14px;
       line-height: 1.6;
-      color: #5e685f;
+      color: #6a6259;
     }
 
-    .categorias {
-      max-width: 700px;
-      margin: 18px auto;
-      padding: 0 18px;
-    }
+
+    /* =========================
+       CATEGORIAS
+    ========================= */
 
     .categoria {
       background: #ffffff;
-      border: 1px solid #eadfce;
-      border-radius: 15px;
-      margin-bottom: 12px;
+      border: 1px solid #e7d9c7;
+      border-radius: 16px;
+      margin-bottom: 15px;
       overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 13px rgba(0, 0, 0, 0.04);
     }
 
     .categoria summary {
-      cursor: pointer;
       list-style: none;
-      padding: 20px;
+      cursor: pointer;
+      position: relative;
+      padding: 20px 52px 20px 22px;
+
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 700;
+
       color: #176c3b;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: #ffffff;
+
+      user-select: none;
     }
 
     .categoria summary::-webkit-details-marker {
@@ -146,904 +121,966 @@
 
     .categoria summary::after {
       content: "+";
-      color: #e87518;
-      font-size: 24px;
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+
       font-family: Arial, sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #e87518;
     }
 
     .categoria[open] summary::after {
       content: "−";
     }
 
+    .categoria[open] summary {
+      border-bottom: 1px solid #eee3d5;
+    }
+
     .conteudo-categoria {
-      padding: 0 20px 20px;
-      border-top: 1px solid #f0e7da;
+      background: #ffffff;
     }
 
-    .aguarde {
-      padding-top: 16px;
-      font-size: 13px;
-      color: #777;
-      text-align: center;
+
+    /* =========================
+       ITENS DO CARDÁPIO
+    ========================= */
+
+    .item-cardapio {
+      padding: 18px 22px;
+      border-bottom: 1px solid #eee3d5;
     }
 
-    .aviso {
-      max-width: 700px;
-      margin: 22px auto;
-      padding: 18px 20px;
-      background: #fff7ec;
-      border-left: 4px solid #e87518;
-      border-radius: 10px;
-      font-size: 13px;
-      line-height: 1.6;
-      color: #5d554d;
+    .item-cardapio:last-child {
+      border-bottom: none;
     }
 
-    .rodape {
-      text-align: center;
-      padding: 25px 20px;
-      font-size: 12px;
-      line-height: 1.7;
-      color: #69756c;
+    .item-topo {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      width: 100%;
     }
 
-    .rodape strong {
+    .item-nome {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.3;
+      font-weight: 700;
       color: #176c3b;
     }
 
+    .item-preco {
+      margin-left: auto;
+      flex-shrink: 0;
+      white-space: nowrap;
+
+      font-size: 17px;
+      line-height: 1.3;
+      font-weight: 700;
+
+      color: #e87518;
+      text-align: right;
+    }
+
+    .item-descricao {
+      margin-top: 7px;
+      padding-right: 60px;
+
+      font-size: 13.5px;
+      line-height: 1.55;
+
+      color: #66615a;
+    }
+
+
+    /* =========================
+       CATEGORIAS A PREENCHER
+    ========================= */
+
+    .em-breve {
+      padding: 24px 22px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #777067;
+    }
+
+
+    /* =========================
+       AVISOS
+    ========================= */
+
+    .informacoes {
+      background: #fff8ed;
+      border: 1px solid #ead8c0;
+      border-radius: 14px;
+
+      padding: 18px;
+      margin-top: 25px;
+
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .informacoes strong {
+      color: #176c3b;
+    }
+
+
+    /* =========================
+       RODAPÉ
+    ========================= */
+
+    footer {
+      text-align: center;
+      padding: 30px 15px 10px;
+
+      font-size: 12px;
+      line-height: 1.7;
+
+      color: #746d64;
+    }
+
+    footer strong {
+      color: #176c3b;
+    }
+
+
+    /* =========================
+       BOTÃO WHATSAPP
+    ========================= */
+
     .whatsapp-fixo {
       position: fixed;
-      left: 16px;
-      right: 16px;
+
+      left: 50%;
       bottom: 16px;
-      max-width: 668px;
-      margin: 0 auto;
-      background: #168446;
+
+      transform: translateX(-50%);
+
+      width: calc(100% - 32px);
+      max-width: 670px;
+
+      background: #188c4b;
       color: #ffffff;
+
       text-decoration: none;
       text-align: center;
-      padding: 17px 20px;
-      border-radius: 16px;
-      font-weight: 700;
+
+      padding: 17px 18px;
+
+      border-radius: 18px;
+
       font-size: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.20);
-      z-index: 1000;
+      font-weight: 700;
+
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.20);
+
+      z-index: 9999;
     }
 
     .whatsapp-fixo:hover {
-      background: #126d3a;
+      background: #14783f;
     }
+
+
+    /* =========================
+       CELULAR
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .topo {
+        padding: 22px 14px;
+      }
+
+      .logo {
+        max-width: 360px;
+      }
+
+      .pagina {
+        padding: 22px 12px 35px;
+      }
+
+      .introducao h1 {
+        font-size: 27px;
+      }
+
+      .introducao p {
+        font-size: 13px;
+      }
+
+      .categoria summary {
+        padding: 18px 48px 18px 17px;
+        font-size: 18px;
+      }
+
+      .item-cardapio {
+        padding: 17px 17px;
+      }
+
+      .item-topo {
+        gap: 12px;
+      }
+
+      .item-nome {
+        font-size: 16px;
+      }
+
+      .item-preco {
+        font-size: 16px;
+      }
+
+      .item-descricao {
+        padding-right: 0;
+        margin-top: 6px;
+        font-size: 13px;
+      }
+
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
+
+  <!-- CABEÇALHO -->
+
   <header class="topo">
-    <img src="logo-cardapio-digital.png.png"
-     alt="Pizzaria Jardins"
-     class="logo">
 
-      </header>
+    <img
+      src="logo-cardapio-digital.png.png"
+      alt="Pizzaria Jardins"
+      class="logo"
+    >
 
-  <section class="intro">
-    <h1>Nosso Cardápio</h1>
-    <p>
-      Escolha seus sabores favoritos e, quando decidir,
-      é só tocar no botão do WhatsApp para fazer seu pedido.
-    </p>
-  </section>
+  </header>
 
-  <main class="categorias">
 
-    <details class="categoria">
+
+  <main class="pagina">
+
+
+    <!-- INTRODUÇÃO -->
+
+    <section class="introducao">
+
+      <h1>Nosso Cardápio</h1>
+
+      <p>
+        Escolha seus sabores favoritos e, quando decidir,
+        é só tocar no botão do WhatsApp para fazer seu pedido.
+      </p>
+
+    </section>
+
+
+
+    <!-- PIZZAS TRADICIONAIS -->
+
+    <details class="categoria" open>
+
       <summary>🍕 Pizzas Tradicionais</summary>
-      <div class="conteudo-categoria">
 
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Abobrinha</div>
-      <div class="item-preco">R$ 99</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, muçarela, abobrinha refogada no azeite, parmesão, orégano e azeitonas chilenas.
-    </div>
-  </div>
+      <div
+        class="conteudo-categoria"
+        id="lista-tradicionais">
+      </div>
 
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Alho</div>
-      <div class="item-preco">R$ 99</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, muçarela, cebola, alho frito no azeite, parmesão, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Alho Poró</div>
-      <div class="item-preco">R$ 109</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, alho poró, muçarela, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Aliche</div>
-      <div class="item-preco">R$ 116</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, muçarela, filet de anchovas peruanas, parmesão, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">À Moda da Casa</div>
-      <div class="item-preco">R$ 99</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, escarola, milho, palmito, muçarela, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Alvorada</div>
-      <div class="item-preco">R$ 116</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, atum sólido, palmito, ovos, muçarela, cebola, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Americana</div>
-      <div class="item-preco">R$ 116</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, atum sólido, palmito, ervilha, cobertos com muçarela, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Ao Forno</div>
-      <div class="item-preco">R$ 114</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, catupiry, rodelas de tomate, champignon, parmesão, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Atum</div>
-      <div class="item-preco">R$ 116</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, atum sólido, cebola, parmesão, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Bacon</div>
-      <div class="item-preco">R$ 99</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, muçarela, bacon, parmesão, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Baiana</div>
-      <div class="item-preco">R$ 99</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, calabresa moída, muçarela, cebola, bacon, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Baiacatu</div>
-      <div class="item-preco">R$ 109</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, calabresa moída, catupiry, cebola, bacon, pimenta Tabasco, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Bauru</div>
-      <div class="item-preco">R$ 99</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, presunto, muçarela, rodelas de tomate, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Berinjela</div>
-      <div class="item-preco">R$ 99</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, berinjela, muçarela, parmesão, alho frito, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Bragança</div>
-      <div class="item-preco">R$ 109</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, carne moída temperada, catupiry, cebola, ovos, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Brasileirinha</div>
-      <div class="item-preco">R$ 99</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, calabresa, cebola, cobertos com muçarela, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Brie</div>
-      <div class="item-preco">R$ 112</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, agrião coberto com muçarela, fatias de queijo Brie, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Brócolis</div>
-      <div class="item-preco">R$ 99</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, brócolis, ricota, muçarela, bacon, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Brócolis Especial</div>
-      <div class="item-preco">R$ 109</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, brócolis, muçarela, carne moída temperada, bacon, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Caipira</div>
-      <div class="item-preco">R$ 109</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, sassami de frango, milho, catupiry, bacon, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Calabresa</div>
-      <div class="item-preco">R$ 89</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, calabresa, cebola, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Calábria</div>
-      <div class="item-preco">R$ 109</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, calabresa e cebola coberta com catupiry, manjericão fresco, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Canadense</div>
-      <div class="item-preco">R$ 99</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, lombo canadense, muçarela, cebola, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Carijó</div>
-      <div class="item-preco">R$ 109</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, sassami de frango, catupiry, cebola, bacon, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Catupiry</div>
-      <div class="item-preco">R$ 112</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, catupiry, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Catupyrela</div>
-      <div class="item-preco">R$ 109</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, catupiry, muçarela, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Catuperú</div>
-      <div class="item-preco">R$ 109</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, catupiry, peito de peru, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Champignon</div>
-      <div class="item-preco">R$ 99</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, champignon, muçarela, orégano e azeitonas chilenas.
-    </div>
-  </div>
-
-  <div class="item-cardapio">
-    <div class="item-topo">
-      <div class="item-nome">Comandante</div>
-      <div class="item-preco">R$ 116</div>
-    </div>
-    <div class="item-descricao">
-      Molho de tomate, berinjela, muçarela, filet de anchovas peruanas, pimentões picados, orégano e azeitonas chilenas.
-    </div>
-  </div>
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Da Sogra</div>
-    <div class="item-preco">R$ 112</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, palmito, bolas de catupiry, muçarela, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Dois Queijos</div>
-    <div class="item-preco">R$ 99</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, catupiry, provolone, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Escarola</div>
-    <div class="item-preco">R$ 99</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, escarola, muçarela, cebola, ricota, bacon, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Escarola do Fernando</div>
-    <div class="item-preco">R$ 99</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, escarola, muçarela, calabresa, cebola, parmesão, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Florentina</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, presunto, provolone, catupiry, gorgonzola, muçarela, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Francesa</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, lombo canadense, ovos, catupiry, muçarela, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Frango com Catupiry</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, sassami de frango, catupiry, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Frango à Brasileira</div>
-    <div class="item-preco">R$ 99</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, sassami de frango, ervilha, muçarela, cebola, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Gorgonzola</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, gorgonzola, muçarela, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Gregoriana</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela de búfala, parmesão, manjericão fresco, rodelas de tomate, tomate seco, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Light</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela de búfala, peito de peru, rodelas de tomate, ricota, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Lombo</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, lombo canadense, catupiry, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Marajá</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, palmito, champignon, muçarela, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Marco Polo</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, catupiry, tomate seco coberto com champignon, palmito, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Marguerita</div>
-    <div class="item-preco">R$ 99</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela, parmesão, rodelas de tomate, manjericão fresco, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Marguerita Especial</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela, parmesão, rodelas de tomate, manjericão fresco, tomate cereja, orégano e azeitonas chilenas.
-  </div>
-</div>
-   <div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Mexicana</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, sassami de frango, ervilha, palmito, bolas de catupiry, muçarela, bacon, cebola, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Milho</div>
-    <div class="item-preco">R$ 99</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela, milho, bacon, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Mineirinha</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, catupiry, muçarela, cebola, bacon, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Mix de Cogumelos</div>
-    <div class="item-preco">R$ 116</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, cogumelo paris, shitake e shimeji puxados na manteiga, cebolas no vinho tinto, muçarela, manjericão fresco, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Moda do Chefe</div>
-    <div class="item-preco">R$ 116</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, palmito, atum sólido, tomate seco, muçarela, ricota, alho, parmesão, cebola, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Muçarela</div>
-    <div class="item-preco">R$ 89</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Napolitana</div>
-    <div class="item-preco">R$ 99</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela, rodelas de tomate, parmesão, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Nordestina</div>
-    <div class="item-preco">R$ 116</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela, purê de mandioquinha, carne seca desfiada, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Palmito</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, palmito, muçarela, ovos, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Paola</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela, presunto, calabresa, bolas de catupiry, bacon, parmesão, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Pizzaiolo</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, presunto, milho, catupiry, creme de leite, muçarela, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Portuguesa</div>
-    <div class="item-preco">R$ 99</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela, presunto, cebola, ovos, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Princesinha</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, milho, creme de leite, muçarela, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Quatro Queijos</div>
-    <div class="item-preco">R$ 112</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, catupiry, provolone, gorgonzola, muçarela, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Romana</div>
-    <div class="item-preco">R$ 116</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela, filet de anchovas peruanas, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Rúcula</div>
-    <div class="item-preco">R$ 99</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela, rúcula, tomate seco, orégano e azeitonas chilenas.
-  </div>
-</div>   
-      <div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Shimeji</div>
-    <div class="item-preco">R$ 114</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, catupiry, tomate picado, shimeji puxado no vinho branco, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Shitake</div>
-    <div class="item-preco">R$ 114</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, shitake, catupiry, tomate seco, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Siciliana</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, ervilha, palmito, presunto, ovos e cebola cobertos com muçarela, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Strogonoff de Frango</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, catupiry, sassami de frango ao molho especial, batata palha, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Strogonoff de Mignon</div>
-    <div class="item-preco">R$ 114</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, catupiry, filet mignon ao molho especial, batata palha, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Suíça</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, sassami de frango, milho, creme de leite, bolas de catupiry, muçarela, bacon, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Típica Bragantina</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela, linguiça típica bragantina, cebola, tomate seco, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Toscana</div>
-    <div class="item-preco">R$ 99</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, linguiça toscana defumada e moída, muçarela, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Três Queijos</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, catupiry, provolone, muçarela, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Tropical</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela, peito de peru, banana ou abacaxi, bacon, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Vegetariana</div>
-    <div class="item-preco">R$ 109</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, escarola, milho, palmito, tomate seco, orégano e azeitonas chilenas.
-  </div>
-</div>
-
-<div class="item-cardapio">
-  <div class="item-topo">
-    <div class="item-nome">Veroca</div>
-    <div class="item-preco">R$ 99</div>
-  </div>
-  <div class="item-descricao">
-    Molho de tomate, muçarela, rodelas de tomate, parmesão, cebola, bacon, orégano e azeitonas chilenas.
-  </div>
-</div>  
-</div>
     </details>
 
+
+
+    <!-- PIZZAS ESPECIAIS -->
+
     <details class="categoria">
+
       <summary>✨ Pizzas Especiais</summary>
+
       <div class="conteudo-categoria">
-        <div class="aguarde">Os sabores serão inseridos no próximo passo.</div>
+
+        <div class="em-breve">
+          Estamos preparando esta categoria.
+        </div>
+
       </div>
+
     </details>
 
+
+
+    <!-- PIZZAS DOCES -->
+
     <details class="categoria">
+
       <summary>🍫 Pizzas Doces</summary>
+
       <div class="conteudo-categoria">
-        <div class="aguarde">Os sabores serão inseridos no próximo passo.</div>
+
+        <div class="em-breve">
+          Estamos preparando esta categoria.
+        </div>
+
       </div>
+
     </details>
 
+
+
+    <!-- SOBREMESAS -->
+
     <details class="categoria">
+
       <summary>🍨 Sobremesas</summary>
+
       <div class="conteudo-categoria">
-        <div class="aguarde">Itens serão inseridos no próximo passo.</div>
+
+        <div class="em-breve">
+          Estamos preparando esta categoria.
+        </div>
+
       </div>
+
     </details>
 
+
+
+    <!-- PORÇÕES -->
+
     <details class="categoria">
+
       <summary>🫒 Porções</summary>
+
       <div class="conteudo-categoria">
-        <div class="aguarde">Itens serão inseridos no próximo passo.</div>
+
+        <div class="em-breve">
+          Estamos preparando esta categoria.
+        </div>
+
       </div>
+
     </details>
 
+
+
+    <!-- SUCOS -->
+
     <details class="categoria">
+
       <summary>🍹 Sucos</summary>
+
       <div class="conteudo-categoria">
-        <div class="aguarde">Itens serão inseridos no próximo passo.</div>
+
+        <div class="em-breve">
+          Estamos preparando esta categoria.
+        </div>
+
       </div>
+
     </details>
 
+
+
+    <!-- BEBIDAS -->
+
     <details class="categoria">
+
       <summary>🥤 Bebidas</summary>
+
       <div class="conteudo-categoria">
-        <div class="aguarde">Itens serão inseridos no próximo passo.</div>
+
+        <div class="em-breve">
+          Estamos preparando esta categoria.
+        </div>
+
       </div>
+
     </details>
 
+
+
+    <!-- CERVEJAS -->
+
     <details class="categoria">
+
       <summary>🍺 Cervejas</summary>
+
       <div class="conteudo-categoria">
-        <div class="aguarde">Itens serão inseridos no próximo passo.</div>
+
+        <div class="em-breve">
+          Estamos preparando esta categoria.
+        </div>
+
       </div>
+
     </details>
 
+
+
+    <!-- DRINKS -->
+
     <details class="categoria">
+
       <summary>🍸 Drinks</summary>
+
       <div class="conteudo-categoria">
-        <div class="aguarde">Itens serão inseridos no próximo passo.</div>
+
+        <div class="em-breve">
+          Estamos preparando esta categoria.
+        </div>
+
       </div>
+
     </details>
+
+
+
+    <!-- INFORMAÇÕES -->
+
+    <section class="informacoes">
+
+      <strong>Informações importantes</strong>
+
+      <br><br>
+
+      Pizzas com dois ou mais sabores serão cobradas
+      pelo valor do sabor de maior preço.
+
+      <br>
+
+      Ingredientes adicionais serão cobrados separadamente.
+
+    </section>
+
+
+    <footer>
+
+      <strong>Pizzaria Jardins</strong>
+
+      <br>
+
+      Rua José Domingues, 624 – Taboão – Bragança Paulista/SP
+
+      <br>
+
+      Atendimento das 18h às 00h • Terças-feiras fechado
+
+    </footer>
+
 
   </main>
 
-  <div class="aviso">
-    <strong>Informações importantes:</strong><br>
-    Pizzas com dois ou mais sabores são cobradas pelo valor do sabor de maior preço.
-    Outras regras do cardápio serão detalhadas nesta página.
-  </div>
 
-  <footer class="rodape">
-    <strong>Pizzaria Jardins</strong><br>
-    Rua José Domingues, 624 • Taboão • Bragança Paulista/SP<br>
-    Salão &amp; Delivery • 18h às 00h • Fechado às terças-feiras
-  </footer>
 
-  <a class="whatsapp-fixo"
-     href="https://wa.me/551140345005"
-     target="_blank"
-     rel="noopener noreferrer">
+  <!-- WHATSAPP -->
+
+  <a
+    class="whatsapp-fixo"
+    href="https://wa.me/551140345005"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     💬 PEDIR PELO WHATSAPP
   </a>
 
+
+
+  <script>
+
+    const pizzasTradicionais = [
+
+      {
+        nome: "Abobrinha",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, muçarela, abobrinha refogada no azeite, parmesão, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Alho",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, muçarela, cebola, alho frito no azeite, parmesão, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Alho Poró",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, alho poró, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Aliche",
+        preco: "R$ 116",
+        descricao: "Molho de tomate, muçarela, filet de anchovas peruanas, parmesão, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "À Moda da Casa",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, escarola, milho, palmito, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Alvorada",
+        preco: "R$ 116",
+        descricao: "Molho de tomate, atum sólido, palmito, ovos, muçarela, cebola, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Americana",
+        preco: "R$ 116",
+        descricao: "Molho de tomate, atum sólido, palmito, ervilha, cobertos com muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Ao Forno",
+        preco: "R$ 114",
+        descricao: "Molho de tomate, catupiry, rodelas de tomate, champignon, parmesão, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Atum",
+        preco: "R$ 116",
+        descricao: "Molho de tomate, atum sólido, cebola, parmesão, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Bacon",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, muçarela, bacon, parmesão, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Baiana",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, calabresa moída, muçarela, cebola, bacon, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Baiacatu",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, calabresa moída, catupiry, cebola, bacon, pimenta Tabasco, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Bauru",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, presunto, muçarela, rodelas de tomate, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Berinjela",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, berinjela, muçarela, parmesão, alho frito, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Bragança",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, carne moída temperada, catupiry, cebola, ovos, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Brasileirinha",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, calabresa, cebola, cobertos com muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Brie",
+        preco: "R$ 112",
+        descricao: "Molho de tomate, agrião coberto com muçarela, fatias de queijo Brie, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Brócolis",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, brócolis, ricota, muçarela, bacon, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Brócolis Especial",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, brócolis, muçarela, carne moída temperada, bacon, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Caipira",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, sassami de frango, milho, catupiry, bacon, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Calabresa",
+        preco: "R$ 89",
+        descricao: "Molho de tomate, calabresa, cebola, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Calábria",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, calabresa e cebola coberta com catupiry, manjericão fresco, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Canadense",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, lombo canadense, muçarela, cebola, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Carijó",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, sassami de frango, catupiry, cebola, bacon, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Catupiry",
+        preco: "R$ 112",
+        descricao: "Molho de tomate, catupiry, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Catupyrela",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, catupiry, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Catuperú",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, catupiry, peito de peru, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Champignon",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, champignon, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Comandante",
+        preco: "R$ 116",
+        descricao: "Molho de tomate, berinjela, muçarela, filet de anchovas peruanas, pimentões picados, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Da Sogra",
+        preco: "R$ 112",
+        descricao: "Molho de tomate, palmito, bolas de catupiry, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Dois Queijos",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, catupiry, provolone, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Escarola",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, escarola, muçarela, cebola, ricota, bacon, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Escarola do Fernando",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, escarola, muçarela, calabresa, cebola, parmesão, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Florentina",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, presunto, provolone, catupiry, gorgonzola, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Francesa",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, lombo canadense, ovos, catupiry, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Frango com Catupiry",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, sassami de frango, catupiry, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Frango à Brasileira",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, sassami de frango, ervilha, muçarela, cebola, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Gorgonzola",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, gorgonzola, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Gregoriana",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, muçarela de búfala, parmesão, manjericão fresco, rodelas de tomate, tomate seco, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Light",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, muçarela de búfala, peito de peru, rodelas de tomate, ricota, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Lombo",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, lombo canadense, catupiry, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Marajá",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, palmito, champignon, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Marco Polo",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, catupiry, tomate seco coberto com champignon, palmito, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Marguerita",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, muçarela, parmesão, rodelas de tomate, manjericão fresco, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Marguerita Especial",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, muçarela, parmesão, rodelas de tomate, manjericão fresco, tomate cereja, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Mexicana",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, sassami de frango, ervilha, palmito, bolas de catupiry, muçarela, bacon, cebola, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Milho",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, muçarela, milho, bacon, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Mineirinha",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, catupiry, muçarela, cebola, bacon, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Mix de Cogumelos",
+        preco: "R$ 116",
+        descricao: "Molho de tomate, cogumelo paris, shitake e shimeji puxados na manteiga, cebolas no vinho tinto, muçarela, manjericão fresco, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Moda do Chefe",
+        preco: "R$ 116",
+        descricao: "Molho de tomate, palmito, atum sólido, tomate seco, muçarela, ricota, alho, parmesão, cebola, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Muçarela",
+        preco: "R$ 89",
+        descricao: "Molho de tomate, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Napolitana",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, muçarela, rodelas de tomate, parmesão, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Nordestina",
+        preco: "R$ 116",
+        descricao: "Molho de tomate, muçarela, purê de mandioquinha, carne seca desfiada, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Palmito",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, palmito, muçarela, ovos, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Paola",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, muçarela, presunto, calabresa, bolas de catupiry, bacon, parmesão, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Pizzaiolo",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, presunto, milho, catupiry, creme de leite, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Portuguesa",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, muçarela, presunto, cebola, ovos, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Princesinha",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, milho, creme de leite, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Quatro Queijos",
+        preco: "R$ 112",
+        descricao: "Molho de tomate, catupiry, provolone, gorgonzola, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Romana",
+        preco: "R$ 116",
+        descricao: "Molho de tomate, muçarela, filet de anchovas peruanas, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Rúcula",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, muçarela, rúcula, tomate seco, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Shimeji",
+        preco: "R$ 114",
+        descricao: "Molho de tomate, catupiry, tomate picado, shimeji puxado no vinho branco, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Shitake",
+        preco: "R$ 114",
+        descricao: "Molho de tomate, shitake, catupiry, tomate seco, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Siciliana",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, ervilha, palmito, presunto, ovos e cebola cobertos com muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Strogonoff de Frango",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, catupiry, sassami de frango ao molho especial, batata palha, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Strogonoff de Mignon",
+        preco: "R$ 114",
+        descricao: "Molho de tomate, catupiry, filet mignon ao molho especial, batata palha, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Suíça",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, sassami de frango, milho, creme de leite, bolas de catupiry, muçarela, bacon, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Típica Bragantina",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, muçarela, linguiça típica bragantina, cebola, tomate seco, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Toscana",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, linguiça toscana defumada e moída, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Três Queijos",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, catupiry, provolone, muçarela, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Tropical",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, muçarela, peito de peru, banana ou abacaxi, bacon, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Vegetariana",
+        preco: "R$ 109",
+        descricao: "Molho de tomate, escarola, milho, palmito, tomate seco, orégano e azeitonas chilenas."
+      },
+
+      {
+        nome: "Veroca",
+        preco: "R$ 99",
+        descricao: "Molho de tomate, muçarela, rodelas de tomate, parmesão, cebola, bacon, orégano e azeitonas chilenas."
+      }
+
+    ];
+
+
+    function montarCardapio(lista, destino) {
+
+      const container = document.getElementById(destino);
+
+      lista.forEach(function(item) {
+
+        const elemento = document.createElement("div");
+
+        elemento.className = "item-cardapio";
+
+        elemento.innerHTML = `
+          <div class="item-topo">
+
+            <div class="item-nome">
+              ${item.nome}
+            </div>
+
+            <div class="item-preco">
+              ${item.preco}
+            </div>
+
+          </div>
+
+          <div class="item-descricao">
+            ${item.descricao}
+          </div>
+        `;
+
+        container.appendChild(elemento);
+
+      });
+
+    }
+
+
+    montarCardapio(
+      pizzasTradicionais,
+      "lista-tradicionais"
+    );
+
+  </script>
+
+
 </body>
+
 </html>
