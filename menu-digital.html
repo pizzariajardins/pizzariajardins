@@ -489,21 +489,18 @@
 
 
 
-    <!-- CERVEJAS -->
+<!-- CERVEJAS -->
 
-    <details class="categoria">
+<details class="categoria">
 
-      <summary>🍺 Cervejas</summary>
+  <summary>🍺 Cervejas</summary>
 
-      <div class="conteudo-categoria">
+  <div
+    class="conteudo-categoria"
+    id="lista-cervejas">
+  </div>
 
-        <div class="em-breve">
-          Estamos preparando esta categoria.
-        </div>
-
-      </div>
-
-    </details>
+</details>
 
 
 
@@ -1330,6 +1327,58 @@ const sucos = [
   }
 
 ];
+
+    const cervejas = [
+
+  {
+    nome: "Corona Extra",
+    preco: "R$ 17",
+    descricao: "Long Neck. 330 ml."
+  },
+
+  {
+    nome: "Heineken",
+    preco: "R$ 17",
+    descricao: "Long Neck. 330 ml."
+  },
+
+  {
+    nome: "Heineken Zero",
+    preco: "R$ 17",
+    descricao: "Long Neck. 330 ml."
+  },
+
+  {
+    nome: "Brahma Malzbier",
+    preco: "R$ 17",
+    descricao: "Long Neck ou lata. Consulte as opções."
+  },
+
+  {
+    nome: "Stella Artois",
+    preco: "R$ 17",
+    descricao: "Long Neck. 330 ml."
+  },
+
+  {
+    nome: "Heineken 600 ml",
+    preco: "R$ 25",
+    descricao: "600 ml."
+  },
+
+  {
+    nome: "Original 600 ml",
+    preco: "R$ 25",
+    descricao: "600 ml."
+  },
+
+  {
+    nome: "Serra Malte 600 ml",
+    preco: "R$ 25",
+    descricao: "600 ml. Consulte a disponibilidade."
+  }
+
+];
         
     function montarCardapio(lista, destino) {
 
@@ -1399,6 +1448,11 @@ const sucos = [
     montarCardapio(
   bebidas,
   "lista-bebidas"
+);
+
+    montarCardapio(
+  cervejas,
+  "lista-cervejas"
 );
     
   </script>
