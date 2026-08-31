@@ -429,21 +429,18 @@
 
 
 
-    <!-- SOBREMESAS -->
+   <!-- SOBREMESAS -->
 
-    <details class="categoria">
+<details class="categoria">
 
-      <summary>🍨 Sobremesas</summary>
+  <summary>🍨 Sobremesas</summary>
 
-      <div class="conteudo-categoria">
+  <div
+    class="conteudo-categoria"
+    id="lista-sobremesas">
+  </div>
 
-        <div class="em-breve">
-          Estamos preparando esta categoria.
-        </div>
-
-      </div>
-
-    </details>
+</details>
 
 
 
@@ -1200,6 +1197,34 @@ const pizzasDoces = [
   }
 
 ];
+
+    const sobremesas = [
+
+  {
+    nome: "Banana Flambada",
+    preco: "R$ 35",
+    descricao: ""
+  },
+
+  {
+    nome: "Creme de Papaia com Cassis",
+    preco: "R$ 39",
+    descricao: ""
+  },
+
+  {
+    nome: "Taça de Colegial",
+    preco: "R$ 35",
+    descricao: ""
+  },
+
+  {
+    nome: "Sorvete Simples",
+    preco: "R$ 29",
+    descricao: "3 bolas de sorvete (creme ou morango) com cobertura de caramelo."
+  }
+
+];
     
     function montarCardapio(lista, destino) {
 
@@ -1249,6 +1274,11 @@ const pizzasDoces = [
     montarCardapio(
   pizzasDoces,
   "lista-doces"
+);
+
+   montarCardapio(
+  sobremesas,
+  "lista-sobremesas"
 );
     
   </script>
