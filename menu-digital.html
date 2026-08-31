@@ -506,19 +506,16 @@
 
     <!-- DRINKS -->
 
-    <details class="categoria">
+<details class="categoria">
 
-      <summary>🍸 Drinks</summary>
+  <summary>🍸 Drinks</summary>
 
-      <div class="conteudo-categoria">
+  <div
+    class="conteudo-categoria"
+    id="lista-drinks">
+  </div>
 
-        <div class="em-breve">
-          Estamos preparando esta categoria.
-        </div>
-
-      </div>
-
-    </details>
+</details>
 
 
 
@@ -1379,6 +1376,16 @@ const sucos = [
   }
 
 ];
+
+ const drinks = [
+
+  {
+    nome: "Caipirinha",
+    preco: "R$ 36",
+    descricao: ""
+  }
+
+];   
         
     function montarCardapio(lista, destino) {
 
@@ -1453,6 +1460,11 @@ const sucos = [
     montarCardapio(
   cervejas,
   "lista-cervejas"
+);
+
+    montarCardapio(
+  drinks,
+  "lista-drinks"
 );
     
   </script>
