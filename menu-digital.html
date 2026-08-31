@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Esta página não deve aparecer nas buscas do Google -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Cardápio Digital | Pizzaria Jardins</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7efe3;
+      color: #27382d;
+      padding-bottom: 95px;
+    }
+
+    .topo {
+      text-align: center;
+      padding: 28px 20px 22px;
+      background: #fffaf2;
+      border-bottom: 1px solid #eadfce;
+    }
+
+    .logo {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin: 0 auto 14px;
+    }
+
+    .slogan {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16px;
+      font-style: italic;
+      color: #176c3b;
+      margin-bottom: 8px;
+    }
+
+    .desde {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #e87518;
+      font-weight: 700;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 24px 20px 10px;
+      text-align: center;
+    }
+
+    .intro h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      color: #176c3b;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #5e685f;
+    }
+
+    .categorias {
+      max-width: 700px;
+      margin: 18px auto;
+      padding: 0 18px;
+    }
+
+    .categoria {
+      background: #ffffff;
+      border: 1px solid #eadfce;
+      border-radius: 15px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    }
+
+    .categoria summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #176c3b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .categoria summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .categoria summary::after {
+      content: "+";
+      color: #e87518;
+      font-size: 24px;
+      font-family: Arial, sans-serif;
+    }
+
+    .categoria[open] summary::after {
+      content: "−";
+    }
+
+    .conteudo-categoria {
+      padding: 0 20px 20px;
+      border-top: 1px solid #f0e7da;
+    }
+
+    .aguarde {
+      padding-top: 16px;
+      font-size: 13px;
+      color: #777;
+      text-align: center;
+    }
+
+    .aviso {
+      max-width: 700px;
+      margin: 22px auto;
+      padding: 18px 20px;
+      background: #fff7ec;
+      border-left: 4px solid #e87518;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #5d554d;
+    }
+
+    .rodape {
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 12px;
+      line-height: 1.7;
+      color: #69756c;
+    }
+
+    .rodape strong {
+      color: #176c3b;
+    }
+
+    .whatsapp-fixo {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      max-width: 668px;
+      margin: 0 auto;
+      background: #168446;
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center;
+      padding: 17px 20px;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.20);
+      z-index: 1000;
+    }
+
+    .whatsapp-fixo:hover {
+      background: #126d3a;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topo">
+    <img src="logo-jardins.png"
+         alt="Pizzaria Jardins"
+         class="logo">
+
+    <div class="slogan">
+      A arte em fazer pizzas há mais de 30 anos!
+    </div>
+
+    <div class="desde">
+      Desde 1994
+    </div>
+  </header>
+
+  <section class="intro">
+    <h1>Nosso Cardápio</h1>
+    <p>
+      Escolha seus sabores favoritos e, quando decidir,
+      é só tocar no botão do WhatsApp para fazer seu pedido.
+    </p>
+  </section>
+
+  <main class="categorias">
+
+    <details class="categoria">
+      <summary>🍕 Pizzas Tradicionais</summary>
+      <div class="conteudo-categoria">
+        <div class="aguarde">Os sabores serão inseridos no próximo passo.</div>
+      </div>
+    </details>
+
+    <details class="categoria">
+      <summary>✨ Pizzas Especiais</summary>
+      <div class="conteudo-categoria">
+        <div class="aguarde">Os sabores serão inseridos no próximo passo.</div>
+      </div>
+    </details>
+
+    <details class="categoria">
+      <summary>🍫 Pizzas Doces</summary>
+      <div class="conteudo-categoria">
+        <div class="aguarde">Os sabores serão inseridos no próximo passo.</div>
+      </div>
+    </details>
+
+    <details class="categoria">
+      <summary>🍨 Sobremesas</summary>
+      <div class="conteudo-categoria">
+        <div class="aguarde">Itens serão inseridos no próximo passo.</div>
+      </div>
+    </details>
+
+    <details class="categoria">
+      <summary>🫒 Porções</summary>
+      <div class="conteudo-categoria">
+        <div class="aguarde">Itens serão inseridos no próximo passo.</div>
+      </div>
+    </details>
+
+    <details class="categoria">
+      <summary>🍹 Sucos</summary>
+      <div class="conteudo-categoria">
+        <div class="aguarde">Itens serão inseridos no próximo passo.</div>
+      </div>
+    </details>
+
+    <details class="categoria">
+      <summary>🥤 Bebidas</summary>
+      <div class="conteudo-categoria">
+        <div class="aguarde">Itens serão inseridos no próximo passo.</div>
+      </div>
+    </details>
+
+    <details class="categoria">
+      <summary>🍺 Cervejas</summary>
+      <div class="conteudo-categoria">
+        <div class="aguarde">Itens serão inseridos no próximo passo.</div>
+      </div>
+    </details>
+
+    <details class="categoria">
+      <summary>🍸 Drinks</summary>
+      <div class="conteudo-categoria">
+        <div class="aguarde">Itens serão inseridos no próximo passo.</div>
+      </div>
+    </details>
+
+  </main>
+
+  <div class="aviso">
+    <strong>Informações importantes:</strong><br>
+    Pizzas com dois ou mais sabores são cobradas pelo valor do sabor de maior preço.
+    Outras regras do cardápio serão detalhadas nesta página.
+  </div>
+
+  <footer class="rodape">
+    <strong>Pizzaria Jardins</strong><br>
+    Rua José Domingues, 624 • Taboão • Bragança Paulista/SP<br>
+    Salão &amp; Delivery • 18h às 00h • Fechado às terças-feiras
+  </footer>
+
+  <a class="whatsapp-fixo"
+     href="https://wa.me/551140345005"
+     target="_blank"
+     rel="noopener noreferrer">
+    💬 PEDIR PELO WHATSAPP
+  </a>
+
+</body>
+</html>
