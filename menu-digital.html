@@ -476,19 +476,16 @@
 
     <!-- BEBIDAS -->
 
-    <details class="categoria">
+<details class="categoria">
 
-      <summary>🥤 Bebidas</summary>
+  <summary>🥤 Bebidas</summary>
 
-      <div class="conteudo-categoria">
+  <div
+    class="conteudo-categoria"
+    id="lista-bebidas">
+  </div>
 
-        <div class="em-breve">
-          Estamos preparando esta categoria.
-        </div>
-
-      </div>
-
-    </details>
+</details>
 
 
 
@@ -1281,7 +1278,59 @@ const sucos = [
   }
 
 ];
-    
+
+    const bebidas = [
+
+  {
+    nome: "Água Prata",
+    preco: "R$ 9",
+    descricao: "Com ou sem gás."
+  },
+
+  {
+    nome: "Tônica Antártica",
+    preco: "R$ 11",
+    descricao: "Lata. Normal ou Zero."
+  },
+
+  {
+    nome: "H2OH!",
+    preco: "R$ 11",
+    descricao: "Sabor Limão ou Limoneto."
+  },
+
+  {
+    nome: "Chá Gelado",
+    preco: "R$ 11",
+    descricao: "Sabor Limão ou Pêssego."
+  },
+
+  {
+    nome: "Schweppes Citrus",
+    preco: "R$ 11",
+    descricao: "Lata."
+  },
+
+  {
+    nome: "Refrigerante Lata",
+    preco: "R$ 10",
+    descricao: "Coca-Cola, Guaraná, Sprite ou Fanta. Opções zero açúcar."
+  },
+
+  {
+    nome: "Vinho Tinto da Casa",
+    preco: "R$ 24",
+    descricao: "Taça de vinho (seco ou suave)."
+  },
+
+  {
+    nome: "Jarra de Vinho",
+    preco: "R$ 59",
+    descricao: "Vinho da casa (seco ou suave)."
+  }
+
+];
+        
     function montarCardapio(lista, destino) {
 
       const container = document.getElementById(destino);
@@ -1345,6 +1394,11 @@ const sucos = [
     montarCardapio(
   sucos,
   "lista-sucos"
+);
+
+    montarCardapio(
+  bebidas,
+  "lista-bebidas"
 );
     
   </script>
