@@ -459,21 +459,18 @@
 
 
 
-    <!-- SUCOS -->
+   <!-- SUCOS -->
 
-    <details class="categoria">
+<details class="categoria">
 
-      <summary>🍹 Sucos</summary>
+  <summary>🍹 Sucos</summary>
 
-      <div class="conteudo-categoria">
+  <div
+    class="conteudo-categoria"
+    id="lista-sucos">
+  </div>
 
-        <div class="em-breve">
-          Estamos preparando esta categoria.
-        </div>
-
-      </div>
-
-    </details>
+</details>
 
 
 
@@ -1250,6 +1247,40 @@ const pizzasDoces = [
   }
 
 ];
+
+const sucos = [
+
+  {
+    nome: "Sucos Tradicionais",
+    preco: "R$ 17",
+    descricao: "Abacaxi, Laranja, Limão, Manga, Mamão ou Uva."
+  },
+
+  {
+    nome: "Sucos Especiais",
+    preco: "R$ 22",
+    descricao: "Acerola, Caju, Framboesa, Frutas Vermelhas, Maracujá, Morango ou Pêssego."
+  },
+
+  {
+    nome: "Sucos Especiais e Vitaminas",
+    preco: "R$ 23",
+    descricao: "Sucos com 2 ou mais frutas ou batidos com leite."
+  },
+
+  {
+    nome: "Jarra de Suco",
+    preco: "R$ 38",
+    descricao: "Sucos com 2 ou mais frutas ou batidos com leite: acréscimo de R$ 5,00."
+  },
+
+  {
+    nome: "Suco Detox",
+    preco: "R$ 23",
+    descricao: "Suco misto de Abacaxi, Limão, Couve, Gengibre e Hortelã."
+  }
+
+];
     
     function montarCardapio(lista, destino) {
 
@@ -1309,6 +1340,11 @@ const pizzasDoces = [
     montarCardapio(
   porcoes,
   "lista-porcoes"
+);
+
+    montarCardapio(
+  sucos,
+  "lista-sucos"
 );
     
   </script>
