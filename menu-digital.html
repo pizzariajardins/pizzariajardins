@@ -399,21 +399,18 @@
 
 
 
-    <!-- PIZZAS ESPECIAIS -->
+   <!-- PIZZAS ESPECIAIS -->
 
-    <details class="categoria">
+<details class="categoria">
 
-      <summary>✨ Pizzas Especiais</summary>
+  <summary>✨ Pizzas Especiais</summary>
 
-      <div class="conteudo-categoria">
+  <div
+    class="conteudo-categoria"
+    id="lista-especiais">
+  </div>
 
-        <div class="em-breve">
-          Estamos preparando esta categoria.
-        </div>
-
-      </div>
-
-    </details>
+</details>
 
 
 
@@ -1037,6 +1034,118 @@
 
     ];
 
+    const pizzasEspeciais = [
+
+  {
+    nome: "4 Queijos com Mignon",
+    preco: "R$ 116",
+    descricao: "Molho de tomate, gorgonzola, catupiry, provolone, muçarela, filet mignon em cubos puxado no azeite, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Bacalhau",
+    preco: "R$ 209",
+    descricao: "Molho de tomate, lascas de bacalhau Gadus Morhua puxadas no azeite, rodelas de tomate, cebola, ovos, pimentões, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Capricciosa",
+    preco: "R$ 114",
+    descricao: "Molho de tomate, catupiry, peito de peru, muçarela, champignon, palmito, bacon, parmesão, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Camarão à Baiana",
+    preco: "R$ 116",
+    descricao: "Molho de tomate, muçarela, camarão rosa à baiana, bolas de catupiry, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Camarão à Espanhola",
+    preco: "R$ 229",
+    descricao: "Molho de tomate, muçarela, camarão rosa puxado no azeite, rúcula, palmito, tomate seco, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Camarão à Moda da Casa",
+    preco: "R$ 229",
+    descricao: "Molho de tomate, muçarela de búfala, camarão rosa puxado no azeite, pimentões coloridos, cebola, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Camarão à Martinez",
+    preco: "R$ 229",
+    descricao: "Molho de tomate, muçarela, camarão rosa puxado no azeite, champignon, palmito, bolas de catupiry, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Camarão à Bragança",
+    preco: "R$ 229",
+    descricao: "Molho de tomate, muçarela, camarão rosa puxado no azeite, manjericão fresco, cebola, tomate seco, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Coração de Alcachofra",
+    preco: "R$ 229",
+    descricao: "Molho de tomate, corações de alcachofra, muçarela, palmito, ervas finas e azeitonas chilenas."
+  },
+
+  {
+    nome: "Espanhola",
+    preco: "R$ 114",
+    descricao: "Molho de tomate, muçarela, catupiry, champignon, pepperoni, pimentões, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Especial da Casa",
+    preco: "R$ 114",
+    descricao: "Molho de tomate, pimentões, calabresa moída, champignon, catupiry, muçarela, cebola, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "6 Formaggi",
+    preco: "R$ 109",
+    descricao: "Molho de tomate, muçarela de búfala, parmesão, gorgonzola, provolone, catupiry, ricota, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Jardins",
+    preco: "R$ 114",
+    descricao: "Molho de tomate, peito de peru, champignon, creme de leite, muçarela, cebola, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Parma",
+    preco: "R$ 158",
+    descricao: "Molho de tomate, presunto parma, muçarela de búfala, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Parma Divina",
+    preco: "R$ 158",
+    descricao: "Molho de tomate, muçarela, fatias de queijo Brie, fatias de presunto parma, fios de mel e pingos de geléia de figo ou damasco."
+  },
+
+  {
+    nome: "Parma & Rúcula",
+    preco: "R$ 158",
+    descricao: "Molho de tomate, muçarela de búfala, corações de alcachofra, presunto parma, rúcula, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Pepperoni",
+    preco: "R$ 114",
+    descricao: "Molho de tomate, muçarela, pepperoni, orégano e azeitonas chilenas."
+  },
+
+  {
+    nome: "Especialíssima",
+    preco: "R$ 109",
+    descricao: "Molho de tomate, muçarela, peito de frango defumado, bolas de catupiry, ricota, rodelas de tomate, bacon, orégano e azeitonas chilenas."
+  }
+
+];
+
 
     function montarCardapio(lista, destino) {
 
@@ -1077,6 +1186,11 @@
       pizzasTradicionais,
       "lista-tradicionais"
     );
+    
+    montarCardapio(
+  pizzasEspeciais,
+  "lista-especiais"
+);
 
   </script>
 
