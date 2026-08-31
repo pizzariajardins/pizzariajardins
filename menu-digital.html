@@ -444,21 +444,18 @@
 
 
 
-    <!-- PORÇÕES -->
+   <!-- PORÇÕES -->
 
-    <details class="categoria">
+<details class="categoria">
 
-      <summary>🫒 Porções</summary>
+  <summary>🫒 Porções</summary>
 
-      <div class="conteudo-categoria">
+  <div
+    class="conteudo-categoria"
+    id="lista-porcoes">
+  </div>
 
-        <div class="em-breve">
-          Estamos preparando esta categoria.
-        </div>
-
-      </div>
-
-    </details>
+</details>
 
 
 
@@ -1225,6 +1222,34 @@ const pizzasDoces = [
   }
 
 ];
+
+    const porcoes = [
+
+  {
+    nome: "Aperitivo",
+    preco: "R$ 65",
+    descricao: "Deliciosa massa de pizza, regada com azeite de oliva e parmesão."
+  },
+
+  {
+    nome: "Azeitonas Chilenas",
+    preco: "R$ 49",
+    descricao: ""
+  },
+
+  {
+    nome: "Parmesão",
+    preco: "R$ 59",
+    descricao: ""
+  },
+
+  {
+    nome: "Linguiça Típica Bragantina",
+    preco: "R$ 58",
+    descricao: ""
+  }
+
+];
     
     function montarCardapio(lista, destino) {
 
@@ -1279,6 +1304,11 @@ const pizzasDoces = [
    montarCardapio(
   sobremesas,
   "lista-sobremesas"
+);
+
+    montarCardapio(
+  porcoes,
+  "lista-porcoes"
 );
     
   </script>
